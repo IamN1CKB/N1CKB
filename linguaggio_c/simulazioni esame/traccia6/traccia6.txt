@@ -1,0 +1,35 @@
+Sviluppare in linguaggio C un programma, articolato in sottoprogrammi, che:
+Legga una matrice di interi da un file di testo “input.txt”;
+Salvi in un vettore di interi gli elementi della matrice in modo tale che ogni valore compaia una e una sola volta.
+Trasformi la matrice in un array di strutture il cui i-esimo elemento contiene:
+    -un campo intero che rappresenta il valore di un elemento della matrice
+    -un campo intero che rappresenta il numero occorrenze del valore nella matrice
+    -un array di interi che contiene l’indice di riga per ogni occorrenza del valore nella matrice
+    -un array di interi che contiene l’indice di colonna per ogni occorrenza del valore nella matrice
+
+#define N 100
+struct Mystruct{
+    int valore;
+    int occorrenze;
+    int indiciriga[N];
+    int indicicolonna[N];
+};
+
+Ordinare il vettore di strutture in senso crescente rispetto al numero di occorrenze
+Salvare il vettore di struct in un file binario “output.bin”
+
+
+Esempio:
+
+Matrice iniziale:
+4 0 1
+1 1 3
+3 0 3
+3 2 4
+
+
+Vettore di struct non ordinato:
+0, 2,[1,3], [2,2]
+1,3,[1,2,2], [3,1,2]
+2,1,[4],[2]
+3,4,[2,3,3,4],[3,1,3,1]

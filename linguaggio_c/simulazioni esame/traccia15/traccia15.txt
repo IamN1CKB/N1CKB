@@ -1,0 +1,41 @@
+Sviluppare in linguaggio C un programma principale, articolato in sottoprogrammi, che:
+Legga una matrice di interi da un file di testo “input.txt”
+Elimini tutte le righe della matrice per cui la differenza tra il valore massimo e il valore minimo è maggiore della media
+Salvi ogni riga eliminata in un array di strutture i cui campi contengono:
+    -la lunghezza della riga
+    -l’indice che la riga aveva nella matrice originale
+    -gli elementi della riga
+    -la media
+    -la differenza tra massimo e minimo
+
+struct Mystruct {
+    int riga[50];
+    int lriga;
+    int index;
+    float media;
+    int diff;
+};
+
+N.B.: Usare la struct definita nel template dell'esercizio, e inizializzare a  il vettore di interi riga  prima di utilizzarlo.
+
+Salvi l’array di strutture in un file binario “output.bin”
+
+
+
+Esempio:
+
+
+Matrice iniziale:
+4 0 1
+1 1 3
+3 3 3
+3 2 4
+
+Matrice finale:
+3 3 3
+3 2 4
+
+Vettore di struct non ordinato:
+
+[4,0,1],3,0,1.66, 4
+[1,1,3],3,1,1.66, 2

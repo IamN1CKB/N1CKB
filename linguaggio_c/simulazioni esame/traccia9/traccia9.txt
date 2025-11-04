@@ -1,0 +1,49 @@
+Sviluppare in linguaggio C un programma, articolato in sottoprogrammi, che :
+
+Legga una matrice di reali di dimensione m,n da un file di testo “input.txt”
+
+Calcoli il prodotto matrice colonna della matrice iniziale per la sua trasposta
+
+Accodi in un vettore di struct gli elementi della diagonale principale e la diagonale secondaria, ciascuna ordinata in senso decrescente. Ogni elemento della struct contiene posizione, indice di riga e di colonna del’elemento.
+
+struct Mystruct{
+
+int val;
+
+int i;
+
+int j;
+
+};
+
+Ordinare il vettore di ottenuto in senso decrescente
+
+Salvare gli elementi del vettore di struct in un file binario "output.bin"
+
+Sviluppare un programma principale che utilizzi i sottoprogrammi nell’ordine specificato.
+
+
+Esempio:
+
+
+Matrice iniziale:
+0   6       0   1   9
+1   2   X   6   2   0
+9   0
+
+
+
+Matrice finale:
+36  12  0
+12  5   9
+0   9   81
+
+
+vettore:
+
+{81,2,2}
+{ 36, 0, 0}
+{ 5, 1, 1}
+{ 5, 1, 1}
+{ 0, 0, 2}
+{ 0, 2, 0}

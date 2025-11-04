@@ -1,0 +1,67 @@
+Leggere da un file di testo “input.txt” una sequenza di stringhe costituite da numeri e lettere.
+
+Dividere la prima stringa all’interno del file in parole. Si scriva un programma che verifichi se le parole della prima stringa letta siano contenute nelle successive stringhe.
+
+Salvare le parole della prima stringa in un vettore di struct definita come segue:
+
+
+#define N_MAX 100
+
+struct mystruct
+
+{
+
+char parola[N_MAX];
+
+int num_occorrenze;
+
+int indice_parola;
+
+};
+
+typedef struct mystruct Mystruct;
+
+
+Dove:
+
+- num_occorrenze indica il numero di volte in cui la parola è stata riconosciuta come sottostringa delle stringhe successive (la relazione di sottostringa deve essere controllata una sola volta, si cerca la parola “ra” nella stringa raramente, essa dovrá essere contata una sola volta)
+
+- indice_parola: indica la posizione della parola nella prima stringa.
+
+Ordinare il vettore di struct secondo num_occorrenze, e a parità di num_occorrenze per indice_parola.
+
+
+Salvare i soli elementi inizializzati in un file binario “output.bin”.
+
+
+Esempio:
+
+
+do re mi fa sol la si
+
+ascoltare la musica fa bene
+
+parlare da solo
+
+guarda il mare
+
+
+Vettore Risultante
+
+
+{do,0,0}
+
+{re,3,1}
+
+{mi,0,2}
+
+{fa,1,3}
+
+{sol,1,4}
+
+{la,2,5}
+
+{si,1,6}
+
+
+N.B.: Inizializzare a 0 tutti il vettore di struct prima di riempirlo.

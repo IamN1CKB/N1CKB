@@ -1,0 +1,82 @@
+Leggere da un file di testo “input.txt” la dimensione e i valori di una matrice quadrata di numeri reali.
+
+Leggere quindi un vettore di reali che possiede tanti elementi quante sono le righe della matrice.
+
+Confrontare il vettore con le con le colonne e le righe della matrice e per ogni confronto creare una struct definita come segue:
+
+
+#define N_MAX 100
+
+
+struct mystruct
+
+{
+
+char tipo;
+
+int indice;
+
+int confronto;
+
+int n;
+
+int vet[N_MAX];
+
+};
+
+typedef struct mystruct Mystruct;
+
+
+Dove:
+
+- tipo è ‘c’ se il confronto è con la colonna o ‘r’ se con la riga
+
+- indice indica l’indice di riga/colonna
+
+- confronto, è un intero che indica se il vettore è uguale alla riga/colonna (-1), oppure se non uguale specifica quanti suoi elementi sono contenuti almeno una volta nella riga/colonna.
+
+- n il numero di elementi confrontati
+
+- vet è la riga/colonna confrontata
+
+
+Salvare i soli elementi inizializzati in un file binario “output.bin”.
+
+
+Esempio
+
+matrice:
+
+1.3 2 3 0
+
+1.3 3 0 1
+
+1.0 3 0 0
+
+1.3 0 4 0
+
+
+vettore: [1.3 3 0 1]
+
+
+Vettore di struct risultante
+
+
+{r, 0, 3, 4, [1.3 2.0 3.0 0.0 ]}
+
+{r, 1, -1, 4, [1.3 3.0 0.0 1.0 ]}
+
+{r, 2, 3, 4, [1.0 3.0 0.0 0.0 ]}
+
+{r, 3, 2, 4, [1.3 0.0 4.0 0.0 ]}
+
+{c, 0, 2, 4, [1.3 1.3 1.0 1.3 ]}
+
+{c, 1, 2, 4, [2.0 3.0 3.0 0.0 ]}
+
+{c, 2, 2, 4, [3.0 0.0 0.0 4.0 ]}
+
+{c, 3, 2, 4, [0.0 1.0 0.0 0.0 ]}
+
+
+N.B.: Inizializzare a 0 tutti il vettore di struct prima di riempirlo.

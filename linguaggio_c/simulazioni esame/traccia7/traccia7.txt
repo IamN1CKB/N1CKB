@@ -1,0 +1,44 @@
+Scrivere un programma in linguaggio C che:
+• legga dal file “input.txt” la dimensione e i valori di una matrice quadrata di caratteri
+• scorrendo tutte le righe e le colonne della matrice individuare tutte le parole presenti in 
+verticale o orizzontale, ovvero tutte le sequenze di caratteri diverse da uno spazio, ma più 
+lunghe di una lettera
+• salvare ogni parola in una struct definita come segue
+#define N_MAX 100
+struct Mystruct {
+    int inizio[2];
+    int fine[2];
+    char parola[N_MAX];
+};
+Dove:
+inizio contiene gli indici della matrice corrispondenti alla posizione della 
+prima lettera della parola trovata
+fine contiene gli indici della matrice corrispondenti alla posizione dell’ultima 
+lettera della parola trovata
+parola è la parola trovata
+• Ordinare il vettore per valori alfabetici crescenti del campo parola
+• Salvare il vettore di struct in un file binario “output.bin”
+Esempio
+____________________
+| C A R T A   B L U |
+| A       D         |
+| S A R T O R I A   |
+| A   A   R         |
+|     P A N I N O   |
+| R   A   A         |
+| O       T   B O A |
+| S O S T A         |
+| A         B A R   |
+⸺⸺⸺⸺⸺⸺
+Array di struct:
+{[0][4], [7][4], adornata}
+{[8][5], [8][7], bar}
+{[0][6], [0][8], blu}
+{[6][6], [6][8], boa}
+{[0][0], [0][4], carta}
+{[0][0], [3][0], casa}
+{[4][2], [4][7], panino}
+{[2][2], [5][2], rapa}
+{[5][0], [8][0], rosa}
+{[2][0], [2][7], sartoria}
+{[7][0], [7][4], sosta}

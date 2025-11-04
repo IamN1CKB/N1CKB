@@ -1,0 +1,39 @@
+Scrivere un programma in linguaggio C che:
+- legga dal file “input.txt” le dimensioni m e n e gli elementi di una matrice di interi m x n;
+- trovi il valore minimo min_i di ogni riga e, nel caso in cui min_i < 0, sommi tutti gli 
+elementi della riga con il valore assoluto di min_i;
+- fatto questo, crei m structs in un vettore, uno per ogni riga della matrice calcolata al punto 
+precedente, i cui elementi sono definiti come segue:
+#define N_MAX 100
+struct Mystruct
+{
+int index;
+int n;
+int elems[N_MAX];
+float media;
+};
+Dove:
+index è l’indice di riga della matrice
+n è il numero di colonne
+elems è un vettore contente gli elementi della riga
+media è la media degli elementi della riga
+ salvi il vettore di struct in un file binario “output.bin”
+Utilizzare funzioni per: il calcolo della media di un vettore di interi; la modifica della matrice in 
+input (secondo punto dell’elenco); la creazione delle structs (terzo punto dell’elenco).
+Esempio
+4 6
+1 2 3 4 -5 6
+7 2 3 4 5 6
+2 0 2 -2 3 5
+2 -1 2 20 4 1
+Minimi riga: -5 2 -2 -1
+Matrice modificata:
+6 7 8 9 0 11
+7 2 3 4 5 6
+4 2 4 0 5 7
+3 0 3 21 5 2
+Array di struct:
+{0, 6, [ 6 7 8 9 0 11 ], 6.83}
+{1, 6, [ 7 2 3 4 5 6 ], 4.50}
+{2, 6, [ 4 2 4 0 5 7 ], 3.67}
+{3, 6, [ 3 0 3 21 5 2 ], 5.67}

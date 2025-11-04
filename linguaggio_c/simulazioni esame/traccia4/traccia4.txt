@@ -1,0 +1,10 @@
+Sviluppare il linguaggio c un programma che deve
+Leggere le dimensioni e i valori reali di una matrice di testo input.txt
+Eliminare tutte le righe la cui somma è uguale a 0
+Per ogni riga eliminata a creare uno struct i cui campi contengono:
+La lunghezza della riga
+Gli elementi della riga
+L'indice della riga nella matrice prima dell'eliminazione
+
+Salvare la matrice finale e il vettore di struct in un file binario output.bin
+

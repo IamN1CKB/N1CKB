@@ -1,0 +1,27 @@
+Sviluppare in linguaggio C, articolato in sottoprogrammi, che :
+    Legga una matrice quadrata di interi da un file di testo “input.txt”
+    Scambi il massimo della prima colonna sulla prima riga, il massimo della seconda colonna sulla seconda riga e cosi via .....
+    Calcoli la media tra le somme degli elementi al di sopra e quelli al di sotto della diagonale principale e la salvi nell’ultima posizione della matrice
+    Ordini la diagonale principale in maniera crescente.
+    Salvi I SOLI ELEMENTI della matrice in un file binario “output.bin”.
+
+
+Esempio:
+
+Matrice iniziale:
+
+5   6   1   8
+1   20  3   4
+9   0   11  12
+13  4   15  1
+
+media=(23+30)/2=26.5
+
+
+Matrice finale:
+
+
+13  6   1   8
+1   20  3   4
+9   0   15  1
+5   14  11  26

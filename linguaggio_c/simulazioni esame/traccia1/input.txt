@@ -1,0 +1,26 @@
+scrivo cose a caso per riempire il file. questo file servirà per esercitazione per poter contare i caratteri di questo file.
+deve essere molto lungo per poter capire l'utilità delle iterazioni di fread.
+inizio cose a caso:
+Eccoti alcune curiosità e informazioni casuali:
+
+1. I pinguini sono uccelli ma non possono volare. Si muovono molto abilmente nell'acqua e sono noti per il loro adorabile modo di camminare sulla terraferma.
+
+2. Il DNA umano è lungo circa due metri, ma si avvolge strettamente all'interno del nucleo di ogni cellula umana.
+
+3. Il deserto del Sahara è più grande dell'intera area degli Stati Uniti continentali.
+
+4. La città di Venezia, in Italia, è costruita su circa 118 isole separate.
+
+5. Le balene blu sono i mammiferi più grandi del pianeta, con alcuni esemplari che possono raggiungere una lunghezza di oltre 30 metri e un peso di circa 200 tonnellate.
+
+6. L'ape regina in un alveare può vivere fino a cinque anni e può deporre fino a 2000 uova al giorno.
+
+7. La città di Tokyo è la più popolosa al mondo, con oltre 37 milioni di abitanti nella sua area metropolitana.
+
+8. La luce del sole impiega circa 8 minuti e 20 secondi per raggiungere la Terra.
+
+9. Il fiore più grande del mondo è il Rafflesia arnoldii, che può pesare fino a 11 kg e avere un diametro di oltre un metro. 
+
+10. Il numero di combinazioni possibili di un mazzo di carte da gioco è più grande del numero di secondi trascorsi dall'inizio dell'universo fino ad oggi.
+
+Spero che queste curiosità casuali siano state interessanti! Fammi sapere se hai domande su qualcosa di specifico o se desideri ulteriori informazioni!

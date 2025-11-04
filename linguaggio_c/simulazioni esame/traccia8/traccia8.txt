@@ -1,0 +1,41 @@
+Sviluppare in linguaggio C un programma principale e sottoprogrammi diversi che realizzino le seguenti operazioni:
+    -data una stringa in ingresso riconosce le diverse parole
+    -per ogni parola crea una struttura che contiene i seguenti campi:
+        -la posizione della prima lettera della parola nella stringa
+        -un carattere che specifica se si tratta di una sequenza di sole lettere, di lettere e numeri o di soli numeri (‘a’,’b’,’c’)
+        -la lunghezza della parola
+
+struct Mystruct {
+    int pos;
+    char c;
+    int l;
+}
+
+realizzare poi tre funzioni che consentono di:
+ordinare il vettore di struct per valori crescenti della lunghezza della parola, e a parità di questa la posizione del primo carattere
+
+salvare su file binario “output.bin” I SOLI ELEMENTI del vettore di struct ordinato.
+
+
+Esempio:
+
+
+Stringa iniziale: “Il codice del pacco numero 123345 risulta a341b”
+
+Vettore di strutture:
+
+0,a,2
+
+10,a,3
+
+14,a,5
+
+42,b,5
+
+3,a,6
+
+...
+
+27,c,6
+
+34,a,7

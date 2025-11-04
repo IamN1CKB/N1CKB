@@ -1,0 +1,50 @@
+Leggere da un file di testo “input.txt” la dimensione e i valori di una matrice quadrata di numeri naturali.
+Eliminare riga e colonna della matrice che contengono un elemento sulla diagonale secondaria che ha la somma dei suoi divisori (escluso il numero) uguali al numero stesso.
+(suggerimento: per cercare divisori utilizzare l’operazione di modulo con i numeri minori di quello di ogni elemento).
+Salvare ogni elemento della nuova matrice in una struct definita come segue:
+
+struct mystruct {
+    int position[2];
+    int value;
+    int sdiag;
+};
+typedef struct mystruct Mystruct;
+
+Dove position rappresenta un array con le coordinate dell’elemento all’interno della matrice, value è il numero stesso ed sdiag è un intero che vale 1 se l’elemento è sulla diagonale secondaria, 0 altrimenti.
+
+Salvare gli elementi dell’array di struct in un file binario “output.bin”.
+
+
+Esempio:
+
+
+2   4   5   7
+3   0   6   7
+9   7   5   3
+1   8   6   5
+
+
+
+Elimino seconda riga e terza colonna perché i divisori dell’elemento sulla diagonale secondaria (6) sono: [1,2,3] la cui somma è 6.
+
+
+2 4 7
+
+9 7 3
+
+1 8 5
+
+
+Vettore risultante
+
+
+{[0,0], 2, 0}
+
+{[0,1], 4, 0}
+
+{[0,2], 7, 1}
+
+[…]
+
+
+N.B.: Inizializzare a 0 tutti il vettore di struct prima di riempirlo.

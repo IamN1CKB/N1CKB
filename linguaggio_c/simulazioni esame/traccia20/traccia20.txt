@@ -1,0 +1,58 @@
+Un file nominato “input.txt” contiene una sequenza (di lunghezza ignota) di uguaglianze tra somme di interi positivi, una per riga, ciascuna terminata da un punto e virgola, e senza spazi bianchi.
+
+Esempio: 2+3+4=9;
+
+Le uguaglianze possono essere sia corrette che sbagliate.
+
+Si scriva un programma che scriva solo le uguaglianze corrette in un vettore di strutture.
+
+Ogni struttura è così definita:
+
+struct mystruct
+
+{
+
+int n_val_sinistra;
+
+int n_val_destra;
+
+int somma;
+
+}
+
+
+Con:
+
+- n_val_sinistra: il numero di addendi a sinistra dell’uguaglianza
+
+- n_val_destra: il numero di addendi a destra dell’uguaglianza
+
+- somma: il numero di addendi a sinistra dell’uguaglianza
+
+
+Si ordini il vettore di strutture in base al risultato delle uguaglianze dal maggiore al minore (somma).
+
+Si stampi il vettore a video (vedi esempio) e si salvi su un file binario “output.bin”
+
+
+
+Esempio:
+
+2+3+12=9+8;
+
+2+3+4=9;
+
+22=3+4+5+10;
+
+3+5+1=4+44;
+
+
+Risultato:
+
+{1, 4, 22 }
+
+{3, 2, 17 }
+
+{3, 1, 9 }
+
+N.B.: Inizializzare a 0 tutti il vettore di struct prima di riempirlo.

@@ -1,0 +1,34 @@
+Traccia di Elementi di Programmazione
+
+Sviluppare in linguaggio C un programma che:
+legge n stringhe da un file di testo “input.txt”
+per ogni stringa calcola:
+il numero di parole
+il numero di caratteri della parola più lunga
+il numero di maiuscole
+il numero di minuscole
+per ogni stringa salva in una riga di una matrice di interi i parametri così calcolati
+realizzare un vettore di struct, il cui singolo elemento contenga la stringa, l’indice di riga in cui è memorizzata la stringa
+#define N 100
+struct Mystruct{
+char stringa[N];
+int indice;
+};
+Ordinare il vettore di struct in modo che al primo posto si trovi la stringa con la parola più lunga e salvare I SOLI elementi del vettore in un file binario “output.bin”
+Esempio:
+Stringhe originali:
+
+“mOnaCo NAPOLI”
+
+“roma mILANO pesaro otranto”
+
+“Prossima Presentazione”
+
+        2       6       8       4
+        4       7       5       18
+        2       13      2       19
+
+        
+{“Prossima Presentazione”,3}
+{“roma mILANO pesaro otranto”, 2}
+{“mOnaCo NAPOLI”, 1}

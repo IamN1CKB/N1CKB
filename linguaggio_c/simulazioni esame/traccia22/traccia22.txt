@@ -1,0 +1,78 @@
+Leggere da un file di testo un intero, una matrice quadrata di caratteri di tale dimensioni e una serie di stringhe. Controllare se e quante volte ogni stringa è presente nella matrice di caratteri.
+
+Il vettore può essere presente in verticale, orizzontale e diagonale e in ogni verso.
+
+
+Per ogni stringa trovata nella matrice creare una struct che consenta di memorizzare la stringa, posizione del primo carattere nella matrice, la direzione e il verso.
+
+Far si che il vettore di struct sia ordinato in modo che il campo stringa si trov in ordine alfabetico.
+
+
+Definizione struct
+
+
+
+typedef enum {verticale, orizzontale, obliquo} direzione;
+
+typedef enum {destrasinistra, sinistadestra} oriz;
+
+typedef enum {altobasso, bassoalto} vert;
+
+struct mystruct
+
+{
+
+char v[N];
+
+int pos[2];
+
+direzione d;
+
+oriz d_o;
+
+vert d_v;
+
+};
+
+
+typedef struct mystruct Mystruct;
+
+
+
+
+Esempio
+
+c a s a p r o a
+
+o a r b a r c b
+
+l a d r s r s s
+
+l a h k l k c k
+
+o d m m f d d o
+
+o a r b a r c b
+
+o a r b a r c b
+
+o a r b a r c b
+
+
+
+Parole da cercare:
+
+casa
+
+collo
+
+arco
+
+
+Vettore di struct
+
+{“arco”, [1, 4],2, 1, 0}
+
+{“casa”, [0, 0],1, 1, -1}
+
+{“collo, [0,0 ],0, -1, 0}

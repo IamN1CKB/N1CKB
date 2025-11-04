@@ -1,0 +1,8 @@
+sviluppare un programma in c che legge da file una matrice di numeri reali.
+    -Il programma scambia la diagonale principale con la prima colonna e la diagonale secondaria con l'ultima Colonna
+    -Quindi il programma scambia le colonne in modo che gli elementi dell'ultima riga si trova in ordinati in senso decrescente.
+    -Il programma crea un vettore di struct il cui i-esimo elemento contiene:
+        -Gli elementi della colonna
+        -L'indice di colonna
+        -Il numero di elementi della colonna
+    -Il programma salva il vettore di struct in un file binario

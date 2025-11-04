@@ -1,0 +1,9 @@
+Salvare gli l'array di interi (la cui dimensione e i cui elementi sono contenuti nel file di testo "input.txt") in ordine crescente 
+in un array di struct i cui elementi sono così definiti:
+
+struct Mystruct{
+	int position;
+	int value;
+};
+
+Salvare il vettore ordinato nel file binario "output.bin".

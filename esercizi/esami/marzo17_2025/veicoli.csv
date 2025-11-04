@@ -1,5 +1,0 @@
-tipo,targa,marca,modello,anno,prezzo,garanzia,finanziamento,nuovo,giornaliera,cauzione,assicurazione
-VeicoloVendita,AB123CD,Fiat,Panda,2023,15000,3,true,false,,,
-VeicoloVendita,EF456GH,Volkswagen,Golf,2024,28000,5,true,true,,,
-VeicoloNoleggio,IJ789KL,Ford,Focus,2022,,,,,50,1000,true
-VeicoloNoleggio,MN012OP,Audi,A3,2023,,,,,60,1200,false

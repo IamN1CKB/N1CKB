@@ -1,0 +1,3342 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Esempio di file HTML  
+        </title>
+        <style>
+            /* *{
+                border: solid;
+            } */
+            h1, h2 {
+                text-transform: uppercase;
+            }
+            h1::first-letter,
+            h2::first-letter,
+            h3::first-letter,
+            h4::first-letter,
+            p::first-letter {
+                text-transform: uppercase;
+            }
+            textarea {
+                resize: none;
+            }
+            details {
+                border: solid 1px;
+            }
+            form {
+                width: 1000px;
+            }
+            .table-border, .table-border td, .table-border th {
+                    border: solid 1px;
+            }
+            #A {
+                background-color: blue;
+                width: 75px;
+            }
+            #A1 {
+                background-color: aqua;
+            }
+            #A2{
+                background-color: brown;
+                width: 200px;
+            }
+            #B {
+                width: 100px;
+            }
+            #B1 {
+                background-color: red;
+            }
+            img[usemap="#map-name"] {
+                border: solid 1px;
+            }
+        </style>
+</head>
+<body>
+    <h1 id="Giuda-allHTML">
+        GUIDA ALL'HTML
+    </h1>
+    <p>
+        HTML, acronimo di "HyperText Markup Language" (Linguaggio di Markup per l'IperTesto), è il linguaggio di markup standard  utilizzato per creare e strutturare contenuti su pagine web.
+        <br>
+        Un linguaggio di markup è un sistema di annotazione testuale utilizzato per definire la struttura, la formattazione e, talvolta, il comportamento di un documento.
+    </p>
+    <p>
+        HTML funziona attraverso l'uso di tag, che sono elementi del linguaggio racchiusi tra parentesi angolari &lt; >. Ogni tag fornisce un'indicazione sulla struttura o la funzione di un elemento all'interno della pagina web. Ad esempio, il tag &lt;h1> viene utilizzato per creare un titolo di primo livello (heading 1), il tag &lt;p> per creare un paragrafo di testo, il tag &lt;a> per creare un collegamento ipertestuale (link), e così via.
+    </p>
+    <p>
+        HTML è spesso accompagnato da CSS (Cascading Style Sheets) per gestire l'aspetto visivo della pagina e da JavaScript per aggiungere interattività e funzionalità dinamiche. Insieme, HTML, CSS e JavaScript costituiscono la base fondamentale per la creazione e lo sviluppo di pagine web moderne.
+        <br>
+        Il CSS e lo JavaScript li vedremo in futuro. Per adesso ci concentriamo sull'uso di HTML
+    </p>
+    
+    <hr>
+    <h2 id="I-tag-dapertura-e-di-chiusura">
+        I TAG DI APERTURA E DI CHIUSURA
+    </h2>
+    <p>
+        Un elemento è di solito racchiuso in un tag di apertura e un tag di chiusura che hanno una sintassi del genere:
+        <br>
+        &lt;nome_elemento> contenuto &lt;/nome_elemento>
+        <br>
+        Però, ci sono altri elementi che non hanno un tag di chiusura, come ad esempio &lt;img> &lt;meta> &lt;link> &lt;input> &lt;br>
+        <br>
+        Questi elementi sono detti elementi vuoti (void element). 
+    </p>
+    
+    <hr>
+    <h2 id="Gli-attributi">
+        GLI ATTRIBUTI
+    </h2>
+    <p>
+        Gli attributi sono elementi utilizzati per fornire informazioni aggiuntive o configurare specifiche caratteristiche di un elemento. Gli attributi forniscono istruzioni dettagliate su come un elemento dovrebbe essere visualizzato, comportarsi o interagire con altri elementi. Sono solitamente definiti all'interno dei tag di apertura degli elementi utilizzando la sintassi "nome dell'attributo"="valore dell'attributo".
+    </p>
+    
+    <hr>
+    <h2 id="I-principali-tag-da-usare">
+        I PRINCIPALI TAG DA USARE
+    </h2>
+    <p>
+        Per strutturare una semplice pagina web bisogna essere a conoscenza di alcuni tag fondamentali.
+    </p>
+    <ul>
+        <li>
+            &lt;!DOCTYPE html> (abbreviazione di document type) è una dichiarazione utilizzata all'inizio di un documento HTML per specificare il tipo di documento e la versione di HTML che il browser dovrebbe utilizzare per interpretarlo correttamente. Questa dichiarazione informa il browser che il documento è scritto in HTML5 e il browser quindi renderà la pagina utilizzando le regole e le funzionalità specifiche di HTML5.
+            <br>
+            Questa dichiarazione è insensibile alle maiuscole. Quindi andrebbero bene anche dichiarazioni del genere:
+            <br>
+            &lt;!dOcTyPe html> &lt;!doctype html>
+        </li>
+        <li>
+            &lt;html> è il tag radice che apre la pagina web e dopo il quale tag di chiusura non va messo nient'altro. Può essere usato con il lang attributo che specifica la lingua principale della pagina.
+        </li>
+        <li>
+            &lt;head> è il tag che apre la head section, che non appare nel browser, ma può contiene informazioni riguardo i documenti HTML, fogli di stile esterno, vari script di JavaScript e il titolo della pagina.
+        </li>
+        <li>
+            &lt;meta> Fornisce al browser alcune informazioni di base sul documento. Per fornire queste informazioni si usano gli attributi, ad esempio l'attributo charset dichiara la codifica dei caratteri. I documenti HTML moderni dovrebbero sempre utilizzare UTF-8, anche se non è un requisito. In HTML, il tag "meta" non richiede un tag di chiusura.
+        </li>
+        <li>
+            &lt;title> Il titolo della pagina. Il testo scritto tra questo tag di apertura e il tag di chiusura verrà visualizzato sulla scheda della pagina o nella barra del titolo del browser.
+        </li>
+        <li>
+            &lt;body> Apre la parte del documento visualizzata dagli utenti, ovvero tutto il contenuto visibile o udibile di una pagina. Nessun contenuto dovrebbe essere aggiunto dopo il tag di chiusura &lt;/body>.
+        </li>
+        <li>
+            &lt;h1> un intestazione di primo livello per la pagina (dopo vedremo altri tipi)
+        </li>
+        <li>
+            &lt;p> un paragrafo di testo
+        </li>
+    </ul>
+
+
+    
+    <hr>
+    <h2>
+        SCRIVERE CODICE COME TESTO IN UN FILE HTML
+    </h2>
+    <p>
+        Prima di scoprire tutti i tag capiamo come si può scrivere in modo facile del codice all'interno della pagina senza farla interpretare dal browser.
+        <br>
+        Nel caso dobbiamo far vedere nella pagina web più spazi (il browser interpreta solo il primo spazio, e quelli successivi li ignora) oppure proprio la scrittura del codice, ma viene interpretato dal browser come parte del codice stesso, possiamo usare vari metodi:
+    </p>
+    <h3>
+        usare i caratteri speciali
+    </h3>
+    <ul>
+        Scrivere i caratteri speciali in codice HTML: sostituire i caratteri speciali che vengono interpretati come codice, in altri modi, seguendo queste traduzioni (fai finta che i caratteri non sono divisi da spazi)
+        <li>
+            lo spazio &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; => &nbsp; &nbsp; &nbsp; &nbsp; & n b s p ;
+        </li>
+        <li>
+            " &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=>   &nbsp; &nbsp; &nbsp; &nbsp; & q u o t ;
+        </li>
+        <li>
+            &lt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =>   &nbsp; &nbsp; &nbsp; &nbsp; & l t ;
+        </li>
+        <li>
+            &gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =>   &nbsp; &nbsp; &nbsp; &nbsp; & g t ;
+        </li>
+        <li>
+            - &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=>   &nbsp; &nbsp; &nbsp; &nbsp; & n d a s h ;
+        </li>
+    </ul>
+    <p>
+        ad esempio per scrivere il codice di un paragrafo facciamo così:
+        <br>
+        <i>    &lt;p&gt;Paragrafo a caso&lt;/p&gt;    </i>
+        <br>
+        Il codice lo metto in corsivo per distinguerlo meglio.
+    </p>
+    
+    <h3>
+        Scrivere il codice all'interno del tag &lt;textarea&gt;. É l'opzione più comoda
+    </h3>
+    <textarea readonly><div>cose a caso</div></textarea>
+    <ul>
+        usiamo inoltre 4 attributi associati al textarea
+        <li>
+            name = definiamo il nome della’aerea di testo.
+        </li>
+        <li>
+            readonly = con valore readonly gli abbiamo detto che deve essere di sola lettura, se lo omettiamo diventerà un aria di testo con possibilità di scrittura.
+        </li>
+        <li>
+            cols = con valore numerico gli stiamo specificando la larghezza visibile dell’area di testo.
+        </li>
+        <li>
+            rows = con valore numerico gli specifichiamo il numero visibile di linee dell’area di testo.
+        </li>
+    </ul>
+    <p>
+        Inoltre usiamo in CSS (vedrai più avanti cos'è) la proprietà e il valore "resize: none;" per non poterlo ridimensionare.
+        <br>
+        Ora possiamo studiare i diversi tipi di tag.
+    </p>
+    
+    <hr>
+    <h2>
+        LE INTESTAZIONI
+    </h2>
+    <p>
+        HTML fornisce non solo semplici tag di paragrafo, ma anche sei tag di intestazione separati per indicare titoli di diverse dimensioni e spessori. Enumerati come titolo 1 fino a titolo 6, il titolo 1 ha il testo più grande e spesso, mentre il titolo 6 è il più piccolo e sottile, arrivando al livello del paragrafo.
+        <br>
+        &lt;h1> definisce la più importante intestazione.
+        <br>
+        &lt;h6> definisce la meno importante intestazione.
+    </p>
+    <textarea readonly cols="50" rows="7">
+        <h1>Intestazione di primo tipo</h1>
+        <h2>Intestazione di secondo tipo</h2>
+        <h3>Intestazione di terzo tipo</h3>
+        <h4>Intestazione di quarto tipo</h4>
+        <h5>Intestazione di quinto tipo</h5>
+        <h6>Intestazione di sesto tipo</h6>
+    </textarea>
+    <div>
+        <h1>Intestazione di primo tipo</h1>
+        <h2>Intestazione di secondo tipo</h2>
+        <h3>Intestazione di terzo tipo</h3>
+        <h4>Intestazione di quarto tipo</h4>
+        <h5>Intestazione di quinto tipo</h5>
+        <h6>Intestazione di sesto tipo</h6>
+    </div>
+
+    
+    <hr>
+    <h2 id="I-paragrafi">
+        I PARAGRAFI
+    </h2>
+    <p>
+        I paragrafi sono il più basico HTML elemento. Sono usati per scrivere del testo nella pagina ma, vengono ignorati qualsiasi spazio extra dopo il primo, e anche le linee extra che vengono visualizzate dal browser come un solo semplice spazio. Per questo motivo, insieme al tag &lt;p> si usa anche i tag &lt;br> e &lt;pre>
+        <br>
+        Il tag &lt;pre> in HTML viene utilizzato per definire un blocco di testo preformattato, il che significa che il testo all'interno di questo tag viene visualizzato esattamente come è stato inserito nel codice, inclusi gli spazi, le righe vuote
+    </p>
+    <textarea cols="80" rows="9">
+        <pre>
+            Questo è un blocco di testo preformattato.
+            Qui puoi inserire spazi e ritorni a capo
+            senza che il browser li ignori.
+            Nonostante ciò non si possono inserire i simboli di HTML.
+            
+            <p>Questo è un esempio di tag HTML all'interno del tag pre.</p>
+        </pre>
+    </textarea>
+    <pre>
+        Questo è un blocco di testo preformattato.
+        Qui puoi inserire spazi e ritorni a capo
+        senza che il browser li ignori.
+        Nonostante ciò non si possono inserire i simboli di HTML.
+        
+        <p>Questo è un esempio di tag HTML all'interno del tag pre.</p>
+    </pre>
+    <p>
+        Invece il tag &lt;br> consente di mandare a capo del testo o un altro elemento, restando all'interno dello stesso tag.
+    </p>
+    <textarea cols="40" rows="8">
+        <p>
+            Questo è il primo rigo
+            <br>
+            Questo è il secondo rigo
+            <br>
+            Questo è il terzo rigo
+        </p>
+    </textarea>
+    <p>
+        Questo è il primo rigo
+        <br>
+        Questo è il secondo rigo
+        <br>
+        Questo è il terzo rigo
+    </p>
+    <p>
+        Eventualmente, per separare i paragrafi o altri elementi possiamo usare il tag "hr" che crea linea orizzontale che attraversa l'area in cui è stato inserito il tag.
+        <br>
+        Similmente a questo.
+    </p>
+
+    
+    <hr>
+    <h2>
+        FORMATTAZIONE DEL TESTO
+    </h2>
+    <p>
+        Mentre la maggior parte dei tag HTML viene utilizzata per creare elementi, l'HTML fornisce anche tag di formattazione nel testo per applicare stili specifici legati al testo a porzioni di testo. Questo argomento include esempi di formattazione del testo in HTML come l'evidenziazione, il grassetto, il sottolineato, il pedice e il testo barrato.
+    </p>
+    <textarea cols="150" rows="26">
+        <p>
+            <mark>testo evidenziato</mark> (il colore si può modificare in CSS)
+            <br>
+            <b>grassetto di primo tipo</b>
+            <br>
+            <strong>grassetto di secondo tipo</strong>
+            <br>
+            <i>corsivo di primo tipo</i>
+            <br>
+            <em>corsivo di secondo tipo</em>
+            <br>
+            <ins>testo sottolineato di primo tipo (testo inserito)</ins>
+            <br>
+            <u>testo sottolineato di secondo tipo</u>
+            <br>
+            <abbr title="qui va il testo non abbreviato">abbreviazione</abbr> (se passi il puntatore vicino vedrai il testo non abbreviato)
+            <br>
+            <del>testo barrato di primo tipo (testo cancellato)</del>
+            <br>
+            <s>testo barrato di secondo tipo</s>
+            <br>
+            <sup>testo in pedice</sup>: esempio base<sup>esponente</sup> => 5<sup>3</sup>
+            <br>
+            <sub>testo in apice</sub>: esempio=> base<sub>apice</sub> => F<sub>1</sub>
+        </p>
+    </textarea>
+    <p>
+        <mark>testo evidenziato</mark> (il colore si può modificare in CSS)
+        <br>
+        <b>grassetto di primo tipo</b>
+        <br>
+        <strong>grassetto di secondo tipo</strong>
+        <br>
+        <i>corsivo di primo tipo</i>
+        <br>
+        <em>corsivo di secondo tipo</em>
+        <br>
+        <ins>testo sottolineato di primo tipo (testo inserito)</ins>
+        <br>
+        <u>testo sottolineato di secondo tipo</u>
+        <br>
+        <abbr title="qui va il testo non abbreviato">abbreviazione</abbr> (se passi il puntatore vicino vedrai il testo non abbreviato)
+        <br>
+        <del>testo barrato di primo tipo (testo cancellato)</del>
+        <br>
+        <s>testo barrato di secondo tipo</s>
+        <br>
+        <sup>testo in pedice</sup>: esempio base<sup>esponente</sup> => 5<sup>3</sup>
+        <br>
+        <sub>testo in apice</sub>: esempio=> base<sub>apice</sub> => F<sub>1</sub>
+    </p>
+    <ul>
+        <details>
+            <summary>
+                Alcuni tag sembrano non avere differenze, ma in realtà c'è una differenza semantica.
+            </summary>
+            <li>
+                "b" e "strong": "strong" viene utilizzato per indicare che il testo è fondamentalmente o semanticamente importante rispetto al testo circostante, mentre "b" non indica tale importanza e rappresenta semplicemente del testo che dovrebbe essere reso in grassetto.
+            </li>
+            <li>
+                "i" e "em": "em" viene utilizzato per indicare che il testo dovrebbe avere un'enfasi aggiuntiva che deve essere evidenziata, mentre "i" rappresenta semplicemente del testo che dovrebbe essere separato dal testo normale circostante.
+            </li>
+            <li>
+                "u" e "ins": "u" viene usato per sottolineare del testo e dargli importanza. "ins" viene usato per evidenziare del testo recentemente inserito (utile nei lavori di gruppo su siti web)
+            </li>
+            <li>
+                "del" e "s": "s" viene usato per barrare un testo e dargli meno importanza. "del" viene usato per evidenziare del testo recentemente eliminato (utile nei lavori di gruppo su siti web)
+            </li>
+        </details>
+    </ul>
+
+    
+    <hr>
+    <h2>
+        CLASSI O ID
+    </h2>
+    <p>
+        Le classi e gli ID semplificano il riferimento agli elementi HTML da script e fogli di stile. L'attributo class può essere utilizzato su uno o più tag ed è utilizzato da CSS per lo stile. Gli ID, invece, sono destinati a riferirsi a un singolo elemento, il che significa che lo stesso ID non dovrebbe mai essere utilizzato due volte. Gli ID sono generalmente utilizzati con JavaScript e collegamenti interni al documento, e sono sconsigliati in CSS.
+    </p>
+    <ul>
+        <li>
+            <h3>
+                Classi
+            </h3>
+            <p>
+                Le classi sono identificatori per gli elementi a cui vengono assegnate. Utilizza l'attributo class per assegnare una classe a un elemento.
+                <br>
+                Per assegnare più classi a un elemento, separa i nomi delle classi con spazi.
+            </p>
+            <textarea cols="50" rows="7">
+                <div class="example-class">
+                    Content
+                </div>
+                <div class="example-class class2">
+                    Content
+                </div>
+            </textarea>
+        </li>
+        <li>
+            <h3>
+                Id
+            </h3>
+            <p>
+                L'attributo ID di un elemento è un identificatore che deve essere unico nell'intero documento. Il suo scopo è quello di identificare univocamente l'elemento durante il collegamento (utilizzando un ancoraggio), la scrittura di script o lo styling (con CSS).
+            </p>
+            <textarea cols="35" rows="4">
+                <div id="example-id">
+                    Content
+                </div>
+            </textarea>
+        </li>
+    </ul>
+    <p>
+        Per capire come usare le class e gli id in CSS vedi <a href="index2.html#selector">qui</a>
+    </p>
+    <h3>
+        I valori accettati per una classe o un id (per HTML5 o superiori)
+    </h3>
+    <p>
+        Le caratteristiche accettate per una classe o un id sono
+        1. Non deve contenere spazi.
+        2. Deve contenere almeno un carattere.
+
+        Il valore può essere composto da cifre, da una singola cifra, da caratteri di punteggiatura, da caratteri speciali o qualsiasi altra cosa, ad eccezione degli spazi. Ecco degli esempi validi:
+    </p>
+    <textarea cols="40" rows="11">
+        <div id="container"> ... </div>
+        <div id="999"> ... </div>
+        <div id="#%LV-||"> ... </div>
+        <div id="____V"> ... </div>
+        <div id="⌘⌥"> ... </div>
+        <div id="♥"> ... </div>
+        <div id="{}"> ... </div>
+        <div id="©"> ... </div>
+        <div id="♤₩¤☆€~¥"> ... </div>
+    </textarea>
+    <p>
+        Questo invece è invalido:
+    </p>
+    <textarea cols="30" rows="2">
+        <div id=" "> ... </div>
+    </textarea>
+
+
+    
+    <hr>
+    <h2>
+        I COMMENTI
+    </h2>
+    <p>
+        Analogamente ad altri linguaggi di programmazione, di markup e di formattazione come il markdown, i commenti in HTML forniscono ad altri sviluppatori informazioni specifiche sullo sviluppo senza influire sull'interfaccia utente. Questo argomento spiega come scrivere commenti HTML e le loro applicazioni funzionali.
+    </p>
+    <p>
+        I commenti HTML possono essere utilizzati per lasciare note a te stesso o ad altri sviluppatori su un punto specifico nel codice. Possono essere iniziati con `&lt;!--` e conclusi con `--&gt;`, come ad esempio:
+    </p>
+    <textarea cols="40" rows="2">
+        <!-- Io sono un commento HTML! -->
+    </textarea>
+    <p>
+        Possono essere inseriti all'interno di altri contenuti:
+    </p>
+    <textarea cols="90" rows="4">
+        <h1>
+            Questa parte sarà visualizzata <!-- mentre questa non sarà visualizzata -->.
+        </h1>
+    </textarea>
+    <p>
+        Possono anche estendersi su più righe per fornire ulteriori informazioni:
+    </p>
+
+    <textarea cols="70" rows="5">
+        <!-- Questo è un commento HTML su più righe.
+         Qualsiasi cosa sia qui non verrà visualizzata dal browser.
+         Puoi "commentare" intere sezioni di codice HTML.
+        -->
+    </textarea>
+    <p>
+        Tuttavia, non possono apparire all'interno di un altro tag HTML, come in questo caso:
+    </p>
+
+    <textarea cols="80" rows="2">
+        <h1 <!-- testAttribute="something" -->>Questo non funzionerà</h1>
+    </textarea>
+    <p>
+        Questo produce HTML non valido poiché l'intero blocco `&lt;h1 &lt;!-- testAttribute="something" -->` sarebbe considerato un singolo tag di apertura `&lt;h1` con alcune altre informazioni non valide contenute al suo interno, seguito da un unico carattere `>` di chiusura che non fa nulla.
+    </p>
+   
+
+
+    <hr>
+    <h2 id="I-collegamenti-ipertestuali">
+        I COLLEGAMENTI IPERTESTUALI
+    </h2>
+    <p>
+        I collegamenti ipertestuali sono comunemente utilizzati per collegare pagine web separate, ma possono anche essere utilizzati per collegare tra diversi punti in un singolo documento, spesso all'interno di una tabella dei contenuti o addirittura per avviare applicazioni esterne. Questo argomento spiega l'implementazione e l'applicazione dei tag anchor HTML in vari contesti. 
+        <br>
+        Questi collegamenti si effettuano con il tag &lt;a> e con l'attributo href (hypertext reference)
+    </p>
+    <textarea cols="70" rows="2">
+        <a href="sito su cui andare">testo scritto sul browser</a>
+    </textarea>
+    <ul>
+        <h3>
+            Specifichiamo gli attributi utili nel tag a
+        </h3>
+        <li>
+            href: Specifica l'indirizzo di destinazione. Può essere un URL assoluto o relativo, oppure il nome di un ancoraggio . Un URL assoluto è l'URL completo di un sito web, come ad esempio http://example.com/. Un URL relativo punta a un'altra directory e/o a un documento all'interno dello stesso sito web, ad esempio /about-us/ punta alla directory "about-us" all'interno della directory radice (/). Quando si punta a un'altra directory senza specificare esplicitamente il documento, i server web restituiscono tipicamente il documento "index.html" all'interno di quella directory.
+        </li>
+        <br>
+        <li>
+            hreflang: Specifica la lingua della risorsa collegata dall'attributo href (che deve essere presente con questo attributo). Utilizzare i valori linguistici da <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes#id">qui</a>
+            <br>
+            <textarea cols="80" rows="2">
+                <a href="https://www.treccani.it/" hreflang="it">Treccani</a>
+            </textarea>
+            <a href="https://www.treccani.it/" hreflang="it">Treccani</a>
+        </li>
+        <br>
+        <li>
+            rel: Specifica la relazione tra il documento corrente e il documento collegato. Per HTML5, i valori devono essere definiti nella <a href="https://www.w3.org/TR/2014/REC-html5-20141028/links.html#linkTypes">specifica</a>.
+        </li>
+        <br>
+        <li>
+            title: Specifica informazioni aggiuntive su un collegamento. Le informazioni vengono spesso visualizzate come testo di suggerimento quando il cursore si sposta sopra il collegamento. Questo attributo non è limitato ai collegamenti, può essere utilizzato su quasi tutti i tag HTML.
+            <br>
+            <textarea cols="90" rows="2">
+                <a href="https://www.treccani.it/" title="questo è il titolo">Treccani</a>
+            </textarea>
+            <a href="https://www.treccani.it/" title="questo è il titolo">Treccani</a>
+        </li>
+        <br>
+        <li>
+            download: Specifica che il bersaglio verrà scaricato quando un utente fa clic sul collegamento ipertestuale. Il valore dell'attributo sarà il nome del file scaricato. Non ci sono restrizioni sui valori consentiti e il browser rileverà automaticamente l'estensione del file corretta e la aggiungerà al file (.img, .pdf, ecc.). Se il valore viene omesso, verrà utilizzato il nome del file originale.
+            <br>
+            <textarea cols="80" rows="2">
+                <a href="media/gabby.JPG" download="gabby.png">scarica qui</a>
+            </textarea>
+            <a href="media/gabby.JPG" download="gabby.png">scarica qui</a>
+        </li>
+        <br>
+        <li>
+            target: Specifica dove aprire il collegamento, ad esempio in una nuova scheda o finestra. I valori possibili sono _blank, _self, _parent, _top e nome del frame (deprecato, ossia indica che è considerato obsoleto, non ottimale o non raccomandato per l'uso futuro.). L'uso di questo attributo potrebbe danneggiare la sicurezza del sito, 
+            <details>
+                <summary>
+                    Vediamo il significato dei vari valori e il significato di Frame e iFrame
+                </summary>
+                <ul>
+                    <li>
+                        _self: Questo è il valore predefinito. Quando un utente fa clic sul collegamento, la nuova risorsa viene aperta nello stesso tab o finestra in cui si trova la pagina corrente.
+                    </li>
+                    <br>
+                    <li>
+                        _blank: Quando un utente fa clic sul collegamento, la nuova risorsa viene aperta in una nuova finestra o tab del browser.
+                        <br>
+                        <strong>Pericolo di sicurezza</strong>: Utilizzare `target="_blank"` concede al sito che ha aperto la finestra un accesso parziale all'oggetto `window.opener` tramite JavaScript, consentendo a quella pagina di accedere e modificare `window.opener.location` della tua pagina e potenzialmente reindirizzare gli utenti a siti dannosi o di phishing.
+                        <br>
+                        Ogni volta che utilizzi questa opzione per pagine che non controlli, aggiungi `rel="noopener"` al tuo collegamento per impedire che l'oggetto `window.opener` venga inviato con la richiesta.
+                        <br>
+                        Attualmente, Firefox non supporta `noopener`, quindi dovrai utilizzare `rel="noopener noreferrer"` per ottenere il massimo effetto.
+                        <br>
+                        <textarea cols="130" rows="4">
+                            <a href="https://www.treccani.it/" target="_blank" >link non sicuro a Treccani</a>
+                            <br>
+                            <a href="https://www.treccani.it/" target="_blank" rel="noopener noreferrer">link sicuro a Treccani</a>
+                        </textarea>
+                        <br>
+                        <a href="https://www.treccani.it/" target="_blank" >link non sicuro a Treccani</a>
+                        <br>
+                        <a href="https://www.treccani.it/" target="_blank" rel="noopener noreferrer">link sicuro a Treccani</a>
+                        <br>
+                        Se Treccani fosse stato un sito non sicuro, con il primo caso avrebbe avuto accesso a un oggetto importante JavaScript (window.opener)
+                    </li>
+                    <br>
+                    <li>
+                        _parent: Se la pagina corrente è all'interno di un frame o di un iframe, la nuova risorsa verrà aperta nel frame genitore, se disponibile. Se la pagina non è all'interno di un frame, questo comportamento sarà simile all'apertura nel contesto _self.
+                    </li>
+                    <br>
+                    <li>
+                        _top: Se la pagina corrente è all'interno di un frame o di un iframe, la nuova risorsa verrà aperta nella finestra principale del browser, sostituendo tutti i frame. Se la pagina non è all'interno di un frame, questo comportamento sarà simile all'apertura nel contesto _self.
+                    </li>
+                    <br>
+                    <li>
+                        nome del frame: È possibile specificare il nome di un frame o di un iframe esistente come valore per l'attributo target. In questo caso, la nuova risorsa verrà aperta nel frame specificato. Quest'opzione non è molto sicura.
+                    </li>
+                </ul>
+                <h3>
+                    Frame e iFrame
+                </h3>
+                <p>
+                    Dopo aver capito questo, vediamo di preciso cos'è un frame.
+                    <br>
+                    I frame e gli iframe sono entrambi elementi in HTML utilizzati per suddividere una pagina web in diverse sezioni o aree che possono contenere contenuti diversi. Tuttavia, hanno scopi e utilizzi leggermente diversi:
+                </p>
+                <ul>
+                    <li>
+                        Frame:
+                        <br>
+                        I frame sono stati introdotti nelle prime versioni di HTML e sono stati utilizzati per creare layout complessi suddividendo una pagina in più sezioni rettangolari, ciascuna delle quali può contenere un documento HTML separato. I frame consentono agli sviluppatori di visualizzare più documenti HTML in una singola pagina web, dividendo l'area di visualizzazione in più parti. Tuttavia, a causa di problemi di usabilità, di accessibilità e di difficoltà nel gestire i contenuti, l'uso dei frame è ampiamente sconsigliato e non è supportato in HTML5.
+                        <br>
+                        Esempio di utilizzo dei frame (sconsigliato):
+                        <br>
+                        <textarea cols="60" rows="5">
+                            <frameset cols="25%,75%">
+                              <frame src="menu.html">
+                              <frame src="contenuto.html">
+                            </frameset>
+                        </textarea>
+                    </li>
+                    <li>
+                        iFrame (Inline Frame):
+                        <br>
+                        Gli iframe, d'altra parte, sono un elemento più moderno e flessibile introdotto con HTML 4.0. Gli iframe sono utilizzati per incorporare un documento HTML all'interno di un altro documento HTML. Possono essere utili per incorporare contenuti di terze parti come video, mappe, widget o qualsiasi altra risorsa Web all'interno di una pagina.
+                        <br>
+                        Gli iframe sono molto più flessibili rispetto ai frame tradizionali, ma possono ancora presentare sfide per l'accessibilità, la sicurezza e il layout responsivo. Gli sviluppatori dovrebbero prestare attenzione all'uso degli iframe e considerare le migliori pratiche per garantire un'esperienza utente positiva.
+                        <br>
+                        Esempio di utilizzo di un iframe:
+                        <br>
+                        <textarea name="" id="" cols="90" rows="2">
+                            <iframe src="contenuto.html" width="500" height="300"></iframe>
+                        </textarea>
+                    </li>
+                </ul>
+                <p>
+                    In generale, è preferibile evitare l'uso dei frame e degli iframe, specialmente quando ci sono alternative più moderne come l'utilizzo di CSS per la disposizione dei layout, l'uso di componenti di inclusione come Server-Side Includes (SSI) o lo sviluppo di applicazioni Web più interattive utilizzando tecnologie front-end come JavaScript e Ajax.
+                </p>
+            </details>
+        </li>
+    </ul>
+        
+    
+    <h3>
+        Percorsi assoluti e relativi
+    </h3>
+    <p>
+        Per collegare un elemento in locale o sul web si usano i percorsi relativi o assoluti, che servono a muoverci tra le cartelle.
+        <br>
+        I percorsi assoluti e relativi sono termini utilizzati per descrivere come le risorse, come file o URL, vengono riferite e localizzate all'interno di un sistema di file o di un contesto web. Sia i percorsi assoluti che quelli relativi sono utilizzati per individuare la posizione di una risorsa all'interno di una struttura di directory.
+    </p>
+    <ul>
+        <details>
+            <summary>
+                Vediamo come usare i percorsi assoluti e relativi
+            </summary>
+            <li>
+                <p>
+                    PERCORSO ASSOLUTO:
+                    Un percorso assoluto specifica il percorso completo di una risorsa dall'inizio della gerarchia di directory o dalla radice del dominio web. In un sistema di file, il percorso assoluto includerebbe ogni directory nella gerarchia, dall'unità o dalla radice in cui si trova il file fino alla posizione del file stesso. In un contesto web, il percorso assoluto sarebbe l'URL completo, comprensivo del protocollo (http, https) e del dominio.
+                </p>      
+                <p>
+                    Esempio di percorso assoluto in un sistema di file:
+                    <i>
+                        C:\Documenti\Progetto\index.html
+                    </i>
+                    <br>
+                    Esempio di percorso assoluto in un contesto web: 
+                    <i>
+                        https://www.example.com/pagine/index.html
+                    </i>
+                    
+                </p>
+            </li>
+            <li>
+                PERCORSO RELATIVO:
+                Un percorso relativo, d'altra parte, specifica la posizione di una risorsa in relazione alla posizione del file o dell'URL di riferimento. In altre parole, un percorso relativo indica come raggiungere una risorsa partendo dalla posizione attuale. I percorsi relativi sono spesso utilizzati quando si fa riferimento a risorse all'interno della stessa directory o delle sue sottodirectory.
+                <br>
+                Ci sono 3 casi per i percorsi relativi: 
+                <ul>
+                    <li>
+                        Percorso Relativo Senza Cambiamenti di Directory:
+                        <br>
+                        In questo caso, il percorso relativo specifica semplicemente il nome del file o della risorsa da raggiungere, senza dover cambiare alcuna directory.
+                        Esempio:
+                        <br>
+                        <i>href="filedellastessacartella.html"</i>
+                    </li>
+                    <br>
+                    <li>
+                        il caso in cui i file partono da una directory superiore fino ad arrivare a quella inferiore
+                        <br>
+                        dobbiamo usare la sintassi
+                        <br>
+                        <i>href="prima sottocartella/seconda sottocartella/altre sottocartelle/file da collegare.html"</i>
+                        <br>
+                        <img src="media/percorso1.jpg">
+                        <br>
+                        in quest'esempio il valore di href per collegare il file interna.html sarebbe <i>href="prima/interna/interna.html"</i>
+                    </li>
+                    <br>
+                    <li>
+                        il caso in cui i file partono da una directory inferiore fino ad arrivare a quella superiore
+                        <br>
+                        in questo caso la sintassi è tot 2 punti quanti sono i livelli da "scalare", separati da /, e poi il file da collegare:
+                        <br>
+                        <i>href="../file da collegare.html"</i>
+                        <br>
+                        in questo esempio salgo di 1 livello per collegare il file
+                        <br>
+                        <img src="media/percorso2.jpg">
+                        <br>
+                        nell'esempio della foto si deve salire di 2 livelli => <i>href="../../index.html"</i>
+                    </li>
+                </ul>
+            </li>
+        </details>
+    </ul>
+    <p>
+        In definitiva, i percorsi assoluti sono completi e iniziano dalla radice, mentre i percorsi relativi sono basati sulla posizione attuale e possono includere cambiamenti di directory. I percorsi relativi sono spesso più flessibili e portabili, in quanto non dipendono dalla struttura completa del sistema di file o dell'URL. La scelta tra i due dipenderà dal contesto in cui si sta lavorando.
+        <br>
+        Quando si ha un hosting web disponibile (il servizio che permette di mettere online un sito web), i vari file html si inseriscono in varie cartelle o nella stessa cartella di un server a seconda di come sono indirizzati i link.
+    </p>
+    <p>
+        I nomi dei file html sono personalizzabili, ma di solito la homepage ha sempre il nome di index.html
+        <br>
+        esempio <a href="\percorso\assoluto\completamente\a\caso\index.html">link al file della homepage</a>
+        <br>
+        Il link al file in questo caso è un percorso assoluto, che quasi sicuramente non andrà, perché sarà cambiata la posizione del file.
+        <br>
+    </p>
+    <h3>
+        Come linkare i vari collegamenti
+    </h3>
+    <h4>
+        Link esterni
+    </h4>
+    <p>
+        Dunque con il tag "a" possiamo linkare website esterni o pagine dello stesso website.
+        <br>
+        
+        Nel caso di un sito web esterno è giusto denotare che il link è esterno con l'attributo "rel" e il valore "external"
+    </p>
+    <textarea cols="130" rows="4">
+        <a href="https://paveldogreat.github.io/WebGL-Fluid-Simulation/" rel="external" title="WebGL-Fluid-Simulation">
+            WebGL-Fluid-Simulation
+        </a>
+    </textarea>
+    <br>
+    <a href="https://paveldogreat.github.io/WebGL-Fluid-Simulation/" rel="external" title="WebGL-Fluid-Simulation">
+        WebGL-Fluid-Simulation
+    </a>
+    <p>
+        Puoi collegarti a un sito che utilizza un protocollo diverso da HTTP. Ad esempio, per collegarti a un sito FTP, puoi fare così:
+        <br>
+        <textarea cols="80" rows="4">
+            <a href="ftp://example.com/" rel="external" title="example.it">
+                Questo potrebbe essere un collegamento a un sito FTP
+            </a>
+        </textarea>
+        <br>
+        <a href="ftp://example.com/" rel="external" title="example.it">
+            Questo potrebbe essere un collegamento a un sito FTP
+        </a>
+        <br>
+        In questo caso, la differenza è che questo tag di ancoraggio sta richiedendo al browser dell'utente di connettersi a example.com utilizzando il protocollo di trasferimento file (FTP) anziché il protocollo di trasferimento ipertestuale (HTTP).
+        <br>
+        Studia meglio il protocollo FTP e come funziona
+    </p>
+    <h4>
+        Link a un ancora (id)
+    </h4>
+    <p>
+        Gli ancoraggi possono essere utilizzati per passare a tag specifici all'interno di una pagina HTML. Il tag `a` può puntare a qualsiasi elemento che abbia un attributo id grazie al simbolo #. Gli ancoraggi vengono principalmente utilizzati per passare a una sottosezione di una pagina e vengono usati in combinazione con i tag di intestazione.
+        <br>
+        Facciamo un esempio con questa pagina stessa e con i tag di intestazione precedenti
+    </p>
+    <textarea cols="50" rows="24">
+        <a href="#Giuda-allHTML">
+            Guida all'HTML
+        </a>
+        <br>
+        <a href="#I-tag-dapertura-e-di-chiusura">
+            I tag d'apertura e di chiusura
+        </a>
+        <br>
+        <a href="#Gli-attributi">
+            Gli attributi
+        </a>
+        <br>
+        <a href="#I-principali-tag-da-usare">
+            I principali tag da usare
+        </a>
+        <br>
+        <a href="#I-paragrafi">
+            I paragrafi
+        </a>
+        <br>
+        <a href="#I-collegamenti-ipertestuali">
+            I collegamenti ipertestuali
+        </a>
+    </textarea>
+    <div>
+        <a href="#Giuda-allHTML">
+            Guida all'HTML
+        </a>
+        <br>
+        <a href="#I-tag-dapertura-e-di-chiusura">
+            I tag d'apertura e di chiusura
+        </a>
+        <br>
+        <a href="#Gli-attributi">
+            Gli attributi
+        </a>
+        <br>
+        <a href="#I-principali-tag-da-usare">
+            I principali tag da usare
+        </a>
+        <br>
+        <a href="#I-paragrafi">
+            I paragrafi
+        </a>
+        <br>
+        <a href="#I-collegamenti-ipertestuali">
+            I collegamenti ipertestuali
+        </a>
+    </div>
+    <p>
+        Gli ancoraggi si possono fare anche tra elementi di pagine diverse con la sintassi seguente (ci colleghiamo alla pagina dove studieremo il CSS)
+    </p>
+    <textarea cols="40" rows="4">
+        <a href="index1.html#flexbox">
+            Flexbox
+        </a>
+    </textarea>
+    <br>
+    <a href="index1.html#flexbox">
+        Flexbox
+    </a>
+
+
+    <h4>
+        Link a un numero di telefono
+    </h4>
+    <p>
+        Se il valore dell'attributo href inizia con "tel:" il tuo dispositivo comporrà il numero quando ci fai clic. Questo funziona su dispositivi mobili o su computer/tablet che eseguono software - come Skype o FaceTime - in grado di effettuare chiamate telefoniche.
+    </p>
+    <textarea cols="40" rows="4">
+        <a href="tel:+393510630348">
+            numero di un Playboy
+        </a>
+    </textarea>
+    <br>
+    <a href="tel:+393510630348">
+        numero di un Playboy
+    </a>
+
+    <h4>
+        Link a un Email
+    </h4>
+    <p>
+        Se il valore dell'attributo href inizia con "mailto:" cercherà di aprire un client di posta elettronica quando ci fai clic:
+    </p>
+    <textarea cols="50" rows="4">
+        <a href="mailto:nicolabelardo005@gmail.com">
+            email di Nicola
+        </a>
+    </textarea>
+    <br>
+    <a href="mailto:nicolabelardo005@gmail.com">
+        email di Nicola
+    </a>
+    <p>
+        Puoi anche aggiungere indirizzi per destinatari in copia (cc) o destinatari in copia nascosta (ccn, in inglese bcc) utilizzando la seguente sintassi:
+    </p>
+    <textarea cols="115" rows="4">
+        <a href="mailto:nicolabelardo005@gmail.com?cc=belardonicola2@gmail.com&bcc=franzesegiovanni221@gmail.com">
+            Email con destinatario in copia e copia nascosta
+        </a>
+    </textarea>
+    <br>
+    <a href="mailto:nicolabelardo005@gmail.com?cc=belardonicola2@gmail.com&bcc=franzesegiovanni221@gmail.com">
+        Email con destinatario in copia e copia nascosta
+    </a>
+    <p>
+        Puoi anche popolare l'oggetto e il corpo per il nuovo messaggio di posta elettronica:
+    </p>
+    <textarea cols="163" rows="4">
+        <a href="mailto:nicolabelardo005@gmail.com?subject=io+sono+Gianni&body=Ciao,+io+sono+Gianni&cc=belardonicola2@gmail.com&bcc=franzesegiovanni221@gmail.com">
+            Email con oggetto, corpo, destinatario in copia e copia nascosta
+        </a>
+    </textarea>
+    <br>
+    <a href="mailto:nicolabelardo005@gmail.com?subject=io+sono+Gianni&body=Ciao,+io+sono+Gianni&cc=belardonicola2@gmail.com&bcc=franzesegiovanni221@gmail.com">
+        Email con oggetto, corpo, destinatario in copia e copia nascosta
+    </a>
+    <p>
+        Non tutte le opzioni specificate dopo l'indirizzo del destinatario sono supportate in tutti i client di posta elettronica.
+    </p>
+
+
+    <h4>
+        Link che esegue una funzione JavaScript
+    </h4>
+    <p>
+        Possiamo usare i tag "a" anche per eseguire una funzione in JavaScript, tramite il protocollo "javascript:"
+        <br>
+        Per come fare una funzione JavaScript lo vedremo in futuro. La funzione che avvieremo farà in modo di aggiungere un paragrafo con scritto questo è il paragrafo n. Il paragrafo verrà aggiunto dopo il link che lo avvia
+    </p>
+    <textarea cols="50" rows="4">
+        <a href="javascript:myFunction();">
+            Esegui codice
+        </a>
+    </textarea>
+    <br>
+    <a href="javascript:myFunction();">
+        Esegui codice
+    </a>
+    <div id="funzione" style="border: solid 1px; width: fit-content;">
+        Qui nascono dei paragrafi:
+    </div>
+    <p>
+        Puoi fare la stessa cosa con l'attributo onclick (che poi vedremo nello JavaScript)
+    </p>
+    <textarea cols="55" rows="4">
+        <a href="" onclick="myFunction(); return false">
+            Esegui codice
+        </a>
+    </textarea>
+    <br>
+    <a href="" onclick="myFunction(); return false">
+        Esegui codice
+    </a>
+    <p>
+        Il `return false;` è necessario per evitare che la tua pagina scorra verso l'alto quando viene fatto clic sul collegamento a "". Assicurati di includere tutto il codice che desideri eseguire prima di esso, poiché il ritorno interromperà l'esecuzione del codice ulteriore.
+        <br>
+        Anche degno di nota, puoi includere un punto esclamativo ! dopo il cancelletto per evitare che la pagina scorra verso l'alto. Questo funziona perché qualsiasi slug non valido farà sì che il collegamento non scorrerà in nessun punto della pagina, poiché non riesce a individuare l'elemento a cui fa riferimento (un elemento con id="!"). Potresti anche utilizzare qualsiasi slug non valido (come #scrollsNowhere) per ottenere lo stesso effetto. In questo caso, `return false;` non è richiesto.
+    </p>
+    <p>
+        Dovresti usare qualcosa di tutto ciò?
+        <br>
+        La risposta è quasi certamente no. Eseguire JavaScript inline con l'elemento in questo modo è piuttosto una pratica non ottimale. Considera di utilizzare soluzioni JavaScript pure che cercano l'elemento nella pagina e associano una funzione ad esso invece di farlo in questo modo.
+        <br>
+        Considera anche se questo elemento sia veramente un pulsante invece di un collegamento. In tal caso, dovresti utilizzare `button`
+    </p>
+    
+    
+
+    
+    <hr>
+    <h2>
+        ELENCHI
+    </h2>
+    <p>
+        HTML offre tre modi per specificare elenchi: elenchi ordinati, elenchi non ordinati ed elenchi di definizione. Gli elenchi ordinati utilizzano sequenze ordinarie per indicare l'ordine degli elementi dell'elenco, gli elenchi non ordinati utilizzano un simbolo definito come un pallino per elencare gli elementi senza un ordine specifico, e gli elenchi di definizione utilizzano rientri per elencare gli elementi insieme ai loro sotto-punti.
+    </p>
+    
+    <h3>
+        Elenco ordinato
+    </h3>
+    <p>
+        Un elenco ordinato pò essere creato con il tag "ol" (ordered list) e il tag "li" (list item)
+    </p>
+    <textarea cols="30" rows="9">
+        <ol>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+            <li>Elemento 5</li>
+            <li>Elemento 6</li>
+        </ol>
+    </textarea>
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+        <li>Elemento 6</li>
+    </ol>
+    <h4>
+        Cambiare manualmente i numeri
+    </h4>
+    <p>
+        Possiamo cambiare manualmente il numero iniziale da cui partire con l'attributo (inserito in ol) start.
+        <br>
+        Inoltre possiamo cambiare il valore di un singolo list item con l'attributo (inserito in li) value. Dopo il list item
+    </p>
+    <textarea cols="60" rows="21">
+        <ol start="3">
+            <li>
+                Elemento 3
+            </li>
+            <li>
+                Elemento 4
+            </li>
+            <li value="3">
+                Elemento 3: da qui si resetta il conto
+            </li>
+            <li>
+                Elemento 4
+            </li>
+            <li>
+                Elemento 5
+            </li>
+            <li>
+                Elemento 6
+            </li>
+        </ol>
+    </textarea>
+    <ol start="3">
+        <li>
+            Elemento 3
+        </li>
+        <li>
+            Elemento 4
+        </li>
+        <li value="3">Elemento 3: da qui si resetta il conto</li>
+        <li>
+            Elemento 4
+        </li>
+        <li>
+            Elemento 5
+        </li>
+        <li>
+            Elemento 6
+        </li>
+    </ol>
+    <p>
+        Nota: Gli attributi `start` e `value` accettano solo un numero, anche se l'elenco ordinato è impostato per essere visualizzato come numeri romani o lettere.
+    </p>
+    <p>
+        Si può invertire l'ordine della lista con l'attributo reversed
+    </p>
+    <textarea cols="40" rows="10">
+        <ol reversed="reversed">
+            Elenco ordinato al contrario
+            <li>Elemento 6</li>
+            <li>Elemento 5</li>
+            <li>Elemento 4</li>
+            <li>Elemento 3</li>
+            <li>Elemento 2</li>
+            <li>Elemento 1</li>
+        </ol>
+    </textarea>
+    <ol reversed>
+        Elenco ordinato al contrario
+        <li>Elemento 6</li>
+        <li>Elemento 5</li>
+        <li>Elemento 4</li>
+        <li>Elemento 3</li>
+        <li>Elemento 2</li>
+        <li>Elemento 1</li>
+    </ol>
+    <h4>
+        Cambiare il tipo di numerazione
+    </h4>
+    <p>
+        Con l'attributo type su ol possiamo cambiare il tipo di numerazione. I valori dell'attributo possono essere:
+    </p>
+    <ul>
+        <li>
+            <strong>1</strong> Valore predefinito - Numeri decimali 1, 2, 3, 4
+        </li>
+        <li>
+            <strong>a</strong>  Ordine alfabetico (minuscolo) a, b, c, d
+        </li>
+        <li>
+            <strong>A</strong>  Ordine alfabetico (maiuscolo) A, B, C, D
+        </li>
+        <li>
+            <strong>i</strong>  Numeri romani (minuscolo) i, ii, iii, iv
+        </li>
+        <li>
+            <strong>I</strong>  Numeri romani (maiuscolo) I, II, III, IV
+        </li>
+    </ul>
+    <textarea cols="30" rows="4">
+        <ol type="a">
+            <!--Elemento...-->
+        </ol>
+    </textarea>
+    <textarea cols="30" rows="4">
+        <ol type="A">
+            <!--Elemento...-->
+        </ol>
+    </textarea>
+    <textarea cols="30" rows="4">
+        <ol type="i">
+            <!--Elemento...-->
+        </ol>
+    </textarea>
+    <textarea cols="30" rows="4">
+        <ol type="I">
+            <!--Elemento...-->
+        </ol>
+    </textarea>
+    <div style="display: flex;">
+        <ol type="a">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+            <li>Elemento 5</li>
+            <li>Elemento 6</li>
+        </ol>
+        <ol type="A">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+            <li>Elemento 5</li>
+            <li>Elemento 6</li>
+        </ol>
+        <ol type="i">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+            <li>Elemento 5</li>
+            <li>Elemento 6</li>
+        </ol>
+        <ol type="I">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+            <li>Elemento 5</li>
+            <li>Elemento 6</li>
+        </ol>
+    </div>
+    
+
+    <h3>
+        Elenco non ordinato
+    </h3>
+    <p>
+        Un elenco non ordinato può essere creato con il tag "ul" (unordered list) e il tag "li" 
+    </p>
+    <ul>
+        <li>Elemento numerati</li>
+        <li>Elemento numerati</li>
+        <li>Elemento numerati</li>
+        <li>Elemento numerati</li>
+    </ul>
+    <p>
+        Negli ul possiamo usare l'attributo reversed, ma non ha senso usare start e value
+    </p>
+    <p>
+        Possiamo creare liste in altre liste, anche di tipo diverso
+    </p>
+    <ol>
+        lista non numerata in una lista numerata
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5
+            <ul>
+                <li>Sub-elemento 5.1</li>
+                <li>Sub-elemento 5.2</li>
+            </ul>
+        </li>
+        <li>Elemento</li>
+    </ol>
+
+
+    <h3>
+        Elenco di descrizione (o di definizione)
+    </h3>
+    <p>
+        Un elenco di descrizione può essere creato con il tag dl (description list), il tag dt (description term) e il tag dd (description definition)
+    </p>
+    <textarea cols="50" rows="8">
+        <dl>
+            <dt>Termine 1</dt>
+            <dd>Definizione del termine 1.</dd>
+            
+            <dt>Termine 2</dt>
+            <dd>Definizione del termine 2.</dd>
+        </dl>
+    </textarea>
+    <dl>
+        <dt>Termine 1</dt>
+        <dd>Definizione del termine 1.</dd>
+        
+        <dt>Termine 2</dt>
+        <dd>Definizione del termine 2.</dd>
+    </dl>
+      
+
+
+    
+    <hr>
+    <h2>
+        TABELLE
+    </h2>
+    <p>
+        L'elemento HTML "table" consente agli autori web di visualizzare dati tabulari (come testo, immagini, collegamenti, altre tabelle, ecc.) in una tabella bidimensionale con righe e colonne di celle. I tag da usare sono "table" "tr" "th" "td"
+    </p>
+    <textarea cols="60" rows="27">
+        <table>
+            <tr>
+                <th>
+                    Intestazione 1/Colonna 1
+                </th>
+                <th>
+                    Intestazione 2/Colonna 2
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Dato Riga 1 Colonna 1
+                </td>
+                <td>
+                    Dato Riga 1 Colonna 2
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Dato Riga 2 Colonna 1
+                </td>
+                <td>
+                    Dato Riga 2 Colonna 2
+                </td>
+            </tr>
+        </table>
+    </textarea>
+    <p>
+        Questo renderizzerà una "table" composta da tre righe in totale ("tr", ossia table row): una riga di celle di intestazione ("th", ossia table header) e due righe di celle di contenuto ("td", ossia table data). Gli elementi "th" sono intestazioni tabellari in grassetto (di default) e gli elementi "td" sono dati tabellari. Puoi inserire ciò che vuoi all'interno di un "td" o "th".
+        <br>
+        Ricorda che senza applicare del CSS non ci sono bordi.
+    </p>
+    <table>
+        <tr>
+            <th>
+                Intestazione 1/Colonna 1
+            </th>
+            <th>
+                Intestazione 2/Colonna 2
+            </th>
+        </tr>
+        <tr>
+            <td>
+                Dato Riga 1 Colonna 1
+            </td>
+            <td>
+                Dato Riga 1 Colonna 2
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Dato Riga 2 Colonna 1
+            </td>
+            <td>
+                Dato Riga 2 Colonna 2
+            </td>
+        </tr>
+    </table>
+    <h3>
+        Estensione delle colonne o delle righe
+    </h3>
+    <p>
+        Le celle della tabella possono estendersi su più colonne o righe utilizzando gli attributi colspan e rowspan. Questi attributi possono essere applicati agli elementi "th" e "td" (non "tr").
+        <br>
+        In questo modo, le celle possono occupare spazio su più righe o colonne secondo necessità.
+        <br>
+        Applichiamo anche dello stile CSS per vedere i bordi
+    </p>
+    <textarea cols="75" rows="38">
+        <table class="table-border">
+            <tr>
+                <td>
+                    Riga 1 Colonna 1
+                </td>
+                <td>
+                    Riga 1 Colonna 2
+                </td>
+                <td>
+                    Riga 1 Colonna 3
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    Questa seconda riga si estende su tutte e tre le colonne
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    Questa cella si estende su due righe
+                </td>
+                <td>
+                    Riga 3 Colonna 2
+                </td>
+                <td>
+                    Riga 3 Colonna 3
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Riga 4 Colonna 2
+                </td>
+                <td>
+                    Riga 4 Colonna 3
+                </td>
+            </tr>
+        </table>
+    </textarea>
+    <table class="table-border">
+        <tr>
+            <td>
+                Riga 1 Colonna 1
+            </td>
+            <td>
+                Riga 1 Colonna 2
+            </td>
+            <td>
+                Riga 1 Colonna 3
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                Questa seconda riga si estende su tutte e tre le colonne
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                Questa cella si estende su due righe
+            </td>
+            <td>
+                Riga 3 Colonna 2
+            </td>
+            <td>
+                Riga 3 Colonna 3
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Riga 4 Colonna 2
+            </td>
+            <td>
+                Riga 4 Colonna 3
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        Nota che non dovresti progettare una tabella in cui sia le righe che le colonne si sovrappongano, dato che risulta un HTML non valido. Inoltre il risultato è gestito in modo diverso dai diversi browser web.
+        <br>
+        Vediamo meglio i 2 attributi
+    </p>
+
+    <ul>
+        <li>
+            `rowspan` = Un intero non negativo che specifica il numero di righe coperte da una cella. Il valore predefinito di questo attributo è uno (1). Un valore di zero (0) significa che la cella si estenderà dalla riga corrente fino all'ultima riga della tabella (`thead`, `tbody`, o `tfoot`, elementi che vedremo tra poco).
+        </li>
+        <li>
+            `colspan` = Un intero non negativo che specifica il numero di colonne coperte dalla cella corrente. Il valore predefinito di questo attributo è uno (1). Un valore di zero (0) significa che la cella si estenderà dalla colonna corrente fino all'ultima colonna del gruppo di colonne `colgroup` in cui la cella è definita.
+        </li>
+    </ul>
+    <h3>
+        Tabelle con gli elementi "thead", "tbody", "tfoot" e "caption"
+    </h3>
+    <p>
+        HTML offre anche le tabelle con gli elementi "thead", "tbody", "tfoot" e "caption". Questi elementi aggiuntivi sono utili per aggiungere valore semantico alle tue tabelle e per fornire un luogo per lo styling CSS separato.
+        <br>
+        Quando si stampa una tabella che non si adatta a una sola pagina (carta) ma si estende a più pagine, la maggior parte dei browser ripete il contenuto di "thead" su ogni pagina.
+        <br>
+        Esiste un ordine specifico che deve essere seguito, e dovremmo essere consapevoli del fatto che non tutti gli elementi si inseriscono dove ci si aspetterebbe. L'esempio seguente illustra come i nostri 4 elementi dovrebbero essere posizionati:
+    </p>
+    <textarea cols="110" rows="26">
+            <table class="table-border">
+                <caption> <!-- caption è il primo figlio di table -->
+                    Titolo Tabella
+                </caption>
+                <thead> <!-- thead è dopo caption -->
+                    <tr>
+                        <th>Contenuto Intestazione 1</th>
+                        <th>Contenuto Intestazione 2</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- tbody è dopo thead -->
+                    <tr>
+                        <td>Contenuto Corpo 1</td>
+                        <td>Contenuto Corpo 2</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <!-- tfoot può essere posizionato prima o dopo tbody, ma non in un gruppo di tbody. -->
+                    <!-- Indipendentemente da dove si trova tfoot nel markup, viene reso in fondo. -->
+                    <tr>
+                        <td>Contenuto Piè di Pagina 1</td>
+                        <td>Contenuto Piè di Pagina 2</td>
+                    </tr>
+                </tfoot>
+            </table>
+    </textarea>
+    <table class="table-border">
+            <caption> <!-- caption è il primo figlio di table -->
+                Titolo Tabella
+            </caption>
+            <thead> <!-- thead è dopo caption -->
+                <tr>
+                    <th>Contenuto Intestazione 1</th>
+                    <th>Contenuto Intestazione 2</th>
+                </tr>
+            </thead>
+            <tbody> <!-- tbody è dopo thead -->
+                <tr>
+                    <td>Contenuto Corpo 1</td>
+                    <td>Contenuto Corpo 2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <!-- tfoot può essere posizionato prima o dopo tbody, ma non in un gruppo di tbody. -->
+                <!-- Indipendentemente da dove si trova tfoot nel markup, viene reso in fondo. -->
+                <tr>
+                    <td>Contenuto Piè di Pagina 1</td>
+                    <td>Contenuto Piè di Pagina 2</td>
+                </tr>
+            </tfoot>
+    </table>
+    <ol>
+            Capiamo la funzione di ogni tag:
+            <li>
+                "caption"	È una didascalia che ci permette di dare una contestualizzazione ai dati e rendere più chiaro il loro significato.
+            </li>
+            <li>
+                "thead"	Serve per raggruppare le righe che rappresentano l'intestazione della tabella.
+            </li>
+            <li>
+                "th"	"table header" Indica una cella che contiene un intestazione (ad esempio il titolo di una colonna o di una riga) e serve a dare una definizione dei dati cui si riferisce.
+            </li>
+            <li>
+                "tbody"	Raggruppa le righe che contengono il corpo della tabella, spesso con i dati veri e propri.
+            </li>
+            <li>
+                "tfoot"	Racchiude le righe che utilizziamo come footer della tabella, in cui si possono inserire dei dati di riepilogo, somme, medie, etc.
+            </li>
+    </ol>
+    <p>
+            Interessante notare che thead, tbody e tfoot, creano dei raggruppamenti di righe e che tfoot può apparire, nel markup, anche prima del tbody, questo per consentire ai crowler di leggere prima i dati di sintesi e poi le informazioni più granulari.
+            <br>
+            Alla fine la rappresentazione della tabella rimane quella che ci aspetteremmo:
+            <br>
+            <img src="media/schemaTabella.gif" alt="">
+    </p>
+
+    <h3>
+        Gruppi di Colonne
+    </h3>
+    <p>
+        Dunque di default, nelle tabelle HTML si raggruppano prima le righe e poi le colonne.
+        <br>
+        A volte potresti voler applicare stili a una colonna o a un gruppo di colonne. Oppure, per scopi semantici, potresti voler raggruppare le colonne insieme. Per fare ciò, usa gli elementi `colgroup` e `col`.
+    </p>
+    <ol>
+        <li>
+            L'elemento `colgroup` ti consente di raggruppare le colonne insieme. Gli elementi `colgroup` devono essere elementi figli di un `table` e devono venire dopo eventuali elementi `caption` e prima di qualsiasi contenuto della tabella (ad esempio, `tr`, `thead`, `tbody`, ecc.). Il tag colgroup non ha senso se non ha un ele
+        </li>
+        <li>
+            Il tag "col" viene utilizzato all'interno del tag "colgroup" per definire gli attributi specifici di una colonna o di un gruppo di colonne. L'attributo span può essere utilizzato per specificare quante colonne verranno influenzate dalle proprietà definite all'interno di "col".
+        </li>
+    </ol>
+    <p>
+        La sintassi per scrivere la tabella resta la stessa, ma si aggiungono questi tag in modo da riuscire a selezionare le colonne, partendo da sinistra.  Il numero di colonne da considerare lo indichiamo grazie all'attributo span, settato (usato su colgroup per indicare le colonne del gruppo, e usato su col per indicare quali colonne di un gruppo) di default su 1.
+    </p>
+    <p>
+        Meglio usare sia colgroup che col per non fare casino tra gli stili, e inoltre applicare lo stile ai tag col. (Non capisco perché posso usare poche proprietà CSS per stilare i tag colgroup e col, tra cui background-color e width)
+    </p>
+    <details>
+        <summary>vedi codice:</summary>
+        <textarea cols="125" rows="117">
+            <table class="table-border">
+                <colgroup id="A"> <!-- questo tag ha la larghezza settata a 75px e il colore dello sfondo a blu-->
+                    <col id="A1">
+                        <!-- in questo modo riusciamo a selezionare per i valori CSS la colonna 1; colore dello sfondo: aqua-->
+                    <col span="2" id="A2">
+                        <!-- in questo modo riusciamo a selezionare per i valori CSS le colonne 2 e 3, grazie allo span="2" -->
+                    <col>
+                        <!-- in questo modo occupiamo la colonna 4 i modo che non faccia parte del prossimo colgroup,
+                            inoltre avrà lo stile del suo genitore colgroup -->
+                </colgroup>
+                <colgroup id="B"> <!-- questo tag ha la larghezza settata a 200px-->
+                    <col>
+                    <col>
+                    <col id="B1" span="2">
+                </colgroup>
+                <!-- l'ultima colonna non è influenzata da alcuno stile -->
+                <tr>
+                    <th>Colonna 1</th>
+                    <th>Colonna 2</th>
+                    <th>Colonna 3</th>
+                    <th>Colonna 4</th>
+                    <th>Colonna 5</th>
+                    <th>Colonna 6</th>
+                    <th>Colonna 7</th>
+                    <th>Colonna 8</th>
+                    <th>Colonna 9</th>
+                </tr>
+                <tr>
+                    <td>Riga 1, Colonna 1</td>
+                    <td>Riga 1, Colonna 2</td>
+                    <td>Riga 1, Colonna 3</td>
+                    <td>Riga 1, Colonna 4</td>
+                    <td>Riga 1, Colonna 5</td>
+                    <td>Riga 1, Colonna 6</td>
+                    <td>Riga 1, Colonna 7</td>
+                    <td>Riga 1, Colonna 8</td>
+                    <td>Riga 1, Colonna 9</td>
+                </tr>
+                <tr>
+                    <td>Riga 2, Colonna 1</td>
+                    <td>Riga 2, Colonna 2</td>
+                    <td>Riga 2, Colonna 3</td>
+                    <td>Riga 2, Colonna 4</td>
+                    <td>Riga 2, Colonna 5</td>
+                    <td>Riga 2, Colonna 6</td>
+                    <td>Riga 2, Colonna 7</td>
+                    <td>Riga 2, Colonna 8</td>
+                    <td>Riga 2, Colonna 9</td>
+                </tr>
+                <tr>
+                    <td>Riga 3, Colonna 1</td>
+                    <td>Riga 3, Colonna 2</td>
+                    <td>Riga 3, Colonna 3</td>
+                    <td>Riga 3, Colonna 4</td>
+                    <td>Riga 3, Colonna 5</td>
+                    <td>Riga 3, Colonna 6</td>
+                    <td>Riga 3, Colonna 7</td>
+                    <td>Riga 3, Colonna 8</td>
+                    <td>Riga 3, Colonna 9</td>
+                </tr>
+                <tr>
+                    <td>Riga 4, Colonna 1</td>
+                    <td>Riga 4, Colonna 2</td>
+                    <td>Riga 4, Colonna 3</td>
+                    <td>Riga 4, Colonna 4</td>
+                    <td>Riga 4, Colonna 5</td>
+                    <td>Riga 4, Colonna 6</td>
+                    <td>Riga 4, Colonna 7</td>
+                    <td>Riga 4, Colonna 8</td>
+                    <td>Riga 4, Colonna 9</td>
+                </tr>
+                <tr>
+                    <td>Riga 5, Colonna 1</td>
+                    <td>Riga 5, Colonna 2</td>
+                    <td>Riga 5, Colonna 3</td>
+                    <td>Riga 5, Colonna 4</td>
+                    <td>Riga 5, Colonna 5</td>
+                    <td>Riga 5, Colonna 6</td>
+                    <td>Riga 5, Colonna 7</td>
+                    <td>Riga 5, Colonna 8</td>
+                    <td>Riga 5, Colonna 9</td>
+                </tr>
+                <tr>
+                    <td>Riga 6, Colonna 1</td>
+                    <td>Riga 6, Colonna 2</td>
+                    <td>Riga 6, Colonna 3</td>
+                    <td>Riga 6, Colonna 4</td>
+                    <td>Riga 6, Colonna 5</td>
+                    <td>Riga 6, Colonna 6</td>
+                    <td>Riga 6, Colonna 7</td>
+                    <td>Riga 6, Colonna 8</td>
+                    <td>Riga 6, Colonna 9</td>
+                </tr>
+                <tr>
+                    <td>Riga 7, Colonna 1</td>
+                    <td>Riga 7, Colonna 2</td>
+                    <td>Riga 7, Colonna 3</td>
+                    <td>Riga 7, Colonna 4</td>
+                    <td>Riga 7, Colonna 5</td>
+                    <td>Riga 7, Colonna 6</td>
+                    <td>Riga 7, Colonna 7</td>
+                    <td>Riga 7, Colonna 8</td>
+                    <td>Riga 7, Colonna 9</td>
+                </tr>
+                <tr>
+                    <td>Riga 8, Colonna 1</td>
+                    <td>Riga 8, Colonna 2</td>
+                    <td>Riga 8, Colonna 3</td>
+                    <td>Riga 8, Colonna 4</td>
+                    <td>Riga 8, Colonna 5</td>
+                    <td>Riga 8, Colonna 6</td>
+                    <td>Riga 8, Colonna 7</td>
+                    <td>Riga 8, Colonna 8</td>
+                    <td>Riga 8, Colonna 9</td>
+                </tr>
+            </table>
+        </textarea>
+    </details>
+    <br>
+    <table class="table-border">
+        <colgroup id="A"> <!-- questo tag ha la larghezza settata a 75px e il colore dello sfondo a blu-->
+            <col id="A1">
+                <!-- in questo modo riusciamo a selezionare per i valori CSS la colonna 1; colore dello sfondo: aqua-->
+            <col span="2" id="A2">
+                <!-- in questo modo riusciamo a selezionare per i valori CSS le colonne 2 e 3, grazie allo span="2" -->
+            <col>
+                <!-- in questo modo occupiamo la colonna 4 i modo che non faccia parte del prossimo colgroup, inoltre avrà lo stile del suo genitore colgroup -->
+        </colgroup>
+        <colgroup id="B"> <!-- questo tag ha la larghezza settata a 200px-->
+            <col>
+            <col>
+            <col id="B1" span="2">
+        </colgroup>
+        <!-- l'ultima colonna non è influenzata da alcuno stile -->
+        <tr>
+            <th>Colonna 1</th>
+            <th>Colonna 2</th>
+            <th>Colonna 3</th>
+            <th>Colonna 4</th>
+            <th>Colonna 5</th>
+            <th>Colonna 6</th>
+            <th>Colonna 7</th>
+            <th>Colonna 8</th>
+            <th>Colonna 9</th>
+        </tr>
+        <tr>
+            <td>Riga 1, Colonna 1</td>
+            <td>Riga 1, Colonna 2</td>
+            <td>Riga 1, Colonna 3</td>
+            <td>Riga 1, Colonna 4</td>
+            <td>Riga 1, Colonna 5</td>
+            <td>Riga 1, Colonna 6</td>
+            <td>Riga 1, Colonna 7</td>
+            <td>Riga 1, Colonna 8</td>
+            <td>Riga 1, Colonna 9</td>
+        </tr>
+        <tr>
+            <td>Riga 2, Colonna 1</td>
+            <td>Riga 2, Colonna 2</td>
+            <td>Riga 2, Colonna 3</td>
+            <td>Riga 2, Colonna 4</td>
+            <td>Riga 2, Colonna 5</td>
+            <td>Riga 2, Colonna 6</td>
+            <td>Riga 2, Colonna 7</td>
+            <td>Riga 2, Colonna 8</td>
+            <td>Riga 2, Colonna 9</td>
+        </tr>
+        <tr>
+            <td>Riga 3, Colonna 1</td>
+            <td>Riga 3, Colonna 2</td>
+            <td>Riga 3, Colonna 3</td>
+            <td>Riga 3, Colonna 4</td>
+            <td>Riga 3, Colonna 5</td>
+            <td>Riga 3, Colonna 6</td>
+            <td>Riga 3, Colonna 7</td>
+            <td>Riga 3, Colonna 8</td>
+            <td>Riga 3, Colonna 9</td>
+        </tr>
+        <tr>
+            <td>Riga 4, Colonna 1</td>
+            <td>Riga 4, Colonna 2</td>
+            <td>Riga 4, Colonna 3</td>
+            <td>Riga 4, Colonna 4</td>
+            <td>Riga 4, Colonna 5</td>
+            <td>Riga 4, Colonna 6</td>
+            <td>Riga 4, Colonna 7</td>
+            <td>Riga 4, Colonna 8</td>
+            <td>Riga 4, Colonna 9</td>
+        </tr>
+        <tr>
+            <td>Riga 5, Colonna 1</td>
+            <td>Riga 5, Colonna 2</td>
+            <td>Riga 5, Colonna 3</td>
+            <td>Riga 5, Colonna 4</td>
+            <td>Riga 5, Colonna 5</td>
+            <td>Riga 5, Colonna 6</td>
+            <td>Riga 5, Colonna 7</td>
+            <td>Riga 5, Colonna 8</td>
+            <td>Riga 5, Colonna 9</td>
+        </tr>
+        <tr>
+            <td>Riga 6, Colonna 1</td>
+            <td>Riga 6, Colonna 2</td>
+            <td>Riga 6, Colonna 3</td>
+            <td>Riga 6, Colonna 4</td>
+            <td>Riga 6, Colonna 5</td>
+            <td>Riga 6, Colonna 6</td>
+            <td>Riga 6, Colonna 7</td>
+            <td>Riga 6, Colonna 8</td>
+            <td>Riga 6, Colonna 9</td>
+        </tr>
+        <tr>
+            <td>Riga 7, Colonna 1</td>
+            <td>Riga 7, Colonna 2</td>
+            <td>Riga 7, Colonna 3</td>
+            <td>Riga 7, Colonna 4</td>
+            <td>Riga 7, Colonna 5</td>
+            <td>Riga 7, Colonna 6</td>
+            <td>Riga 7, Colonna 7</td>
+            <td>Riga 7, Colonna 8</td>
+            <td>Riga 7, Colonna 9</td>
+        </tr>
+        <tr>
+            <td>Riga 8, Colonna 1</td>
+            <td>Riga 8, Colonna 2</td>
+            <td>Riga 8, Colonna 3</td>
+            <td>Riga 8, Colonna 4</td>
+            <td>Riga 8, Colonna 5</td>
+            <td>Riga 8, Colonna 6</td>
+            <td>Riga 8, Colonna 7</td>
+            <td>Riga 8, Colonna 8</td>
+            <td>Riga 8, Colonna 9</td>
+        </tr>
+    </table>
+    <p>
+        Ricorda: in una tabella i colgroup non sostituiscono i tr e i th, per questo motivo non vanno mai omessi.
+        <br>
+        Una tabella del genere non avrebbe senso:
+    </p>
+    <textarea cols="50" rows="10">
+        <table class="table-border">
+            <colgroup span="2">
+                <col>
+                Dato
+            </colgroup>
+             <colgroup span="2">
+                Dato
+            </colgroup>
+        </table>
+    </textarea>
+
+
+
+    <h3>
+        Heading scope
+    </h3>
+    <p>
+        Il tag "th" indica il significato dei dati all'interno delle celle, ma quali? Possiamo sfruttare questo tag sia per le colonne sia per le righe impostando l'attributo scope che prevede 5 valori (stati):
+    </p>
+    <ul>
+        <li>
+            scope="row" => L'header si riferisce ai valori sulla stessa riga
+        </li>
+        <li>
+            scope="col" => L'header si riferisce ai valori sulla stessa colonna
+        </li>
+        <li>
+            scope="rowgroup" => L'header si riferisce a tutte le celle incluse nello stesso gruppo di righe del th (il valore non è ammesso se il th non appartiene a un gruppo di righe)
+        </li>
+        <li>
+            scope="colgroup" => L'header si riferisce a tutte le celle incluse nello stesso gruppo di colonne del th (valido solo se th appartiene a un gruppo di colonne)
+        </li>
+        <li>
+            scope="auto" => se diamo come scope "auto" o se omettiamo lo scope, l'insieme di celle cui si applica il contenuto di th viene selezionato dal contesto.
+        </li>
+    </ul>
+    <textarea cols="60" rows="22">
+        <table class="table-border">
+            <thead>
+                <tr>
+                <td></td>
+                <th scope="col">Intestazione Colonna 1</th>
+                <th scope="col">Intestazione Colonna 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Intestazione Riga 1</th>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                <tr>
+                    <th scope="row">Intestazione Riga 2</th>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </textarea>
+    <table class="table-border">
+        <thead>
+            <tr>
+            <td></td>
+            <th scope="col">Intestazione Colonna 1</th>
+            <th scope="col">Intestazione Colonna 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Intestazione Riga 1</th>
+                <td></td>
+                <td></td>
+                </tr>
+            <tr>
+                <th scope="row">Intestazione Riga 2</th>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    dopo aver fatto il CSS vedi pure questa tabella: <a href="TABELLE HTML CON CSS.html">Qui</a>
+
+
+    <hr>
+    <h2>
+        ATTRIBUTI PERSONALIZZATI O DATA ATTRIBUTES
+    </h2>
+    <p>
+        Inoltre esistono gli attributi personalizzabili, detti anche attributi data, che sono attributi HTML definiti dall'utente che non sono standard secondo le specifiche HTML ufficiali, ma sono utilizzati per archiviare dati personalizzati o per scopi specifici all'interno degli elementi HTML. Questi attributi iniziano con il prefisso "data-", seguito da un nome che può essere scelto liberamente dallo sviluppatore.
+    </p>
+    <p>
+        Gli attributi personalizzati sono molto utili quando vuoi associare dati aggiuntivi a elementi HTML senza doverli utilizzare per il comportamento o la presentazione predefiniti del browser. Questo può essere particolarmente utile quando si lavora con scripting JavaScript o quando si desidera memorizzare metadati aggiuntivi.
+        <br>
+        Ecco un esempio di come potresti utilizzare un attributo personalizzato:
+    </p>
+    <button data-action="submit-form">
+        Invia il modulo
+    </button>
+    <p>
+        In questo esempio, l'attributo personalizzato data-action è stato aggiunto a un pulsante. Questo attributo non ha alcun significato intrinseco per il browser, ma può essere utilizzato dal tuo script JavaScript per determinare quale azione eseguire quando il pulsante viene cliccato.
+    </p>
+    <p>
+        Nell'ambito del CSS, gli attributi personalizzati possono anche essere utilizzati in combinazione con i selettori di attributi per applicare stili specifici a elementi con attributi dati specifici:
+        <br>
+        Ricorda che, mentre gli attributi personalizzati sono ampiamente supportati nei moderni browser e possono essere molto utili, è importante utilizzarli con coerenza e con un significato chiaro, in modo che il codice rimanga leggibile e mantenibile nel tempo.
+    </p>
+
+
+    <hr>
+    <h2>
+        COLLEGAMENTO DI RISORSE
+    </h2>
+    <p>
+        Mentre molti script, icone e fogli di stile possono essere inseriti direttamente nel markup HTML, è una pratica consigliata e più efficiente includere queste risorse in un proprio file e collegarle al tuo documento. Questo argomento tratta del collegamento di risorse esterne, come fogli di stile e script, in un documento HTML.
+    </p>
+    <ul>
+        Dettagli degli Attributi
+        <li>
+            charset: Specifica la codifica dei caratteri del documento collegato
+        </li>
+        <li>
+            crossorigin: Specifica come l'elemento gestisce le richieste cross-origin
+        </li>
+        <li>
+            href: Specifica la posizione del documento collegato
+        </li>
+        <li>
+            hreflang: Specifica la lingua del testo nel documento collegato
+        </li>
+        <li>
+            media: Specifica su quale dispositivo verrà visualizzato il documento collegato, spesso usato per selezionare fogli di stile in base al dispositivo in questione
+        </li>
+        <li>
+            rel: Richiesto. Specifica la relazione tra il documento corrente e il documento collegato
+        </li>
+        <li>
+            rev: Specifica la relazione tra il documento collegato e il documento corrente
+        </li>
+        <li>
+            sizes: Specifica le dimensioni della risorsa collegata. Solo quando rel="icon"
+        </li>
+        <li>
+            target: Specifica dove verrà caricato il documento collegato
+        </li>
+        <li>
+            type: Specifica il tipo di media del documento collegato
+        </li>
+        <li>
+            integrity: Specifica un hash codificato in base64 (sha256, sha384 o sha512) della risorsa collegata, consentendo al browser di verificarne la legittimità.
+        </li>
+    </ul>
+    <h3>
+        JavaScript
+    </h3>
+    <ul>
+        Si può linkare un file JavaScript in diversi modi:
+        <li>
+            Sincrono
+            <br>
+            <textarea cols="60" rows="2">
+                <script src="percorso/verso.js"></script>
+            </textarea>
+            <p>
+                La pratica standard è posizionare gli elementi `&lt;script>` JavaScript appena prima del tag di chiusura `&lt;/body>`. Caricare gli script per ultimi consente ai tuoi elementi visivi del sito di apparire più velocemente e scoraggia il tuo JavaScript dall'interagire con elementi che non sono ancora stati caricati.
+            </p>
+        </li>
+        <li>
+            Asincrono
+            <br>
+            <textarea cols="70" rows="2">
+                <script src="percorso/verso.js" async></script>
+            </textarea>
+            <p>
+                Un'altra alternativa, quando il codice JavaScript che viene caricato non è necessario per l'inizializzazione della pagina, è caricarlo in modo asincrono, velocizzando il caricamento della pagina. Utilizzando `async`, il browser caricherà il contenuto dello script in parallelo e, una volta che è completamente scaricato, interromperà l'analisi HTML per analizzare il file JavaScript.
+            </p>
+        </li>
+        <li>
+            Rinviato (Deferred)
+            <br>
+            <textarea cols="70" rows="2">
+                <script src="percorso/verso.js" defer></script>
+            </textarea>
+            <p>
+                Gli script rinviati sono simili agli script asincroni, con la differenza che l'analisi verrà eseguita solo una volta che l'HTML è completamente analizzato. Gli script rinviati sono garantiti di essere caricati nell'ordine della dichiarazione, allo stesso modo degli script sincroni.
+            </p>
+        </li>
+        <li>
+            &lt;noscript>
+            <br>
+            <textarea cols="60" rows="2">
+                <noscript>JavaScript disabilitato</noscript> 
+            </textarea>
+            <p>
+                L'elemento `&lt;noscript>` definisce il contenuto da visualizzare se l'utente ha i JavaScript disabilitati o se il browser non supporta l'uso degli script. L'elemento `&lt;noscript>` può essere collocato sia nell'`&lt;head>` che nel `&lt;body>`.
+            </p>
+        </li>
+    </ul>
+
+    <h3>
+        Foglio di stile CSS Esterno
+    </h3>
+    <textarea cols="80" rows="2">
+        <link rel="stylesheet" href="percorso/verso.css" type="text/css">
+    </textarea>
+    <p>
+        La pratica standard è collocare gli elementi `link` CSS all'interno del tag `head` all'inizio del tuo HTML. In questo modo, il CSS verrà caricato per primo e si applicherà alla tua pagina mentre si sta caricando, invece di mostrare HTML senza stile fino a quando il CSS non viene caricato. L'attributo `type` non è necessario in HTML5, poiché HTML5 supporta generalmente il CSS.
+    </p>
+    <p>
+        Questi 2 tag fanno la stessa cosa in HTML5.
+    </p>
+    <textarea cols="80" rows="3">
+        <link rel="stylesheet" href="percorso/verso.css" type="text/css">
+        <link rel="stylesheet" href="percorso/verso.css">
+    </textarea>
+    <p>
+        Un'altra pratica, sebbene meno comune, è utilizzare una dichiarazione @import all'interno del CSS diretto. Come questo:
+    </p>
+    <textarea cols="80" rows="4">
+        <style type="text/css">
+            @import url("percorso/verso.css");
+        </style>
+    </textarea>
+
+
+    <h3>
+        Favicon
+    </h3>
+    <p>
+        Un favicon è una piccola icona o immagine che viene associata a un sito web e visualizzata nella barra degli indirizzi del browser, accanto al titolo della pagina o all'URL. L'immagine del favicon può essere in diversi formati come ICO (formato icona di Windows), PNG (Portable Network Graphics) o GIF (Graphics Interchange Format).
+    </p>
+    <textarea cols="90" rows="3">
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    </textarea>
+    <p>
+        Usa il tipo mime image/png per i file PNG e image/x-icon per i file icon (*.ico).
+        <br>
+        Un file chiamato favicon.ico nella radice del tuo sito web di solito verrà caricato e applicato automaticamente, senza la necessità di un tag `link`. Se questo file cambia, i browser possono essere lenti e testardi nel aggiornare la loro cache.
+        <br>
+        Per questo motivo è sempre meglio inserirlo in un tag "link"
+    </p>
+    <p>
+        La differenza principale tra rel="icon" e rel="shortcut icon" riguarda la compatibilità con le versioni più vecchie dei browser. In passato, alcuni browser utilizzavano l'attributo rel="shortcut icon" per identificare il favicon. Tuttavia, nel corso del tempo, è diventato più comune utilizzare rel="icon" per specificare il favicon.
+        <br>
+        Se desideri garantire la massima compatibilità con i browser più vecchi, puoi utilizzare entrambe le varianti rel="icon" e rel="shortcut icon":
+    </p>
+
+
+    <h3>
+        CSS Alternativo
+    </h3>
+    <p>
+        Alcuni browser consentono l'applicazione di fogli di stile alternativi se vengono offerti. Di default, non verranno applicati, ma di solito possono essere cambiati attraverso le impostazioni del browser:
+    </p>
+    <textarea cols="30" rows="10">
+        <link rel="alternate stylesheet" href="percorso/stile.css" title="tuoTitolo">
+    </textarea>
+    <p>
+        Firefox consente all'utente di selezionare il foglio di stile utilizzando il submenu Visualizza > Stile pagina, Internet Explorer supporta anche questa funzione (a partire da IE 8), accessibile anche da Visualizza > Stile pagina (almeno fino a IE 11), ma Chrome richiede un'estensione per utilizzare la funzione (a partire dalla versione 48). La pagina web può anche fornire la propria interfaccia utente per consentire all'utente di cambiare stili.
+    </p>
+
+
+    <h3>
+        Risorsa Hint: dns-prefetch, prefetch, prerender
+    </h3>
+    <ul>
+        Questi attributi vengono usati per l'ottimizzazione delle risorse e metadati per le pagine web.
+        <li>
+            Preconnect: Questo attributo informa il browser di stabilire una connessione di rete anticipata con il server specificato nell'URL. Ciò include la risoluzione DNS, l'handshake TCP e, opzionalmente, la negoziazione TLS. Questo può ridurre significativamente il ritardo dovuto all'inizializzazione della connessione quando vengono richieste risorse aggiuntive dallo stesso dominio.
+            <br>
+            <textarea cols="50" rows="2">
+                <link rel="preconnect" href="URL">
+            </textarea>
+        </li>
+        <li>
+            DNS-Prefetch: Informa i browser di risolvere il DNS per un URL, in modo che tutte le risorse da quell'URL vengano caricate più velocemente (come preconnect ma senza la risoluzione DNS, l'handshake TCP e, opzionalmente, la negoziazione TLS).
+            <br>
+            <textarea cols="50" rows="2">
+                <link rel="dns-prefetch" href="URL">
+            </textarea>
+        </li>
+        <li>
+            Prefetch: Questo attributo informa il browser che una risorsa specificata dovrebbe essere prefetched, ovvero scaricata in anticipo, in modo che possa essere caricata più velocemente quando necessaria.
+            <br>
+            <textarea cols="50" rows="2">
+                <link rel="prefetch" href="URL">
+            </textarea>
+            Ricorda: DNS-Prefetch risolve solo il nome di dominio, mentre prefetch scarica/archivia le risorse specificate.
+        </li>
+        <li>
+            Prerender: Questo attributo informa il browser di eseguire il prerendering della pagina specificata in background. Questo può essere utile per fornire un'esperienza di navigazione più rapida, poiché la pagina sarà già pronta quando l'utente vi accede. 
+            <br>
+            Si tratta di una funzione sperimentale.
+            <br>
+            <textarea cols="50" rows="2">
+                <link rel="prerender" href="URL">
+            </textarea>
+        </li>
+    </ul>
+
+    <h3>
+        Attributo 'media' del link
+    </h3>
+    <p>
+        Media specifica quale foglio di stile dovrebbe essere utilizzato per quale tipo di media. L'utilizzo del valore "print" visualizzerebbe solo quel foglio di stile per le pagine di stampa.
+    </p>
+    <textarea cols="60" rows="2">
+        <link rel="stylesheet" href="test.css" media="print">
+    </textarea>
+    <p>
+        Il valore di questo attributo può essere uno dei valori mediatype (simili a una query media CSS).
+        <details>
+            <summary>
+                Puoi vedere qui i più comuni valori di media:
+            </summary>
+            <ul>
+                <li>
+                    all: Rappresenta tutti i dispositivi e media. Questo è il valore predefinito se non viene specificato alcun media type.
+                </li>
+                <li>
+                    screen: Rappresenta dispositivi con schermi, come computer, tablet e smartphone.
+                </li>
+                <li>
+                    print: Rappresenta la visualizzazione quando la pagina viene stampata, ottimizzando lo stile per la stampa su carta.
+                </li>
+                <li>
+                    speech: Rappresenta dispositivi che leggono il contenuto ad alta voce, come screen reader per utenti non vedenti.
+                </li>
+                <li>
+                    aural: Questo media type è stato deprecato ed è stato sostituito da speech nei CSS3 Media Queries.
+                </li>
+                <li>
+                    tv: Rappresenta dispositivi televisivi.
+                </li>
+                <li>
+                    projection: Rappresenta dispositivi di proiezione, come schermi di presentazione.
+                </li>
+                <li>
+                    handheld: Rappresenta dispositivi portatili, come telefoni cellulari.
+                </li>
+                <li>
+                    braille: Rappresenta dispositivi braille, utilizzati da utenti non vedenti.
+                </li>
+                <li>
+                    embossed: Rappresenta dispositivi braille che producono una stampa in rilievo.
+                </li>
+                <li>
+                    tty: Rappresenta dispositivi teletipici (TTY) utilizzati da persone con disabilità uditive.
+                </li>
+            </ul>
+        </details>
+    </p>
+
+
+    <h3>
+        Prev e Next
+    </h3>
+    <p>
+        Questi attributi vengono utilizzati per indicare la relazione tra pagine consecutive in una serie. L'attributo rel="prev" viene utilizzato per puntare alla pagina precedente, mentre rel="next" viene utilizzato per puntare alla pagina successiva.
+    </p>
+    <textarea cols="85" rows="3">
+        <link rel="prev" href="http://stackoverflow.com/documentation/java/topics">
+        <link rel="next" href="http://stackoverflow.com/documentation/css/topics">
+    </textarea>
+
+
+    <h3>
+        Feed Web
+    </h3>
+    <p>
+        Utilizza l'attributo rel="alternate" per consentire la scoperta dei tuoi feed Atom/RSS.
+    </p>
+    <textarea cols="94" rows="3">
+        <link rel="alternate" type="application/atom+xml" href="http://example.com/feed.xml">
+        <link rel="alternate" type="application/rss+xml" href="http://example.com/feed.xml">
+    </textarea>
+    <details>
+        <summary>
+            Ma cosa sono i feed Atom e RSS
+        </summary>
+        <p>
+            I feed Atom e RSS sono formati standardizzati per la sindacazione di contenuti web. Sono utilizzati per distribuire e aggiornare automaticamente contenuti come articoli, notizie, podcast e altro ancora, in modo che gli utenti possano rimanere informati senza dover visitare manualmente ogni sito web.
+        </p>
+        <ul>
+            Ecco una spiegazione di entrambi i formati:
+            <li>
+                RSS (Really Simple Syndication): RSS è un formato di feed che consente ai siti web di condividere i propri contenuti in modo strutturato. Gli utenti possono sottoscrivere un feed RSS tramite un lettore di feed o un aggregatore, che periodicamente verifica se ci sono nuovi contenuti nel feed e li mostra all'utente. I feed RSS contengono titoli, descrizioni e link agli articoli o alle risorse originali.
+            </li>
+            <li>
+                Atom: Atom è un altro formato di feed sindacazione che è stato progettato per superare alcune delle limitazioni di RSS. È basato su standard tecnici ben definiti e offre una struttura più flessibile per la pubblicazione di contenuti. Atom è considerato più robusto e ben strutturato rispetto a RSS.
+            </li>
+        </ul>
+        <p>
+            Sia RSS che Atom funzionano seguendo un modello di sottoscrizione. Gli utenti interessati al contenuto di un sito web possono sottoscrivere il feed utilizzando un lettore di feed o un'applicazione specifica. Quando il sito pubblica nuovi contenuti, questi vengono aggiunti automaticamente al feed, e i lettori di feed notificano agli utenti l'aggiornamento.
+        </p>
+        <p>
+            In generale, sia RSS che Atom sono strumenti utili per distribuire e consumare contenuti in modo efficiente su Internet, specialmente quando si tratta di tenersi aggiornati su notizie, blog, podcast e altri tipi di contenuti online.
+        </p>
+    </details>
+
+
+
+    <hr>
+    <h2>
+        Image
+    </h2>
+    <p>
+        Per aggiungere immagini in un sito web usiamo il tag img, che sono void element (senza tag di chiusura)
+        <br>
+        Gli attributi principali che si danno al tag img sono src, la fonte dell'immagine, e alt, che è il testo alternativo che descrive l'immagine.
+        <br>
+        Il valore di src può essere un file in locale con il suo link assoluto o relativo, oppure un URL a una pagina esterna. Se non vogliamo caricarla in locale possiamo anche usare dei siti che ci permettono di averla sempre disponibile tramite link a pagine esterne, come <a href="https://imgbb.com/">imgbb</a> o <a href="https://www.mediafire.com/">mediafire</a>.
+    </p>
+    <textarea cols="110" rows="4">
+        <img src="images/hello.png" alt="Hello World">
+        <img src="https://i.ibb.co/5nRRmB2/Earth-Eastern-Hemisphere.jpg" alt="la Terra" width="200px">
+        <img src="https://i.ibb.co/kh2C1Rk/STK-20220112-WA0033.webp" alt="STK-20220112-WA0033" width="200px">
+    </textarea>
+    <br>
+    <img src="images/hello.png"
+         alt="Hello World"
+    >
+    <img src="https://i.ibb.co/5nRRmB2/Earth-Eastern-Hemisphere.jpg"
+         alt="la Terra"
+         width="200px"
+         id="terra"
+    >
+    <img src="https://i.ibb.co/kh2C1Rk/STK-20220112-WA0033.webp"
+         alt="STK-20220112-WA0033"
+         width="200px"
+    >
+    <p>
+        Nota: Le immagini non vengono tecnicamente inserite in una pagina HTML, ma sono collegate alle pagine HTML. Il tag "img" crea uno spazio in cui viene visualizzata l'immagine di riferimento.
+        È anche possibile incorporare immagini direttamente all'interno della pagina utilizzando il base64:
+        <details>
+            <summary>
+                Ma cos'è il base64?
+            </summary>
+            <p>
+                Il Base64 è un sistema di codifica che consente di rappresentare dati binari (ad esempio file multimediali o file di qualsiasi tipo) in forma di testo ASCII. Questa codifica è utilizzata principalmente per trasmettere dati binari attraverso protocolli di trasmissione che supportano solo testo, come ad esempio le e-mail o i dati incorporati direttamente nel codice HTML, CSS o JavaScript.
+                <br>
+                La codifica Base64 converte ogni sequenza di 8 bit di dati in una sequenza di caratteri ASCII che rappresentano il valore dei dati. Questo processo implica la suddivisione dei dati binari in gruppi di 6 bit e la conversione di ciascun gruppo in un carattere ASCII corrispondente, utilizzando una tabella di conversione predefinita.
+            </p>
+            <ul>
+                Un esempio semplificato di codifica Base64 potrebbe apparire così:
+                <li>
+                    Prendiamo una sequenza di dati binari: `01001001 01001110 01000110 01001111` (che rappresenta i byte ASCII per "INFO").
+                </li>
+                <li>
+                    Dividiamo questi dati in gruppi di 6 bit: `010010 010100 110100 010001 010110 011110`.
+                </li>
+                <li>
+                    Convertiamo ciascun gruppo di 6 bit in un numero decimale: `18 20 52 9 22 30`.
+                </li>
+                <li>
+                    Usiamo una tabella di codifica Base64 per mappare questi numeri decimali in caratteri ASCII: `S U y J W e`.
+                </li>
+            </ul>
+            <p>
+                Quindi, la sequenza di dati binari "INFO" è stata codificata in Base64 come "SUYJWe".
+                <br>
+                Il risultato è una rappresentazione testuale dei dati binari che può essere facilmente trasmessa attraverso protocolli testuali. Tuttavia, è importante notare che la codifica Base64 non compressa può aumentare la dimensione dei dati, poiché ogni byte di dati binari viene convertito in almeno due caratteri ASCII.
+                <br>
+                In pratica, puoi incontrare il Base64 quando si tratta di incorporare immagini, file audio, video o altri dati binari in codice HTML, CSS o JavaScript.
+            </p>
+        </details>
+    </p>
+    <textarea cols="70" rows="2">
+        <img src="data:image/png;base64,iVBOR..." alt="Hello World">
+    </textarea>
+    <br>
+    <img src="data:image/png;base64,iVBOR..."
+         alt="Hello World"
+    >
+
+    <h3>
+        Scelta del testo alternativo (alt text)
+    </h3>
+    <p>
+        Il testo alternativo viene utilizzato dagli screen reader per gli utenti con problemi di vista e dai motori di ricerca. È quindi importante scrivere un buon testo alternativo per le tue immagini.
+        <br>
+        Il testo dovrebbe avere senso anche se sostituisci l'immagine con il suo attributo alt. Ad esempio le seguenti linee di codice non vanno bene:
+    </p>
+    <textarea cols="90" rows="5">
+        <img src="anonymous.png" alt="Avatar utente anonimo"/> Un utente anonimo ha scritto:
+        <p>Lorem ipsum dolor sit amet.</p>
+        <a href="https://google.com/"><img src="edit.png" alt="Icona modifica"/></a> /
+        <a href="https://google.com/"><img src="delete.png" alt="Icona eliminazione"/></a>
+    </textarea>
+    <p>
+        Infatti, se sostituiamo le immagini con i testi alternativi, apparirebbe questo:
+    </p>
+    <div>
+        <img src="anonymous.png" alt="Avatar utente anonimo"/> Un utente anonimo ha scritto:
+        <p>Lorem ipsum dolor sit amet.</p>
+        <a href="https://google.com/"><img src="edit.png" alt="Icona modifica"/></a> /
+        <a href="https://google.com/"><img src="delete.png" alt="Icona eliminazione"/></a>
+    </div>
+    <ul>
+        Per correggere questo:
+        <li>
+            Rimuovi il testo alternativo per l'avatar. Questa immagine fornisce informazioni agli utenti vedenti (un'icona facilmente riconoscibile per indicare che l'utente è anonimo), ma queste informazioni sono già disponibili nel testo.
+        </li>
+        <li>
+            Rimuovi la parola "icona" dal testo alternativo per le icone. Sapere che l'immagine sarebbe un'icona se ci fosse non aiuta a trasmetterne il vero scopo.
+        </li>
+    </ul>
+    <textarea cols="80" rows="5">
+        <img src="anonymous.png" alt=""> Un utente anonimo ha scritto:
+        <p>Lorem ipsum dolor sit amet.</p>
+        <a href="https://google.com/"><img src="edit.png" alt="Modifica"></a> /
+        <a href="https://google.com/"><img src="delete.png" alt="Elimina"></a>
+    </textarea>
+    <br>
+    <div>
+        <img src="anonymous.png" alt=""> Un utente anonimo ha scritto:
+        <p>Lorem ipsum dolor sit amet.</p>
+        <a href="https://google.com/"><img src="edit.png" alt="Modifica"></a> /
+        <a href="https://google.com/"><img src="delete.png" alt="Elimina"></a>
+    </div>
+    <h4>
+        Note a piè di pagina:
+    </h4>
+    <p>
+        Esiste una differenza semantica tra l'includere un attributo alt vuoto e escluderlo del tutto. Un attributo alt vuoto indica che l'immagine non è una parte chiave del contenuto (come è vero in questo caso - è semplicemente un'immagine aggiuntiva che non è necessaria per capire il resto) e quindi può essere omesso dal rendering. Tuttavia, l'assenza di un attributo alt indica che l'immagine è una parte chiave del contenuto e che semplicemente non esiste un equivalente testuale disponibile per il rendering.
+    </p>
+    
+    <h3>
+        Immagine Responsive Utilizzando l'Attributo srcset
+    </h3>
+    <h4>
+        Utilizzo di srcset con sizes:
+    </h4>
+    <p>
+        L'attributo `srcset` nell'elemento `img` in HTML è utilizzato per fornire al browser una serie di URL di immagini alternative, ciascuna con una diversa risoluzione o dimensione. Questo permette al browser di selezionare automaticamente l'immagine più adatta in base alle caratteristiche dello schermo del dispositivo e alla larghezza del viewport, migliorando così le prestazioni e l'esperienza utente.
+        <br>
+        Ecco come si utilizza l'attributo `srcset`:
+    </p>
+    <textarea cols="60" rows="9">
+        <img src="https://placehold.co/1024x682"
+             srcset="https://placehold.co/1024x682 1024w,
+                     https://placehold.co/800x533 800w,
+                     https://placehold.co/600x400 600w,
+                     https://placehold.co/300x200 300w"
+             alt="Descrizione dell'immagine"
+             width="1024"
+        >
+    </textarea>
+    <br>
+    <img src="https://placehold.co/1024x682"
+         srcset="https://placehold.co/1024x682 1024w,
+                 https://placehold.co/800x533 800w,
+                 https://placehold.co/600x400 600w,
+                 https://placehold.co/300x200 300w"
+         alt="Descrizione dell'immagine"
+         width="1024"
+    >
+    <ul>
+        Nell'esempio sopra:
+        <li>
+            L'attributo `src` definisce l'URL dell'immagine da caricare per i dispositivi che non supportano `srcset` o in caso di mancata corrispondenza con le opzioni `srcset`.
+        </li>
+        <li>
+            L'attributo `srcset` contiene una lista di URL di immagini seguiti dalla larghezza preferita dell'immagine in pixel (ad esempio, `800w` e `1200w`).
+        </li>
+        <li>
+            Il browser selezionerà l'immagine migliore in base alle sue capacità e alla larghezza del viewport. Se la larghezza del viewport è inferiore a 800px e superiore a 600px, verrà utilizzata l'immagine 800w. Se la larghezza del viewport è inferiore a 1024px, ma superiore a 800px, verrà utilizzata l'immagine 1024px.
+        </li>
+    </ul>
+    <p>
+        Dunque ricordiamo che l'attributo srcset, indicato con un valore in w, non si riferisce alla larghezza dell'immagine ma alla larghezza della viewport.
+        È importante notare che puoi specificare più immagini nell'attributo `srcset` con diverse larghezze preferite, e il browser selezionerà quella più appropriata in base alle capacità e alla dimensione dello schermo del dispositivo. Se stiamo usando il pc per visualizzare questo sito, molto probabilmente si caricherà l'immagine a 1024px; invece su dispositivi con risoluzione minore si caricano gli altri.
+        <br>
+        L'attributo `sizes` può anche essere utilizzato in combinazione con `srcset` per fornire ulteriori indicazioni al browser su come selezionare le immagini in base alle dimensioni del viewport. Per poter funzionare, l'attributo size non deve essere scavalcato da un attributo width o una proprietà CSS width (si dice override)
+    </p>
+    <textarea cols="60" rows="11">
+        <img sizes="(min-width: 1200px) 580px,
+                    (min-width: 640px) 48vw,
+                    98vw"
+             src="https://placehold.co/300x200" 
+             srcset="https://placehold.co/1024x682 1024w,
+                     https://placehold.co/800x533 800w,
+                     https://placehold.co/600x400 600w,
+                     https://placehold.co/300x200 300w"
+             alt="ciao"
+        >
+    </textarea>
+    <br>
+    <img sizes="(min-width: 1200px) 580px,
+                (min-width: 640px) 48vw,
+                98vw"
+         src="https://placehold.co/300x200" 
+         srcset="https://placehold.co/1024x682 1024w,
+                 https://placehold.co/800x533 800w,
+                 https://placehold.co/600x400 600w,
+                 https://placehold.co/300x200 300w"
+         alt="ciao"
+    >
+    <ul>
+        L'attributo `sizes` funziona come le query media, descrivendo quanto spazio l'immagine occupa nella finestra di visualizzazione. Cambiando la larghezza della finestra di visualizzazione, cambia l'adattamento dell'immagine.
+        <li>
+            Se la finestra di visualizzazione è più grande di 1200px, l'immagine sarà esattamente di 580px (ad esempio, se il nostro contenuto è centrato in un contenitore largo al massimo 1200px, l'immagine ne occuperà metà meno i margini).
+        </li>
+        <li>
+            Se la finestra di visualizzazione è compresa tra 640px e 1200px, l'immagine occuperà il 48% della finestra di visualizzazione (ad esempio, l'immagine si adatta alla larghezza della nostra pagina e ne occupa la metà meno i margini).
+        </li>
+        <li>
+            Se la finestra di visualizzazione è di un'altra dimensione, nel nostro caso inferiore a 640px, l'immagine occuperà il 98% della finestra di visualizzazione (ad esempio, l'immagine si adatta alla larghezza della nostra pagina e ne occupa tutta la larghezza, meno i margini). La condizione media deve essere omessa per l'ultimo elemento.
+        </li>
+    </ul>
+    <p>
+        L'attributo src è sempre obbligatorio per la fonte dell'immagine. Nel caso di utilizzo con srcset, src fornirà un'immagine di fallback nel caso in cui il browser non supporti srcset.
+    </p>
+    <h4>
+        Utilizzo di srcset senza sizes
+    </h4>
+    <textarea cols="55" rows="7">
+        <img src="img/hello-300.jpg" alt="ciao"
+            srcset="https://placehold.co/1024x682 4x,
+                    https://placehold.co/800x533 3x,
+                    https://placehold.co/600x400 2x,
+                    https://placehold.co/300x200 1x"
+        >
+    </textarea>
+    <br>
+    <img src="img/hello-300.jpg" alt="ciao"
+        srcset="https://placehold.co/1024x682 4x,
+                https://placehold.co/800x533 3x,
+                https://placehold.co/600x400 2x,
+                https://placehold.co/300x200 1x"
+    >
+    <ul>
+        srcset fornisce un elenco di immagini disponibili, con il descrittore del rapporto di pixel del dispositivo x.
+        <li>
+            Se il rapporto di pixel del dispositivo è 1, usa https://placehold.co/300x200
+        </li>
+        <li>
+            Se il rapporto di pixel del dispositivo è 2, usa https://placehold.co/600x400
+        </li>
+        <li>
+            Se il rapporto di pixel del dispositivo è 3, usa https://placehold.co/800x533
+        </li>
+        <li>
+            Se il rapporto di pixel del dispositivo è 4, usa https://placehold.co/1024x682
+        </li>
+    </ul>
+    <p>
+        L'attributo src è sempre obbligatorio per la fonte dell'immagine. Nel caso di utilizzo con srcset, src fornirà un'immagine di fallback nel caso in cui il browser non supporti srcset.
+    </p>
+    <h3>
+        Immagine Responsive Utilizzando l'Elemento picture
+    </h3>
+    <textarea cols="90" rows="7">
+        <picture>
+            <source media="(min-width: 1000px)" srcset="https://placehold.co/1024x682">
+            <source media="(min-width: 600px)" srcset="https://placehold.co/800x533">
+            <source media="(min-width: 450px)" srcset="https://placehold.co/600x400">
+            <img src="https://placehold.co/300x200" style="width:auto;" alt="img">
+        </picture>
+    </textarea>
+    <br>
+    <picture>
+        <source media="(min-width: 1000px)" srcset="https://placehold.co/1024x682">
+        <source media="(min-width: 600px)" srcset="https://placehold.co/800x533">
+        <source media="(min-width: 450px)" srcset="https://placehold.co/600x400">
+        <img src="https://placehold.co/300x200" style="width:auto;" alt="img">
+    </picture>
+    <p>
+        Per visualizzare diverse immagini in base alla larghezza dello schermo, è necessario includere tutte le immagini utilizzando il tag source in un tag picture come mostrato nell'esempio precedente.
+        <ul>
+            Risultato:
+            <li>
+                Su schermi con larghezza minima di schermo >1000px, mostra https://placehold.co/1024x682
+            </li>
+            <li>
+                Su schermi con larghezza minima di schermo >600px, mostra https://placehold.co/800x533
+            </li>
+            <li>
+                Su schermi con larghezza minima di schermo >450px, mostra https://placehold.co/600x400
+            </li>
+            <li>
+                Su schermi con altra larghezza minima di schermo, mostra https://placehold.co/300x200
+            </li>
+        </ul>
+    </p>
+    <h3>
+        Altri attributi di img
+    </h3>
+    <ul>
+        <li>
+            <details>
+                <summary>
+                    width e height: (opzionale)  specificano le dimensioni dell'immagine in pixel.
+                </summary>
+                <p>
+                    In generale, è una pratica migliore utilizzare CSS o un sistema di layout responsivo per gestire le dimensioni delle immagini, in modo che possano adattarsi in modo flessibile alle diverse dimensioni dello schermo senza causare distorsioni. Gli attributi height e width dovrebbero essere utilizzati solo quando è necessario un controllo specifico sulle dimensioni dell'immagine e quando si è sicuri di rispettare le proporzioni originali.
+                </p>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary>
+                    crossorigin: Specifica come l'elemento gestisce le richieste cross-origin.
+                </summary>
+                <p>
+                    L'attributo `crossorigin` nell'elemento `img` in HTML è utilizzato per gestire le politiche di sicurezza quando si caricano immagini da un dominio diverso dal dominio della pagina web corrente. Questo attributo è particolarmente utile quando si lavora con risorse come immagini, font o script da fonti esterne, poiché può prevenire potenziali problemi di sicurezza noti come "violation of same-origin policy" (violazione della politica dello stesso dominio).
+                </p>
+                <ul>
+                    L'attributo `crossorigin` può avere diversi valori:
+                    <li>
+                        anonymous: Questo è il valore predefinito. Indica che il browser caricherà l'immagine in modo anonimo, senza includere le credenziali dell'utente nella richiesta. Questo è il valore più comune e appropriato quando si lavora con immagini di dominio incrociato.
+                    </li>
+                    <li>
+                        use-credentials: Indica che il browser caricherà l'immagine includendo le credenziali dell'utente nella richiesta, come i cookie. Questo può essere utile quando si desidera che il server dell'immagine autentichi l'utente, ma richiede che il server supporti tale funzionalità.
+                    </li>
+                </ul>
+                <p>
+                    Ecco un esempio di come puoi utilizzare l'attributo `crossorigin`:
+                </p>
+                <textarea cols="100" rows="2">
+                    <img src="https://example.com/image.jpg" alt="Immagine" crossorigin="anonymous">
+                </textarea>
+                <p>
+                    In questo esempio, l'immagine viene caricata con l'attributo `crossorigin` impostato su "anonymous", indicando che il browser deve caricare l'immagine in modo anonimo.
+                </p>
+                <p>
+                    L'utilizzo dell'attributo `crossorigin` è importante per evitare problemi di sicurezza, specialmente quando si lavora con risorse da fonti esterne. Tuttavia, è importante notare che il server che ospita l'immagine deve essere configurato per supportare il caricamento incrociato e per gestire correttamente le richieste con gli attributi `crossorigin`.
+                </p>
+            </details>
+        </li>
+        <li>
+            usemap: Specifica il nome di una mappa di immagine da utilizzare. Il prossimo argomento sarà questo.
+        </li>
+        <li>
+            ismap: Indica se l'immagine è una mappa di immagine lato server.
+        </li>
+    </ul>
+
+
+    <hr>
+    <h2>
+        Image map
+    </h2>
+    <h3>
+        Introduzione alle mappe di immagini
+    </h3>
+    <p>
+        Le "image map" (mappa delle immagini) sono un meccanismo che consente di rendere diverse aree di un'immagine cliccabili e associate a link o azioni specifiche. Questo è utile quando si desidera creare collegamenti interattivi in parti specifiche di un'immagine, ad esempio in una mappa geografica o in un'immagine con aree di interesse.
+        <br>
+        Le image map sono spesso utilizzate insieme all'elemento `map` e agli elementi `area` in HTML. Ecco come funzionano:
+    </p>
+    <ul>
+        <li>
+            Creazione dell'immagine: Inizialmente, devi creare l'immagine a cui desideri aggiungere le aree cliccabili. Questa immagine può essere qualsiasi formato di immagine supportato (ad esempio, JPEG, PNG, GIF).
+        </li>
+        <li>
+            Creazione dell'elemento `map`: Devi creare un elemento `map` e assegnargli un nome univoco utilizzando l'attributo `name` che dovrà avere lo stesso valore dell'attributo usemap del tag img (escludendo #). Questo elemento conterrà le definizioni delle diverse aree cliccabili dell'immagine.
+        </li>
+        <li>
+            Creazione degli elementi `area`: All'interno dell'elemento `map`, devi creare gli elementi `area` che rappresentano le aree cliccabili dell'immagine. Ogni elemento `area` può avere attributi come `shape` (forma dell'area) e `coords` (coordinate dell'area). Inoltre, puoi specificare l'URL o l'azione associata all'area cliccabile utilizzando gli attributi `href` o `onclick`.
+        </li>
+    </ul>
+    <p>
+        Ecco un esempio di come potrebbe apparire l'uso delle image map (metto il bordo all'immagine per far capire che è una sola):
+    </p>
+    <textarea cols="120" rows="7">
+        <img src="media/figure.gif" alt="Mappa interattiva" usemap="#map-name">
+        <map name="map-name">
+            <area shape="polygon" coords="79,6,5,134,153,134" href="../../index.html" alt="triangolo">
+            <area shape="rectangle" coords="177,6,306,134" href="index1.html" alt="quadrato">
+            <area shape="circle" coords="397,71,65" onclick="myFunction2()" alt="cerchio">
+        </map>
+    </textarea>
+    <img src="media/figure.gif" alt="Mappa interattiva" usemap="#map-name">
+    <map name="map-name">
+        <area shape="polygon" coords="79,6,5,134,153,134" href="../../index.html" alt="triangolo">
+        <area shape="rectangle" coords="177,6,306,134" href="index1.html" alt="quadrato">
+        <area shape="circle" coords="397,71,65" onclick="myFunction2()" alt="cerchio">
+    </map>
+    <p id="cerchio">
+
+    </p>
+    <ul>
+        Nell'esempio sopra:
+        <li>
+            L'immagine "media/figure.gif" viene visualizzata nell'elemento `img`.
+        </li>
+        <li>
+            L'elemento `map` con l'attributo `name="map-name"` definisce la mappa delle immagini.
+        </li>
+        <li>
+            Gli elementi `area` definiscono 3 aree cliccabili: un triangolo, un rettangolo e un cerchio. Le coordinate `coords` definiscono i punti che delimitano l'area cliccabile.
+        </li>
+        <li>
+            Gli attributi `href` specificano le pagine a cui gli utenti verranno reindirizzati quando cliccano su ciascuna area.
+        </li>
+        <li>
+            Gli attributi `alt` specificano il testo alternativo.
+        </li>
+    </ul>
+    <p>
+        Ad esempio la figura del triangolo riporta alla homepage, la figura del quadrato alla pagine con la spiegazione del CSS, e la figura del cerchio crea un nuovo paragrafo dopo la figura.
+    </p>
+    <p>
+        Le image map possono essere un modo efficace per creare interazioni interattive all'interno di immagini e fornire ai visitatori la possibilità di esplorare contenuti correlati alle aree specifiche dell'immagine.
+        <br>
+        Dovresti notare che il browser riconosce le aree quando il cursore si trasforma in un puntatore (questo succede solo se alle aree viene dato un iperlink, ad esempio al cerchio no).
+    </p>
+    <h3>
+        I possibili valori di coords e shape
+    </h3>
+    <ul>
+        <li>
+            shape: La forma dell'elemento `area`. Può essere impostato su default per selezionare l'intera immagine (nessun attributo coords necessario), circle o circ per un cerchio, rectangle o rect per un rettangolo, e polygon o poly per un'area poligonale specificata da punti angolari.
+        </li>
+        <li>
+            coords
+            Le coordinate che delimitano l'area selezionabile. Quando shape="polygon", questo dovrebbe essere impostato su una lista di coppie "x, y" separate da virgole (ad esempio, shape="polygon" coords="x1, y1, x2, y2, x3, y3, ...").
+            <br>
+            Quando shape="rectangle", questo dovrebbe essere impostato su sinistra, in alto, destra, in basso. Quando shape="circle", questo dovrebbe essere impostato su centroX, centroY, raggio.
+        </li>
+    </ul>
+
+
+
+
+
+    <hr>
+    <h2>
+        Elementi input
+    </h2>
+    <p>
+        Una componente chiave dei sistemi web interattivi sono gli elementi `input`, ossia elementi HTML progettati per ricevere un tipo specifico di input dagli utenti. Diversi tipi di elementi di input possono regolare i dati inseriti per adattarli a un formato specifico e fornire sicurezza all'inserimento delle password.
+    </p>
+    <h3>
+        Campo di testo
+    </h3>
+    <p>
+        Il tipo di input più basilare e il tipo di input predefinito se non viene specificato alcun tipo. Questo tipo di input definisce un campo di testo a singola riga con ritorni automatici delle linee rimossi dal valore di input. Tutti gli altri caratteri possono essere inseriti in questo campo. Gli elementi `input` vengono utilizzati all'interno di un elemento `form` per dichiarare controlli di input che consentono agli utenti di inserire dati.
+    </p>
+    <textarea cols="90" rows="4">
+        <input type="text">
+        <!-- oppure (senza specificare un tipo, utilizzando l'attributo predefinito): -->
+        <input>
+    </textarea>
+    <br>
+    <input type="text">
+    <!-- oppure (senza specificare un tipo, utilizzando l'attributo predefinito): -->
+    <input>
+    <p>
+        La larghezza predefinita di un campo di testo di input è di 20 caratteri. Questo può essere modificato specificando un valore per l'attributo size in questo modo:
+    </p>
+    <textarea cols="50" rows="2">
+        <input type="text" size="50">
+    </textarea>
+    <br>
+    <input type="text" size="50">
+    <p>
+        L'attributo size è nettamente diverso dal definire una larghezza con CSS. Utilizzare una larghezza definisce un valore specifico (in pixel, percentuale dell'elemento padre, ecc.) che l'input deve sempre avere. L'utilizzo dell'attributo size calcola la quantità di larghezza da allocare in base al font utilizzato e a quanto sono larghi normalmente i caratteri.
+        <br>
+        <strong>Nota:</strong> L'utilizzo dell'attributo size non limita intrinsecamente il numero di caratteri che possono essere inseriti nella casella, ma solo quanto ampia è visualizzata la casella. Per limitare la lunghezza, consulta la Validazione dell'Input.
+    </p>
+    <h3>
+        Textarea
+    </h3>
+    <p>
+        Un campo di input consente solo una riga di testo. Se hai bisogno di un input di testo multi-linea per una quantità significativa di testo, utilizza invece un elemento `textarea` (ossia quello che usiamo per scriverci codice sul browser).
+    </p>
+    <ul>
+        Per i tag textarea abbiamo gli attributi:
+        <li>
+            rows per decidere quante righe debba essere alto (almeno inizialmente, prima che sia modificato nella pagina)
+            <br>
+            le righe di default sono 2
+        </li>
+        <li>
+            cols per decidere quante colonne debba essere lungo (almeno inizialmente, prima che sia modificato nella pagina)
+            <br>
+            le colonne di default sono 20
+        </li>
+        <li>
+            name per identificare un elemento HTML all'interno di un modulo o di una richiesta HTTP. Questo attributo consente di inviare dati al server in modo strutturato e prevedibile. (lo vedremo molto in futuro)
+        </li>
+    </ul>
+    <textarea name="testo a caso" cols="30" rows="10">questo testo viene scritto di default e può essere cancellato</textarea>
+    <p>
+        il tag textarea ha come suo valore interno al tag di apertura e di chiusura il valore che viene scritto di default nell'inserimento testo. Può essere modificato a piacere, a meno che non venga messo l'attributo readonly, che rende impossibile la modifica del testo.
+    </p>
+    <textarea readonly cols="40" rows="2">testo di default non modificabile</textarea>
+
+
+
+    <h3>
+        Caselle di Controllo e Pulsanti Radio
+    </h3>
+    <p>
+        Panoramica:
+        <br>
+        Le caselle di controllo e i pulsanti radio vengono scritti con il tag HTML `input`, e il loro comportamento è definito nella specifica HTML.
+        <br>
+        La casella di controllo o il pulsante radio più semplice è un elemento `input` con un attributo type di checkbox o radio, rispettivamente:
+    </p>
+    <textarea cols="30" rows="3">
+        <input type="checkbox">
+        <input type="radio">
+    </textarea>
+    <br>
+    <input type="checkbox">
+    <input type="radio">
+    <p>
+        Un singolo elemento casella di controllo autonomo viene utilizzato per una singola opzione binaria, come una domanda a cui si può rispondere con sì o no. Le caselle di controllo sono indipendenti, il che significa che l'utente può selezionare tutte le scelte che desidera in un gruppo di caselle di controllo. In altre parole, la selezione di una casella di controllo non deseleziona le altre caselle di controllo nello stesso gruppo.
+    </p>
+    <p>
+        I pulsanti radio di solito vengono raggruppati (se non sono raggruppati con un altro pulsante radio, probabilmente intendevi utilizzare una casella di controllo al suo posto) identificati dall'uso dello stesso attributo name su tutti i pulsanti all'interno di quel gruppo. La selezione dei pulsanti radio è mutualmente esclusiva, il che significa che l'utente può selezionare solo una scelta da un gruppo di pulsanti radio. Quando un pulsante radio è selezionato, ogni altro pulsante radio con lo stesso nome che era stato precedentemente selezionato viene deselezionato.
+        <br>
+        Esempio:
+    </p>
+    <textarea cols="70" rows="4">
+        <input type="radio" name="colore" id="rosso" value="#F00"> Rosso
+        <input type="radio" name="colore" id="verde" value="#0F0"> Verde
+        <input type="radio" name="colore" id="blu" value="#00F"> Blu
+    </textarea>
+    <br>
+    <input type="radio" name="colore" id="rosso" value="#F00"> Rosso
+    <input type="radio" name="colore" id="verde" value="#0F0"> Verde
+    <input type="radio" name="colore" id="blu" value="#00F"> Blu
+    <p>
+        Quando vengono visualizzati, i pulsanti radio appaiono come un cerchio (non selezionato) o un cerchio riempito (selezionato). Le caselle di controllo appaiono come un quadrato (non selezionato) o un quadrato riempito (selezionato). A seconda del browser e del sistema operativo, il quadrato ha talvolta angoli arrotondati.
+    </p>
+    <h4>
+        Attributi delle caselle di controllo e dei pulsanti radio
+    </h4>
+    <ul>
+        Le caselle di controllo e i pulsanti radio hanno vari attributi per controllare il loro comportamento:
+        <li>
+            valore: Come qualsiasi altro elemento di input, l'attributo value specifica il valore stringa da associare al pulsante in caso di invio del modulo. Tuttavia, le caselle di controllo e i pulsanti radio sono speciali nel senso che quando il valore viene omesso negli attributi, si imposta il valore predefinito su "on" quando viene inviato, anziché inviare un valore vuoto. L'attributo value non viene riflessa nell'aspetto del pulsante.
+        </li>
+        <li>
+            checked: L'attributo checked specifica lo stato iniziale di una casella di controllo o di un pulsante radio. Si tratta di un attributo booleano e può essere omesso.
+            Ciascuna di queste sono modi validi ed equivalenti per definire un pulsante radio p una casella di controllo selezionata:
+            <br>
+            <textarea cols="60" rows="9">
+                <input type="radio" checked>
+                <input type="radio" checked="">
+                <input type="radio" checked="checked">
+                <input type="radio" checked="ChEcKeD">
+                <input type="checkbox" checked>
+                <input type="checkbox" checked="">
+                <input type="checkbox" checked="checked">
+                <input type="checkbox" checked="ChEcKeD">
+            </textarea>
+            <br>
+            <input type="radio" checked>
+            <input type="radio" checked="">
+            <input type="radio" checked="checked">
+            <input type="radio" checked="ChEcKeD">
+            <input type="checkbox" checked>
+            <input type="checkbox" checked="">
+            <input type="checkbox" checked="checked">
+            <input type="checkbox" checked="ChEcKeD">
+            <p>
+                L'assenza dell'attributo checked è l'unico syntax valido per un pulsante non selezionato:
+            </p>
+            <textarea cols="40" rows="3">
+                <input type="radio">
+                <input type="checkbox">
+            </textarea>
+            <br>
+            <input type="radio">
+            <input type="checkbox">
+        </li>
+    </ul>
+    Quando si resetta un `form`, le caselle di controllo e i pulsanti radio tornano allo stato del loro attributo checked.
+    
+
+    <h4>
+        Accessibilità
+    </h4>
+    <ul>
+        <li>
+            <p>
+                ETICHETTE
+                <br>
+                Per dare contesto ai pulsanti e mostrare agli utenti a cosa serve ciascun pulsante, ognuno di essi dovrebbe avere un'etichetta. Questo può essere fatto utilizzando un elemento `label` per avvolgere il pulsante. Inoltre, ciò rende l'etichetta cliccabile, consentendo di selezionare il pulsante corrispondente.
+                <br>
+                Esempio:
+            </p>
+            <textarea cols="80" rows="4">
+                <label>
+                    <input type="radio" name="colore1" value="#F00"> Rosso
+                </label>
+            </textarea>
+            <br>
+            <label>
+                <input type="radio" name="colore1" value="#F00"> Rosso
+            </label>
+            <p>
+                o con un elemento `label` con un attributo for impostato sull'attributo id del pulsante:
+            </p>
+            <textarea cols="80" rows="3">
+                <input type="checkbox" name="colore2" value="#F00" id="rosso2">
+                <label for="rosso2">Rosso</label>
+            </textarea>
+            <br>
+            <input type="checkbox" name="colore2" value="#F00" id="rosso2">
+            <label for="rosso2">Rosso</label>
+        </li>
+        <br>
+        <li>
+            <p>
+                GRUPPI DI PULSANTI
+                <br>
+                Poiché ciascun pulsante radio influisce sugli altri nel gruppo, è comune fornire un'etichetta o un contesto per l'intero gruppo di pulsanti radio.
+                <br>
+                Per fornire un'etichetta per l'intero gruppo, i pulsanti radio dovrebbero essere inclusi in un elemento `fieldset` con un elemento `legend` al suo interno.
+                <br>
+                Esempio:
+            </p>
+            <textarea cols="100" rows="16">
+                <fieldset>
+                    <legend>Colore del tema:</legend>
+                    <p>
+                        <input type="radio" name="color" id="red" value="#F00">
+                        <label for="red">Rosso</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="color" id="green" value="#0F0">
+                        <label for="green">Verde</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="color" id="blue" value="#00F">
+                        <label for="blue">Blu</label>
+                    </p>
+                </fieldset>
+            </textarea>
+            <fieldset>
+                <legend>Colore del tema:</legend>
+                <p>
+                    <input type="radio" name="color" id="red" value="#F00">
+                    <label for="red">Rosso</label>
+                </p>
+                <p>
+                    <input type="radio" name="color" id="green" value="#0F0">
+                    <label for="green">Verde</label>
+                </p>
+                <p>
+                    <input type="radio" name="color" id="blue" value="#00F">
+                    <label for="blue">Blu</label>
+                </p>
+            </fieldset>
+            <p>
+                Le caselle di controllo possono anche essere raggruppate in modo simile, con un fieldset e una legenda che identifica il gruppo di caselle di controllo correlate. Tuttavia, tieni presente che le caselle di controllo non dovrebbero condividere lo stesso nome perché non sono mutualmente esclusive. Farlo comporterà l'invio da parte del modulo di valori multipli per la stessa chiave e non tutti i linguaggi lato server gestiscono questa situazione allo stesso modo (comportamento non definito). Ciascuna casella di controllo dovrebbe avere un nome unico o utilizzare un set di parentesi quadre ([]) per indicare che il modulo deve inviare un array di valori per quella chiave (poi vedremo in futuro).
+            </p>
+            <p>
+                Il metodo da scegliere dovrebbe dipendere da come hai intenzione di gestire i dati del modulo lato client o lato server. Inoltre, dovresti mantenere la legenda breve, poiché alcune combinazioni di browser e lettori di schermo leggono la legenda prima di ciascun campo di input nel fieldset.
+            </p>
+        </li>
+    </ul>
+
+    <h3>
+        Convalida dell'Input
+    </h3>
+    <p>
+        La convalida dell'input HTML viene effettuata automaticamente dal browser basandosi su attributi speciali sull'elemento di input. Questo può sostituire parzialmente o completamente la convalida dell'input JavaScript. Questo tipo di convalida può essere aggirato dall'utente tramite richieste HTTP appositamente progettate, quindi non sostituisce la convalida dell'input lato server. La convalida avviene solo quando si cerca di inviare il modulo, quindi tutti gli input restrittivi devono essere all'interno di un modulo affinché la convalida si verifichi (a meno che tu non stia usando JavaScript). Tieni presente che gli input che sono disabilitati o di sola lettura non attiveranno la convalida.
+    </p>
+    <p>
+        Alcuni tipi di input più recenti (come email, url, tel, date e molti altri) vengono convalidati automaticamente e non richiedono vincoli di convalida personalizzati.
+        <br>
+        Tutte queste specifiche sono supportate in versioni di HTML ≥ 5
+    </p>
+    <ul>
+        <li>
+            <strong>required</strong>
+            <br>
+            Utilizza l'attributo required per indicare che un campo deve essere compilato per superare la convalida.
+            <br>
+            <textarea cols="30" rows="2">
+                <input required>
+            </textarea>
+            <br>
+            <input required>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+        <li>
+        </li>
+    </ul>
+   
+   **Lunghezza minima/massima**
+   Utilizza gli attributi minlength e maxlength per indicare i requisiti di lunghezza. La maggior parte dei browser impedisce all'utente di digitare più di un certo numero di caratteri nella casella, impedendo loro di rendere la loro voce non valida prima ancora di tentare la presentazione del modulo.
+   ```html
+   <input minlength="3">
+   <input maxlength="15">
+   <input minlength="3" maxlength="15">
+   ```
+   
+   **Specificare un intervallo**
+   Utilizza gli attributi min e max per limitare l'intervallo di numeri che un utente può inserire in un input di tipo numero o range.
+   ```html
+   Marks: <input type="number" size="6" name="marks" min="0" max="100" />
+   Subject Feedback: <input type="range" size="2" name="feedback" min="1" max="5" />
+   ```
+   
+   **
+   Corrispondere a un Modello**
+   Per un controllo più preciso, utilizza l'attributo pattern per specificare qualsiasi espressione regolare che deve essere corrisposta per superare la convalida. Puoi anche specificare un titolo, che verrà incluso nel messaggio di convalida se il campo non viene superato.
+   ```html
+   <input pattern="\d*" title="Solo numeri, per favore.">
+   ```
+   
+   **File di Accettazione Tipo**
+   Per i campi di input di tipo file, è possibile accettare solo determinati tipi di file, come video, immagini, audio, estensioni di file specifiche o determinati tipi di supporti. Ad esempio:
+   ```html
+   <input type="file" accept="image/*" title="Sono ammesse solo immagini">
+   ```
+   È possibile specificare valori multipli separati da virgola, ad esempio:
+   ```html
+   <input type="file" accept="image/*,.rar,application/zip">
+   ```
+   Nota: Aggiungere l'attributo novalidate all'elemento del modulo o l'attributo formnovalidate al pulsante di invio impedisce la convalida degli elementi del modulo. Ad esempio:
+   ```html
+   <form>
+    <input type="text" name="nome" required>
+    <input type="email" name="email" required>
+    <input pattern="\d*" name="numero" required>
+    <input type="submit" value="Pubblica"> <!-- il modulo verrà convalidato -->
+    <input type="submit" value="Salva" formnovalidate> <!-- il modulo NON verrà convalidato -->
+   </form>
+   ```
+   Il modulo ha campi che sono obbligatori per "pubblicare" la bozza ma non sono obbligatori per "salvare" la bozza.
+   
+   **Sezione 17.4: Colore**
+   
+   ```html
+   <input type="color" name="colorepreferito" value="#ff0000">
+   ```
+   Nei browser che lo supportano, l'elemento di input con un attributo di tipo valore colore crea un controllo simile a un pulsante, con un colore uguale al valore dell'attributo di colore (predefinito a nero se il valore non è specificato o è un formato esadecimale non valido).
+   Cliccando su questo pulsante si apre il widget del colore del sistema operativo, che consente all'utente di selezionare un colore.
+   Il fallback per i browser che non supportano questo tipo di input è un input regolare di tipo testo.
+   
+   **Sezione 17.5: Password**
+   ```html
+   <input type
+   
+   ="password" name="password">
+   ```
+   L'elemento di input con un attributo di tipo valore password crea un campo di testo a riga singola simile all'input di tipo testo, tranne che il testo non viene visualizzato mentre l'utente lo inserisce.
+   ```html
+   <input type="password" name="password" placeholder="Password">
+   ```
+   Il testo segnaposto viene mostrato in formato normale e viene sovrascritto automaticamente quando un utente inizia a digitare.
+   Nota: Alcuni browser e sistemi modificano il comportamento predefinito del campo password per visualizzare anche il carattere digitato più di recente per breve tempo, come ad esempio:
+   
+   **Sezione 17.6: File**
+   ```html
+   <input type="file" name="inviafile">
+   ```
+   Gli input di file consentono agli utenti di selezionare un file dal proprio sistema di file locale per l'uso con la pagina corrente. Se utilizzati in combinazione con un elemento di modulo, possono essere utilizzati per consentire agli utenti di caricare file su un server (per ulteriori informazioni, vedere Caricamento dei file).
+   L'esempio seguente consente agli utenti di utilizzare l'input del file per selezionare un file dal proprio sistema di file e caricare quel file su uno script sul server chiamato upload_file.php.
+   ```html
+   <form action="upload_file.php" method="post" enctype="multipart/form-data">
+    Seleziona il file da caricare:
+    <input type="file" name="fileSubmission" id="fileSubmission">
+    <input type="submit" value="Carica il tuo file" name="submit">
+   </form>
+   ```
+
+
+
+
+
+
+
+
+    <ul>Vediamo gli attributi di un tag input
+        <li>
+            class Indica la classe dell'input
+        </li>
+        <li>
+            id Indica l'ID dell'input
+        </li>
+        <li>
+            type Identifica il tipo di controllo di input da visualizzare. I valori accettabili sono hidden, text, tel, url, email,password, date, time, number, range, color, checkbox, radio, file, submit, image, reset e button. Se non specificato, se il valore non è valido o se il browser non supporta il tipo specificato, il valore predefinito è text.
+        </li>
+        <li>
+            name Indica il nome dell'input
+        </li>
+        <li>
+            disabled Valore booleano che indica che l'input dovrebbe essere disabilitato. I controlli disabilitati non possono essere modificati, non vengono inviati durante la sottomissione del modulo e non possono ricevere il focus.
+        </li>
+        <li>
+            checked Quando il valore dell'attributo type è radio o checkbox, la presenza di questo attributo booleano indica che il controllo è selezionato per impostazione predefinita; in caso contrario viene ignorato.
+        </li>
+        <li>
+            multiple HTML5 Indica che possono essere passati più file o valori (si applica solo agli input di tipo file ed email)
+        </li>
+        <li>
+            placeholder HTML5 Suggerisce all'utente cosa può essere inserito nel controllo. Il testo del segnaposto non deve contenere ritorni a capo o avanzamenti di riga.
+        </li>
+        <li>
+            autocomplete HTML5 Indica se il valore del controllo può essere automaticamente completato dal browser.
+        </li>
+        <li>
+            readonly Valore booleano che indica che l'input non è modificabile. I controlli in modalità sola lettura vengono comunque inviati durante la sottomissione del modulo, ma non riceveranno il focus. HTML5: Questo attributo viene ignorato quando il valore dell'attributo type è impostato su hidden, range, color, checkbox, radio, file o button.
+        </li>
+        <li>
+            required HTML5 Indica che un valore deve essere presente o che l'elemento deve essere selezionato affinché il modulo venga inviato.
+        </li>
+        <li>
+            alt Un testo alternativo per le immagini, nel caso in cui non vengano visualizzate.
+        </li>
+        <li>
+            autofocus L'elemento `input` dovrebbe ricevere il focus quando la pagina si carica.
+        </li>
+        <li>
+            value Specifica il valore dell'elemento `input`.
+        </li>
+        <li>
+            step L'attributo step specifica gli intervalli numerici consentiti. Funziona con i seguenti tipi di input: number, range, date, datetime-local, month, time e week.
+        </li>
+    </ul>
+    <h3>attributi dei tag input</h3>
+    <p>
+            Gli attributi che si possono utilizzare in un tag `input` variano a seconda del tipo di input che si sta creando. Ecco alcuni degli attributi più comuni che vengono utilizzati con il tag `input`:
+    </p>
+    <ul>Vedi anche questo
+        <li>
+            type: Specifica il tipo di input. Alcuni valori possibili sono "text" (per input di testo), "password" (per password), "email" (per indirizzo email), "number" (per numeri), "checkbox" (per caselle di controllo), "radio" (per input radio), ecc.
+        </li>
+        <li>
+            name: Definisce il nome dell'input, che verrà utilizzato per identificare l'input quando il modulo viene inviato. È importante avere nomi univoci per gli input all'interno di un modulo.
+        </li>
+        <li>
+            value: Di solito specifica il valore predefinito o iniziale dell'input. Ma se usato 
+        </li>
+        <li>
+            placeholder: Fornisce un suggerimento o un esempio di ciò che dovrebbe essere inserito nell'input. Questo testo scompare quando l'utente inizia a digitare.
+        </li>
+        <li>
+            required: Indica se l'input è obbligatorio o meno. Se presente, l'utente deve fornire un valore prima di poter inviare il modulo.
+        </li>
+        <li>
+            disabled: Disabilita l'input, impedendo all'utente di interagire con esso.
+        </li>
+        <li>
+            readonly: Rende l'input di sola lettura, consentendo all'utente di visualizzare ma non modificare il suo valore.
+        </li>
+        <li>
+            max e min: Utilizzati con input di tipo "number", definiscono il valore massimo e minimo consentito.
+        </li>
+        <li>
+            step: Utilizzato con input di tipo "number", definisce l'incremento o il decremento del valore quando l'utente utilizza i controlli di incremento/decremento.
+        </li>
+        <li>
+            checked: Utilizzato con input di tipo "checkbox" e "radio", indica se l'input è selezionato per impostazione predefinita.
+        </li>
+        <li>
+            autocomplete: Specifica se il browser deve suggerire automaticamente valori per l'input basandosi sulla cronologia dell'utente.
+        </li>
+        <li>
+            size e maxlength: Utilizzati con input di tipo "text" o "password", definiscono la dimensione visuale dell'input e la lunghezza massima del testo inserito.
+        </li>
+    </ul>
+  
+    <!-- 8)radio  è utilizzato per creare un gruppo di opzioni tra cui l'utente può selezionarne una sola. Ogni opzione è rappresentata da un input di tipo radio. Per creare un gruppo di input radio, devi assicurarti che abbiano lo stesso attributo name. In questo modo, solo una delle opzioni può essere selezionata alla volta all'interno del gruppo.-->
+        <input type="radio" name="esempio">Opzione 1
+        <input type="radio" name="esempio">Opzione 2
+        <input type="radio" name="esempio">Opzione 3
+        <input type="radio" name="esempio">Opzione 4
+    <!-- per raccogliere i dati scritti nel tag input bisogna usare il javascript (lo vedremo molto in futuro)-->
+
+ti sono solo alcuni degli attributi che puoi utilizzare con il tag `input`. La scelta degli attributi dipende dal tipo di input che stai creando e dalle tue esigenze specifiche.
+    <h3>form tag e i suoi sotto tag</h3>
+    <!-- form sarebbe una specie di gruppo div specializzato per raggruppare un modulo (form), che può contenere un tag input e un bottone,
+    e anche vari altri possibili elementi di un modulo-->
+    <form>
+        Username: <input type="text">
+        <br>
+        Password: <input type="password">
+        <br>
+        <button>Login</button>
+    </form>
+    <!-- il tag fieldset permette di raggruppare più tag input e raffigurare un bordo attorno ai vari gruppi-->
+    <form>
+        <fieldset>
+            Nome: <input type="text">
+            <br>
+            Email: <input type="email">
+            <br>
+            Telefono: <input type="tel">
+            <br>
+        </fieldset>
+        <fieldset>
+            Username: <input type="text">
+            <br>
+            Password: <input type="password">
+            <br>
+        </fieldset>
+        <button>Registrati</button>
+    </form>
+    <br>
+    <!-- possiamo poi mettere il tag legend come primo sotto-tag di fieldset, in modo da far comparire la scritta come titolo del gruppo-->
+    <form>
+        <fieldset>
+            <legend>Informazioni personali</legend>
+            Nome: <input type="text">
+            <br>
+            Email: <input type="email">
+            <br>
+            Telefono: <input type="tel">
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Informazioni del Login</legend>
+            Username: <input type="text">
+            <br>
+            Password: <input type="password">
+            <br>
+        </fieldset>
+        <button>Registrati</button>
+    </form>
+    <!-- inoltre c'è anche il tag label, che è usato per raggruppare le parole che aiutano gli utenti a sapere cosa scrivere nell'input-->
+    <!-- l'attributo for del tag label serve a connettere il tag label con il suo corrispondente tag input-->
+    <!-- il valore dell'attributo for deve corrispondere con il valore dell'attributo id del tag input, per potersi connettere-->
+    <!-- i label connessi con i tag input possono aiutare l'utente con l'accessibilità. Infatti il lettore quando cliccherà sul tag label
+    verrà focusato il tag input corrispondente. Se invece i tag label e input non sono connessi, ciò non succederà-->     
+    <form>
+        <fieldset>
+            <legend>Informazioni personali</legend>
+            <label for="nome">Nome:</label>
+            <input id="nome" type="text">
+            <br>
+            <label for="email">Email:</label>
+            <input id="email" type="email">
+            <br>
+            <label for="telefono">Telefono:</label>
+            <input id="telefono" type="tel">
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Informazioni del Login</legend>
+            <label for="username">Username:</label>
+            <input id="username" type="text">
+            <br>
+            <label for="password">Password:</label>
+            <input id="password" type="password">
+            <br>
+        </fieldset>
+        <button>Registrati</button>
+    </form>
+    <!--label può essere associato anche a input di altro tipo-->
+    <form>
+        <fieldset>
+            <legend>informazioni delle opzioni</legend>
+            <input type="radio" name="esempio2" id="opzione1">
+            <label for="opzione1">Opzione 1</label>
+            <input type="radio" name="esempio2" id="opzione2">
+            <label for="opzione2">Opzione 2</label>
+            <input type="radio" name="esempio2" id="opzione3">
+            <label for="opzione3">Opzione 3</label>
+        </fieldset>
+    </form>
+    <!-- un ottimo sostituto di label è l'attributo "placeholder" presente in input-->
+    <!-- placeholder si utilizza per scrivere il testo sullo sfondo dell'input (indica di solito email, username o password) -->
+    <form>
+        <fieldset>
+            <legend>
+                testo a caso
+            </legend>
+            <input type="text" placeholder="testo normale"> <br>
+            <input type="password" placeholder="testo nascosto"><br>
+        </fieldset>
+    </form>
+
+    
+    <hr>
+    <h2>
+        Marking-up Quote (per adesso da chatgpt)
+    </h2>
+    <textarea cols="169" rows="35">
+        Il tag `<blockquote>` in HTML è utilizzato per citare un blocco di testo o contenuto da un'altra fonte. Questo elemento viene comunemente utilizzato per evidenziare citazioni o porzioni di testo che sono stati tratti da una fonte esterna, come un libro, un articolo o un'altra pagina web. L'uso corretto del tag `<blockquote>` aiuta a strutturare correttamente il contenuto e a fornire attribuzione alle citazioni.
+
+        Ecco come puoi utilizzare il tag `<blockquote>`:
+        
+        ```html
+        <blockquote>
+          Questa è una citazione tratta da un'altra fonte. Può essere più di una riga di testo.
+        </blockquote>
+        ```
+        
+        Inoltre, puoi includere attributi aggiuntivi per fornire informazioni sulla fonte della citazione, come l'autore o il titolo dell'opera da cui è stata presa la citazione:
+        
+        ```html
+        <blockquote cite="https://www.esempio.com/libro">
+          "La conoscenza è potere." - <cite>Francis Bacon</cite>
+        </blockquote>
+        ```
+        
+        Nell'esempio sopra, l'attributo `cite` viene utilizzato per specificare l'URL della fonte originale da cui è stata tratta la citazione. L'elemento `<cite>` viene utilizzato per includere l'autore o il titolo della fonte.
+        
+        Puoi anche annidare altri elementi all'interno di `<blockquote>`, come paragrafi, testo in corsivo e altro, per formattare la citazione come desideri:
+        
+        ```html
+        <blockquote>
+          <p>La felicità non sta nel possedere, ma nel dare. - <em>Mahatma Gandhi</em></p>
+        </blockquote>
+        ```
+        
+        In conclusione, il tag `<blockquote>` è un modo formale e semanticamente corretto per evidenziare citazioni o porzioni di testo tratti da altre fonti all'interno del tuo contenuto web.
+    </textarea>
+    <br>
+    per indicare che un testo nel nostro file HTML è un indicazione di data o ora si utilizza il tag time (non cambia la forma della parola)
+    <br>
+    Rapporto missione <time>16 dicembre 1991</time>
+    <br>
+    invece per indicare un indirizzo stradale si usa il tag address, che rende il testo in corsivo e manda a capo (in inglese italic)
+    <br>
+    il mio indirizzo di casa è: <address>via fratelli Capocchia n 104</address>
+    <br>
+    
+    
+    
+    <hr>
+    <h2>tag semantici</h2>
+    <p>
+        la maggior parte dei file semantici non modificano l'aspetto della pagina, ma possono essere utili per le CSS rule 
+    </p>
+    <!--div viene usata per raggruppare vari elementi in modo da essere meglio gestiti--> 
+     <div>
+        <p id="siuuum"> SIIUUUUUUUUUUUUUUUMMMM</p>
+        <a href="tel:666">SIIUUUUUUUUUUUUUUUMMMM ma in blu</a>
+    </div>
+    
+    <!--al posto di div possono essere usati molti altri tag che sono più specifici-->
+    
+    <!--il primo tag che sostituisce il tag div è header, utilizzato per le intestazioni-->
+    <header>
+        <h5>
+            il cuore ha le sue ragioni che la ragione non conosce
+        </h5>
+    </header>
+    
+    <!--altro tag che sostituisce div è il tag footer, utilizzato per informazioni a fine pagina, come informazioni di contatto e di visita-->
+    <footer>
+        numero di telefono: <a href="tel:+393442726457">pensaci sei carina</a>
+    </footer>
+    
+    <!--inoltre c'è il tag main che contiene il contenuto principale della pagina web-->
+    <main>
+        senz e te nu post stà, pcchè tu m'appartiennnnn, pcchè m piac tuuu
+    </main>
+    
+    <!--col tag section si può contenere un gruppo di contenuti con lo stesso tema-->
+    <section>
+        tras indo local, tutt Gucci e Ferragam, sold e fierr inde man
+    </section>
+    
+    <!--nav è un tag che contiene un gruppo di elementi che sono usati per navigare in pagine web, come gruppi di link-->
+    <nav>
+        <a href="mailto:checcapocchia@gmail.com">delly</a>
+        <a href="mailto:scimmiaincazzata@gmail.com">è</a>
+        <a href="mailto:palestratoperlafiga@gmail.com">una scimmia</a>
+    </nav>
+    
+    <!--inoltre possiamo sostituire anche il tag p del paragrafo per rendere il codice più leggibile-->
+    <!--possiamo cambiare p con h1 che modifica anche le dimensioni del testo-->
+    
+    <!--poi c'è il tag details che serve a nascondere descrizioni dettagliate nella parola dettagli-->
+    <details>
+        <p>
+            me pcciat o cor, ma poi t na vai e nu sacc ancor
+        </p>
+        sheeeeeeeeeeeeee
+    </details>
+    <!--per poter dare una piccola descrizione della descrizione si inserisce il tag summary nel tag details-->
+    <details>
+        <summary>
+            sheeeeeeeeeeeeee
+        </summary>
+        me pcciat o cor, ma poi t na vai e nu sacc ancor       
+    </details>
+    <!--il tag details è molto utile in un bottone-->
+    <button>
+        <details>
+            <summary>
+                e vuò clicca o scè
+            </summary>
+            aaaaaaaaaaaaaazpegnaaaaaaa
+        </details>
+    </button>
+    
+    <!--per raggruppare un immagine e il testo a lui collegato si utilizza il tag figure-->
+    <figure>
+        <img src="https://s.yimg.com/fz/api/res/1.2/xmgYi4M01WDngH1olFyBvw--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTI0MDtxPTgwO3c9MjQw/https://s.yimg.com/zb/imgv1/576ce588-66b3-3980-8984-71cffd276a9c/t_500x300" alt="oooo ma che cazz, nu s caric" height="100">
+        <figcaption>        <!--il tag figcaption contiene il testo vicino l'immagine, ossia la didascalia (caption in inglese)-->
+            youporn
+        </figcaption>
+    </figure>
+    <br>
+    <br>
+    <br>
+    
+    <hr>
+    <h2>ACCESSIBILITÀ HTML</h2>
+    <p>
+        Per rendere accessibile le pagine web al maggior numero di utenti, dobbiamo ricordarci tecnologie di assistenza. Queste tecnologie sono usate da utenti con diversi dispositivi o con una connessione lenta, oppure con disabilità. Alcune di queste tecnologie di assistenza sono lettori di schermo (per i ciechi), dispositivi di zoom, ecc... Un modo per aiutare queste tecnologie, e quindi questi utenti, è usare un codice semantico HTML: al posto di usare i generici div e span, che non hanno alcun contesto, possiamo usare i tag semantici, come "h1" "ul" o "p". Infatti tramite questi tag semantici il lettore di schermo riesce a interpretare meglio gli elementi HTML.
+    </p>
+    <ul>
+        Ecco alcune regole che si dovrebbero rispettare per una migliore accessibilità:
+        <li>
+            ci deve essere un ordine tra i titoli, dai più grandi ai più piccoli
+        </li>
+        <li>
+            ci deve essere un unico titolo "h1"
+        </li>
+        <li>
+            si deve usare il giusto tag per ogni scopo: il tag "a" per reindirizzare altre pagine, il tag "button" per compiere azioni
+        </li>
+    </ul>
+    <p>
+        Altro modo per migliorare l'accessibilità è il WAI-ARIA. Il WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) è un insieme di specifiche sviluppate dal W3C (World Wide Web Consortium) per migliorare l'accessibilità dei contenuti Web per le persone con disabilità, in particolare per quelle che utilizzano tecnologie assistive come screen reader, tastiere, ecc.
+        <br>
+        Infatti nei casi in cui i tag semantici non sono abbastanza, possiamo usare diversi attributi del WAI-ARIA.
+    </p>
+    <p>
+        Il più importante di questi è l'attributo <strong>role</strong>:
+        <br>
+        L'attributo role viene utilizzato per fornire informazioni aggiuntive sull'identità o sulla funzione di un elemento HTML. In altre parole, l'attributo role viene utilizzato per specificare il ruolo semantico di un elemento all'interno della pagina.
+        <br>
+        L'attributo role può essere utilizzato su qualsiasi elemento HTML, ma è particolarmente utile per gli elementi non semantici, come ad esempio un div o un span.
+        <br>            
+        Ecco un esempio di come utilizzare l'attributo role su un elemento HTML:
+        <div role="button" aria-label="Click me">
+            Click me
+        </div>
+        <textarea cols="70" rows="4" readonly>
+            <div role="button" aria-label="Click me">
+                Click me
+            </div>
+        </textarea>
+        <br>
+        <br>
+        In questo esempio, l'attributo role viene utilizzato per indicare che l'elemento div ha il ruolo di pulsante. L'attributo aria-label viene utilizzato per fornire una descrizione testuale dell'elemento per gli utenti che utilizzano screen reader. L'attributo role può essere utilizzato in combinazione con altri attributi, come ad esempio aria-label, aria-labelledby, aria-describedby, aria-owns, aria-haspopup, aria-expanded, aria-selected, aria-checked, e molti altri ancora.
+    </p>
+    <ul>
+        Facciamo alcuni esempi di role:
+        <li>
+            role="banner" => fa interpretare un elemento come l'intestazione della pagina.
+        </li>
+        <br>
+        <li>Per far considerare al lettore di schermo vari elementi come un unico elemento, dobbiamo usare role al container di questi elementi, dando il valore del tag.
+        <br>
+        <textarea cols="40" rows="5">
+            <div role="img">
+                <img src="image1.png">
+                <img src="image2.png">
+            </div>
+        </textarea>
+        </li>
+        <li>
+            role="comment" => fa interpretare un elemento come una reazione a un certo contenuto.
+        </li>
+        <br>
+        <li>
+            role="contentinfo" => indica l'elemento come footer, ossia informazione del contenuto come il copyright
+        </li>
+        <li>
+            role="alert" => indica l'elemento come un avviso per eventi o cambiamenti nella pagina
+        </li>
+    </ul>
+    <p>
+        Sui tag semantici non si deve usare l'attributo role, siccome è inutile e superfluo. Ricorda, tra un tag semantico e un attributo role, è meglio usare il tag semantico, siccome è più accessibile.
+    </p>
+    <p>
+        Altro attributo ARIA utile è aria-hidden.
+        <br>
+        aria-hidden: nasconde dal lettore di schermo elementi visivi superflui (non si deve inserire valore dell'attributo)
+        <br>
+        questo attributo non deve essere usato su elementi interattivi, come bottoni o link, perché non rende possibile per il lettore di schermo interagire con loro
+    </p>
+    
+    <br>
+    <br>
+    <br>
+    <header>
+        <h2>CSS styling</h2>
+    </header>
+    <!--per poter dare uno stile agli elementi HTML ci sono vari modi con il linguaggio CSS-->
+    
+    <!--1)un modo per dare stile a un elemento è aggiungere l'attributo style nel tag di apertura (detto style in line)-->
+    <!--poi dall'attributo style si sceglie l'aspetto che si vuole modificare (come color) e poi si aggiungono :-->
+    <!--dopo i 2 punti si sceglie la modifica dell'aspetto-->
+    <!--questi elementi sono chiamati declarations (dichiarazioni), formati da una proprietà (color) e un valore (brown)-->
+    <!--possiamo aggiungere quante proprietà vogliamo ma devono essere separate da un ;-->
+    a questo link: <a href="pagine secondarie/Proprietà dei CSS.html">Proprietà CSS link percorso</a> puoi trovare una lista delle proprietà
+    <br>
+    <a href="http://www.hotwebguide.com/content/programmazione-web/css-propriety.asp#:~:text=I%20valori%20predefiniti%20sono%20le,numeri%20interi%20seguiti%20da%20px">Proprietà CSS URL</a>
+    <br>
+    <p style="color:brown;">
+        We are VENOM
+    </p>
+    <!--ci sono tantissime proprietà in CSS, come background-color, che sceglie il colore dello sfondo di un testo-->
+    <p style="color: cornflowerblue; background-color: darkblue;">
+        BRING MEE THAAANOOOSSSS
+    </p>
+    <!--altra proprietà è il font-size (dimensione del carattere), con i valori che si possono misurare in vari modi: pixel, percentuale,-->
+    <a href="tel:+393473528378" style="font-size: 60px;">Allora l'ho farò da solo</a>
+    <!--si può scegliere il tipo di carattere, con la proprietà font-family. i valori di questa proprietà sono molteplici-->
+    <div style="font-family:'Courier New', Courier, monospace;">
+        Io sono INELUTTABILE
+    </div>
+    <!--font-style è una proprietà che può far diventare corsivo delle parole, similmente al tag em-->
+    <!--font-weight invece ha valori che permettono di far diventare il testo grassetto (to bold), similmente al tag strong-->
+    <section style="font-style: italic; font-weight:bold;">
+        Peter, chiamami Strange
+    </section>
+   <!--2)secondo modo per dare stile agli elementi HTML è col il tag style nel tag head a inizio file-->
+   <!--per fare ciò creiamo una nuova pagina in un altro file-->
+   <a href="index1.html">continuo della pagina link percorso</a>
+   <script>
+    const div = document.querySelector("#funzione");
+    function myFunction() {
+        const paragrafo = document.createElement("p");
+        div.appendChild(paragrafo);
+        paragrafo.innerHTML = `Questo è il ${div.children.length}° paragrafo`;
+    }
+
+    let n_eseguito = 0
+    function myFunction2() {
+        const paragrafo_cerchio = document.querySelector("#cerchio");
+        n_eseguito++
+        if (n_eseguito === 1) {
+            var volte = "volta"
+        } else {
+            var volte = "volte"
+        }
+        paragrafo_cerchio.innerHTML = `Hai cliccato sul cerchio (il puntatore su di esso non cambia perché non hai usato un attributo href).
+        <br>
+        Hai cliccato il paragrafo ${n_eseguito} ${volte}`
+    }
+   </script>
+</body>
+</html>

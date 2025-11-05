@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Maturità</title>
+    <style>
+        :root {
+            --border: 3px solid aquamarine;
+        }
+        body {
+            background-color: #222;
+            color: aquamarine;
+            font-size: larger;
+        }
+        #sottoBody {
+            display: flex;
+            justify-content: center;
+        }
+        #main {
+            display: flex;
+            gap: 30px;
+            width: 97%;
+            border: solid;
+            position: relative;
+            top: 10px;
+            height: 70px;
+            align-items: center;
+        }
+        .item {
+            width: 100%;
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+            /*border: solid;*/
+        }
+        .item::before{
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 80%;
+            border-radius: 20%;
+        }
+        .item:hover::before{
+            animation: animateIn 400ms ease-in-out forwards;
+        }
+        .item::before{
+            animation: animateOut 400ms ease-in-out forwards;
+        }
+        @keyframes animateIn {
+            0% {
+                border-radius: var(--border);
+                border-left: var(--border);
+                border-right: var(--border);
+                width: 0%;
+                left: 50%;
+            }
+            100% {
+                border-radius: var(--border);
+                border-left: var(--border);
+                border-right: var(--border);
+                width: 130%;
+                left: -20%;
+            }
+        }
+        @keyframes animateOun {
+            0% {
+                border-radius: var(--border);
+                border-left: var(--border);
+                border-right: var(--border);
+                width: 130%;
+                left: -20%;
+            }
+            60% {
+                border-radius: var(--border);
+                border-left: var(--border);
+                border-right: var(--border);
+                width: 0%;
+                left: 50%;
+            }
+            100% {
+                width: 0%;
+                left: 50%;
+            }
+        }
+
+        h1 {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+            background: linear-gradient(90deg, red 0%, white 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: hueRotate 5s alternate infinite;
+        }
+        @keyframes hueRotate {
+            0% {
+                filter: hue-rotate(279deg);
+            }
+            50% {
+                filter: hue-rotate(197deg);
+            }
+            100% {
+                filter: hue-rotate(12deg);
+            }
+        }
+        a {
+            color: aquamarine;
+        }
+        section {
+            text-align: center;
+        }
+        #footer-parent {
+            display: flex;
+            justify-content: center;
+        }
+        footer {
+            position: fixed;
+            bottom: 10px;
+            text-align: center;
+            width: 55%;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <strong>
+            QUESTA É LA HOMEPAGE PER LA MATURITÀ DI NICOLA BELARDO
+        </strong>
+    </h1>
+    <p>
+        <ul>
+            LE VARIE TEMATICHE ESPOSTE ALL'ESAME POSSONO ESSERE: 
+            <li>
+                Rapporto Uomo-Natura
+            </li>
+            <li>
+                Scienza etica e responsabilità
+            </li>
+            <li>
+                Passioni
+            </li>
+            <li>
+                Tempo
+            </li>
+            <li>
+                Donna
+            </li>
+        </ul>
+    </p>
+    <section>
+        Di seguito si possono notare i link a siti esterni utili durante l'esposizione delle varie tematiche
+    </section>
+    <div id="sottoBody">
+        <div id="main">
+            <a href="scienze.html" class="item" target="_blank">
+                Tettonica a placche
+            </a>
+            <a href="Les Demoiselles d’Avignon.html" class="item" target="_blank">
+                Les Demoiselles d’Avignon
+            </a>
+            <a href="gauguin.html" class="item" target="_blank">
+                Da dove veniamo? Chi siamo? Dove andiamo?
+            </a>
+            <a href="Monet.html" class="item" target="_blank">
+                Lo stagno delle Ninfee
+            </a>
+            <a href="Renoir.html" class="item" target="_blank">
+                Moulin de la Galette
+            </a>
+            <a href="impressione, sole nascente.html" class="item" target="_blank">
+                Impressione, sole nascente
+            </a>
+            <a href="https://www.desmos.com/calculator/1khosys0nb" class="item" target="_blank">
+                Circuiti RLC
+            </a>
+        </div>
+    </div>
+    <div id="footer-parent">
+        <footer>
+            <a href="https://onedrive.live.com/edit.aspx?resid=FBC83E4F43529CC9!206&ithint=file%2cpptx&authkey=!AM-wIIwRcWQdFZ0" target="_blank">
+                Presentazione PowerPoint educazione civica
+            </a>
+            <a href="PCTO NICOLA.pdf" target="_blank">
+                PCTO
+            </a>
+        </footer>
+    </div>
+</body>
+</html>

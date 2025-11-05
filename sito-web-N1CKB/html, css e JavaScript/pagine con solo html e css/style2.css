@@ -1,0 +1,215 @@
+@import url("pagine\ secondarie/style2NotMain.css");
+/* La regola @import in CSS è utilizzata per includere uno stile CSS da un altro file all'interno di un foglio di stile principale.
+Questo permette di organizzare il codice CSS in file separati e di riutilizzarlo in diverse pagine o sezioni di un sito web.
+L'uso di @import può aiutare a suddividere il codice in parti più gestibili e a migliorare la manutenibilità.  */
+
+/*argomento=> selector div p { }*/
+#div0 {
+    background-color: black;
+    width: fit-content;
+}
+#div0 p {
+    color: white;
+}
+/*argomento=> selector div > p { }*/
+#div {
+    background-color: green;
+    width:fit-content;
+}
+#div > img {
+    border: 3px solid blue;
+    width: 300px;
+}
+/*argomento=> selector div + p { }*/
+.div {
+    background-color: blue;
+    color: white;
+}
+.div + p {
+    border: 3px dashed black;
+}
+/*argomento=> selector div ~ p { }*/
+#div2 {
+    border: 1px solid;
+}
+#div2 ~ p {
+    color: brown;
+    border: 1px dashed white;
+}
+
+/*argomento=> attribute selector*/
+.div1[data-color] {
+    color: red;
+}
+.div2[data-color="red"] {
+    color: red;
+}
+div[class*="foo"] {
+    color: red;
+}
+div[data-boh~="valore"] {
+    color: red;
+}
+a[href^="https://"] {
+    color: cornflowerblue;
+}
+div[class$="file"] {
+    color: red;
+}
+p[lang|="EN"] {
+    color: red;
+}
+div[lang="EN" i] {
+    color: red;
+}
+
+
+
+
+/* Pseudo-classe con un solo : */
+a:hover {
+    color: red; 
+    /* Cambia il colore del testo quando si posiziona il cursore sopra un link */
+}
+/* Pseudo-elemento con due :: */
+#p::before {
+    content: "► "; 
+    /* Aggiunge una freccia prima di ogni paragrafo */
+}
+#p::first-line {
+    font-weight: bold; 
+    /* Rende grassetto la prima riga di ogni paragrafo */
+}
+
+/*child pseudo class*/
+.prova:first-child {
+    background-color: red;
+    width: fit-content;
+}
+#container-child-pseudo-class {
+    display: flex;
+    gap: 18px;
+    border: 2px red solid;
+    width: fit-content;
+    padding: 5px;
+}
+#container-child-pseudo-class > div:first-child {
+    color: red;
+}
+#container-child-pseudo-class > span:first-child {
+    color: red;
+}
+#container-child-pseudo-class > :nth-child(3) {
+    color: blue;
+}
+#container-child-pseudo-class > :nth-child(n+3) {
+    font-weight: bold;
+}
+#container-child-pseudo-class > :nth-child(3n) {
+    border: 1px solid black;
+}
+#container-child-pseudo-class > :nth-child(3n+1) {
+    color:chartreuse;
+}
+#container-child-pseudo-class > :nth-child(-n+3) {
+    transform: rotate(180deg);
+}
+#container-child-pseudo-class > :nth-child(odd) {
+    text-decoration: underline;
+}
+#container-child-pseudo-class > :nth-child(even) {
+    text-decoration: overline;
+}
+#container-child-pseudo-class > :last-child {
+    color: brown;
+}
+#container-child-pseudo-class > :nth-last-child(3) {
+    color: yellowgreen;
+}
+#container-child-pseudo-class > span:last-of-type {
+    color: orange
+}
+
+
+
+
+/*lista delle pseudo class più usate*/
+a:active {
+    color: white;
+}
+button:active {
+    background-color: white;
+}
+#paragrafo_da_attivare:active {
+    color: red;
+}
+
+
+/*argomento=> ::placeholder pseudo class*/
+#input::placeholder {
+    color: red;
+}
+
+/*argomento=> :placeholder-shown pseudo class*/
+#form1{
+    border: solid green;
+    width: min-content;
+}
+#input1 {
+    width: 200px;
+    height: 35px;
+    /*questa è la grandezza del tag input quando è scritto qualcosa dentro*/
+}
+#input1:placeholder-shown {
+    height: auto;
+    /*questa è la grandezza del tag input quando non è scritto nulla dentro (con placeholder visibile)*/
+}
+
+/*argomento=> :has() pseudo class*/
+.p:has(a) {
+    background-color: yellow;
+}
+#label:has(~ input:placeholder-shown) {
+    border: dashed brown;
+}
+#label {
+    border: solid brown;
+}
+#label ~ input {
+    width: 300px;
+}
+
+/*argomento=> :in-range pseudo class*/
+input:in-range {
+    border: 4px green solid;
+}
+
+/*argomento=> :invalid pseudo class*/
+.input {
+    width: 200px;
+}
+.input:invalid {
+    border: 2px solid red;
+}
+
+/*argomento=> come nascondere una parte di un testo*/
+.box {
+    width: 400px;
+    border: solid 2px;
+    padding: 10px;
+}
+#p1 {
+    white-space: nowrap;
+    /* questo dispone tutto su una linea rompendo il container */
+    overflow: hidden;
+    /* questo nasconde la parte di testo fuori dal container */
+    text-overflow: ellipsis;
+    /* questo mette i puntini sospensivi poco prima dell'overflow */
+}
+#p2{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* STUDIA MEGLIO */
+}

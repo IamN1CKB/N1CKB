@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evento input immagini</title>
+    <style>
+        .foto {
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Se scrivi alcune parole nel form input, verrà mostrata una foto
+    </h1>
+    <input type="text">
+    <br>
+    <button>
+        Rimuovi foto
+    </button>
+    <br>
+    <script>
+        const input = document.querySelector("input")
+        input.oninput = function aggiungiImmagine() {
+            if (
+                input.value.toLowerCase()==="cazzo" ||
+                input.value.toLowerCase()==="gabby" ||
+                input.value.toLowerCase()==="mamma" ||
+                input.value.toLowerCase()==="mommy" ||
+                input.value.toLowerCase()==="mare" ||
+                input.value.toLowerCase()==="taormina" ||
+                input.value.toLowerCase()==="papà" ||
+                input.value.toLowerCase()==="stazione" ||
+                input.value.toLowerCase()==="trombe" ||
+                input.value.toLowerCase()==="conchiglia" ||
+                input.value.toLowerCase()==="halloween" ||
+                input.value.toLowerCase()==="smash" /*||
+                input.value.toLowerCase()==="" /*||
+                input.value.toLowerCase()==="" /*||
+                input.value.toLowerCase()==="" /*||
+                input.value.toLowerCase()==="" /*||
+                */
+            ) {
+                const immagine = document.createElement("img");
+                immagine.src = "media/" + input.value.toLowerCase() + ".jpg";
+                immagine.classList.add("foto")
+                document.body.appendChild(immagine);
+            }
+        }
+        const bottone = document.querySelector("button");
+        bottone.onclick = function rimuoviCazzo() {
+            const immagine = document.querySelector("img.foto")
+            document.body.removeChild(immagine);
+        }
+    </script>
+</body>
+</html>

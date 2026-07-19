@@ -60,6 +60,29 @@ public class Main1 {
         System.out.println(stack.pop());
         System.out.println("lo stack e' vuoto? " + stack.isEmpty());
 
+        ListBasedStack<String> stackLista = new ListBasedStack<String>();
+        System.out.println("lo stackLista e' vuoto? " + stackLista.isEmpty());
+        stackLista.push("Ciao");
+        stackLista.push("A");
+        stackLista.push("B");
+        System.out.println("il primo elemento dello stackLista e' " + stackLista.top());
+        stackLista.pop();
+        System.out.println("il primo elemento dello stackLista e' " + stackLista.top());
+
+        ArrayQueue<Integer> queue = new ArrayQueue<Integer>(20);
+        System.out.println("la queue e' vuota? " + queue.isEmpty());
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        System.out.println("il primo elemento della queue e' " + queue.first());
+        System.out.println("elemento rimosso dalla queue: " + queue.dequeue());
+        System.out.println("il primo elemento della queue e' " + queue.first());
+        System.out.println("la queue e' vuota? " + queue.isEmpty());
+        queue.dequeue();
+        queue.dequeue();
+        System.out.println("la queue e' vuota? " + queue.isEmpty());
+        System.out.println("elemento rimosso dalla queue: " + queue.dequeue());
+
         LinkedPositionalList<String> listaPosizioni = new LinkedPositionalList<String>();
         Position<String> MichelePosition = listaPosizioni.addFirst("Michele");
         // lista: Michele

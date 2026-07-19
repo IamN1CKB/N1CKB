@@ -4,6 +4,10 @@ public class ListBasedStack<E> implements Stack<E> {
 
     private SinglyLinkedList<E> list = new SinglyLinkedList<E>();
 
+
+    //costruttore vuoto
+    public ListBasedStack() { }
+    
     @Override
     public int size() {
         return list.size();    

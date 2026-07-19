@@ -1,33 +1,59 @@
 package strutture_dati;
 
-public class SinglyLinkedList<E>{
-	//---Classe innestata chiamata Node---/
-	private static class Node<E> {
-		private E element; //riferimento all'elemento contenuto nel nodo
-		private Node<E> next; //riferimento al nodo successivo nella lista
-		public Node(E e,Node<E> n){
-			element = e;
-			next = n;
-		}
-		public E getElement(){return element;}
-		public Node<E> getNext() {return next;}
-		public void setNext(Node<E> n){next = n;}
-	}//fine classe nodo
-	private Node<E> head = null; //nodo testa della lista(null se vuoto)
-	private Node<E> tail = null; //stessa cosa solo che per la coda
-	private int size = 0;
-	public SinglyLinkedList(){}   //costruttore vuoto siccome non servono parametri
-	//metodi di accesso qui
-	public int size(){return size;}
-	public boolean isEmpty() {return size==0;}
-	public E first(){
-		if(isEmpty()) return null;
-		return head.getElement();
-	}
-	public E last(){
-		if(isEmpty()) return null;
-		return tail.getElement();
-	}
+public class SinglyLinkedList<E> {
+
+    // ---------------- nested Node class ----------------
+    private static class Node<E> {
+        private E element;       // Riferimento all'elemento informativo contenuto
+        private Node<E> next;    // Riferimento al nodo successivo nella lista
+
+        public Node(E e, Node<E> n) {
+            this.element = e;
+            this.next = n;
+        }
+
+        public E getElement() {
+            return element;
+        }
+
+        public Node<E> getNext() {
+            return next;
+        }
+
+        public void setNext(Node<E> n) {
+            this.next = n;
+        }
+    } // ---------------- end of nested Node class ----------------
+
+    // Variabili di istanza di SinglyLinkedList
+    private Node<E> head = null; // Nodo di testa della lista (null se vuota)
+    private Node<E> tail = null; // Nodo di coda della lista (null se vuota)
+    private int size = 0;        // Numero di nodi attualmente presenti nella lista
+
+    // Costruttore per creare una lista inizialmente vuota
+    public SinglyLinkedList() { }
+
+    // Metodi di accesso fondamentali
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    // Restituisce (senza rimuovere) il primo elemento della lista
+    public E first() {
+        if (isEmpty()) return null;
+        return head.getElement();
+    }
+
+    // Restituisce (senza rimuovere) l'ultimo elemento della lista
+    public E last() {
+        if (isEmpty()) return null;
+        return tail.getElement();
+    }
+    
 
 	public void addFirst(E e){
 		head = new Node<>(e, head); //creazione nuovo nodo

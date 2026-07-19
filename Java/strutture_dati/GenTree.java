@@ -57,6 +57,7 @@ public class GenTree<E> implements Tree<E> {
 
         // metodi di aggiornamento
         /** Imposta l'elemento del nodo. */
+        @SuppressWarnings("unused")
         public void setElement(E e) {
             element = e;
         }

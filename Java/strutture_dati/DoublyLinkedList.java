@@ -114,7 +114,7 @@ public class DoublyLinkedList<E> {
         Node<E> corrente = header.getNext();
         while (corrente!=trailer) {
             E element = corrente.getElement();
-            System.out.println(element+" ");
+            System.out.println(element);
             corrente=corrente.getNext(); //simile a un incremento
         }
         System.out.println("\n");

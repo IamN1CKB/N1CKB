@@ -9,8 +9,11 @@ public class provaSettembre2025 {
         
         tree.addRoot(5.6f);
         Position<Float> primoFiglio = tree.addChild(tree.root(), 3.2f);
+        @SuppressWarnings("unused")
         Position<Float> secondoFiglio = tree.addChild(tree.root(), 8.1f);
+        @SuppressWarnings("unused")
         Position<Float> terzoFiglio = tree.addChild(primoFiglio, 1.5f);
+        @SuppressWarnings("unused")
         Position<Float> quartoFiglio = tree.addChild(primoFiglio, 4.7f);
 
 
@@ -39,9 +42,8 @@ public class provaSettembre2025 {
             }
             if (h>maxH) {
                 maxH=h;
+            }
+            System.out.println(maxH);
         }
-        System.out.println(maxH);
-            
-
     }
 }

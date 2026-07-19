@@ -49,7 +49,7 @@ public class VisitGenTree<E> extends GenTree<E> {
      */
     public void breadthFirst() {
         if (!isEmpty()) {
-            ListedQueue<Position<E>> queue = new ListedQueue<>();
+            LinkedQueue<Position<E>> queue = new LinkedQueue<>();
             queue.enqueue(root());
             while (!queue.isEmpty()) {
                 Position<E> p = queue.dequeue();

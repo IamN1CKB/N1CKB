@@ -1,5 +1,4 @@
 package strutture_dati;
-import java.util.Iterator;
 
 /**
  * Interfaccia che definisce il comportamento di una lista posizionale.

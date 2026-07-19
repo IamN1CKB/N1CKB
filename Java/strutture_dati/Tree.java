@@ -1,5 +1,4 @@
 package strutture_dati;
-import java.util.Iterator;
 
 public interface Tree<E> extends Iterable<E> {
     /**

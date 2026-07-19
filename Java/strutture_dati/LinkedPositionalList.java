@@ -2,7 +2,7 @@ package strutture_dati;
 
 import java.util.NoSuchElementException;
 
-import java.util.Iterator;
+
 
 /**
  * Implementazione di una PositionalList tramite lista doppiamente concatenata
@@ -153,85 +153,68 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
 
     
 
+    // Implementazione dell'iteratore per le posizioni
 
-
-    
-
-    
-    //Vediamo come poter iterare una lista posizionale
-    //Il primo modo per iterare una lista posizionale, è attraverso un oggetto Iterable delle posizioni, che restituisce un iteratore delle posizioni
-
-    public class PositionIterable implements Iterable<Position<E>> {
-        public Iterator<Position<E>> iterator() {
-            return new PositionIterator();
-        }
-    }
-    
-    //definiamo una funzione che restituisce l'oggetto Iterable
-    public Iterable<Position<E>> positions() {
-        return new PositionIterable();
-    }
-
-
-    //L'iteratore deve essere privato e 
     private class PositionIterator implements Iterator<Position<E>> {
-        /** Una Position della lista contenitore, inizializzata alla prima posizione. */
-        private Position<E> cursor = first(); // Accede al metodo first() della PositionalList esterna
+        private Position<E> cursor = first();   // Inizia dalla testa della lista
+        private Position<E> recent = null;      // Memorizza l'ultimo elemento restituito
 
-        /** La Position dell'elemento più recente riportato (se presente). */
-        private Position<E> recent = null;
-
-        @Override
+        // Verifica se vi sono altre posizioni da visitare
         public boolean hasNext() {
             return (cursor != null);
         }
 
-        @Override
+        // Avanza il cursore e restituisce la posizione visitata
         public Position<E> next() throws NoSuchElementException {
             if (cursor == null) {
-                throw new NoSuchElementException("non c'è nessuna posizione successivo");
+                throw new NoSuchElementException("Nessun'altra posizione disponibile");
             }
-            //ogni volta che viene eseguito next, aggiorniamo recent e cursor
-            recent = cursor;
-            cursor = after(cursor); // Accede al metodo after() della PositionalList esterna
+            recent = cursor;            // Salva la posizione corrente
+            cursor = after(cursor);     // Avanza il cursore alla posizione successiva
             return recent;
         }
-        
 
-        // Qui potresti implementare remove() che dovrebbe usare recent.
-        // L'implementazione di remove() è più complessa in una PositionalList.
-        @Override
-        public void remove() throws IllegalStateException {
-            if (recent == null) throw new IllegalStateException("nothing to remove");
-            // logica per rimuovere l'elemento in 'recent' dalla PositionalList esterna
-            // questo richiede un riferimento alla PositionalList o un modo per chiamare il suo remove(Position p)
-            // Per semplicità, spesso si omette o si rende non supportato.
-            //remove(recent); // Si assume che esista un metodo remove(Position p) nella PositionalList
-            recent = null; // resetta recent per prevenire doppie rimozioni
+        // Rimuove l'ultimo elemento restituito dalla lista posizionale
+        public void remove() {
+            if (recent == null) {
+                throw new IllegalStateException("Nessuna posizione valida da rimuovere");
+            }
+            LinkedPositionalList.this.remove(recent); // Rinvio alla rimozione della lista esterna
+            recent = null; // Azzera il riferimento per impedire rimozioni consecutive non autorizzate
         }
     }
 
-    //Possiamo iterare una lista posizionale anche tramite iteratori di elementi che si basano sugli iteratori di posizioni associati
-    private class ElementIterator implements Iterator<E> {
-        private Iterator<Position<E>> posIterator = new PositionIterator(); // Crea un iteratore di posizioni
+    
+    private class PositionIterable implements Iterable<Position<E>> {
+        public Iterator<Position<E>> iterator() {
+            return new PositionIterator();
+        }
+    }
 
-        @Override
+    public Iterable<Position<E>> positions() {
+        return new PositionIterable();
+    }
+
+    // Implementazione dell'iteratore per gli elementi
+    private class ElementIterator implements Iterator<E> {
+        // Istanzia internamente il PositionIterator per sfruttare lo scorrimento dei nodi
+        Iterator<Position<E>> posIterator = new PositionIterator();
+
+        // Riferisce direttamente al comportamento del PositionIterator
         public boolean hasNext() {
             return posIterator.hasNext();
         }
 
-        @Override
+        // Estrae l'elemento reale dal nodo restituito dal PositionIterator
         public E next() {
-            // Chiama next() sull'iteratore di posizioni e poi getElement() sulla posizione risultante
-            return posIterator.next().getElement();
+            return posIterator.next().getElement(); // Adatta l'output estraendo il dato generico
         }
 
-        @Override
+        // Riferisce l'operazione di rimozione
         public void remove() {
-            posIterator.remove(); // Delega la rimozione all'iteratore di posizioni
+            posIterator.remove();
         }
     }
-
 
     @Override
     public Iterator<E> iterator() {

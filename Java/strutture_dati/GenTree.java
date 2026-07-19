@@ -3,7 +3,6 @@
 package strutture_dati;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * Classe che implementa un albero generico (n-ario) tramite nodi con lista di

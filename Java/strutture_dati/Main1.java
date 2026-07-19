@@ -1,6 +1,5 @@
 package strutture_dati;
 
-import java.util.Iterator;
 
 public class Main1 {
     public static void main(String[] args) {

@@ -7,7 +7,6 @@
 package strutture_dati;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class LinkedBinaryTree<E> implements BinaryTree<E> {
     /**

@@ -220,4 +220,47 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
     public Iterator<E> iterator() {
         return new ElementIterator();
     }
+
+
+    // Implementazione dell'iteratore inverso per le posizioni
+
+    private class PositionIteratorB implements Iterator<Position<E>> {
+        private Position<E> cursor = last();    // Il cursore inizia dall'ultimo elemento
+        private Position<E> recent = null;       // Memorizza l'ultimo elemento restituito
+
+        // Verifica se vi sono altre posizioni risalendo verso la testa
+        public boolean hasNext() {
+            return (cursor != null);
+        }
+
+        // Restituisce la posizione corrente e arretra il cursore
+        public Position<E> next() throws NoSuchElementException {
+            if (cursor == null) {
+                throw new NoSuchElementException("Nessun'altra posizione disponibile a ritroso");
+            }
+            recent = cursor;            // Salva la posizione corrente
+            cursor = before(cursor);    // Sposta il cursore sul nodo precedente (arretramento)
+            return recent;
+        }
+
+        // Rimuove l'ultimo elemento restituito durante lo scorrimento inverso
+        public void remove() throws IllegalStateException {
+            if (recent == null) {
+                throw new IllegalStateException("Nessuna posizione valida da rimuovere");
+            }
+            LinkedPositionalList.this.remove(recent); // Delega alla rimozione strutturale della lista
+            recent = null; // Impedisce rimozioni multiple consecutive
+        }
+    }
+    // Implementazione dell'iterable inverso per le posizioni
+    private class PositionIterableB implements Iterable<Position<E>> {
+        public Iterator<Position<E>> iterator() {
+            return new PositionIteratorB();
+        }
+    }
+
+    // Restituisce un iterable per scorrere le posizioni in ordine inverso
+    public Iterable<Position<E>> positionsB() {
+        return new PositionIterableB();
+    }
 }

@@ -1,14 +1,24 @@
 package strutture_dati;
 
 import java.util.NoSuchElementException;
+
 import java.util.Iterator;
 
+/**
+ * Implementazione di una PositionalList tramite lista doppiamente concatenata
+ * dotata di sentinelle di testa (header) e coda (trailer).
+ * 
+ * @param <E> il tipo di elementi memorizzati
+ */
 public class LinkedPositionalList<E> implements PositionalList<E> {
-    // Classe annidata Node
+
+    // ------------------------------------------------------------------------
+    // CLASSE INTERNA STATICA NODE
+    // ------------------------------------------------------------------------
     private static class Node<E> implements Position<E> {
-        private E element;
-        private Node<E> prev;
-        private Node<E> next;
+        private E element;       // Riferimento all'elemento memorizzato
+        private Node<E> prev;    // Riferimento al nodo precedente
+        private Node<E> next;    // Riferimento al nodo successivo
 
         public Node(E e, Node<E> p, Node<E> n) {
             element = e;
@@ -17,52 +27,77 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
         }
 
         public E getElement() throws IllegalStateException {
-            if (next == null)  // nodo non valido
-                throw new IllegalStateException("Posizione non piu' valida");
+            if (next == null) { // Convenzione per nodo rimosso
+                throw new IllegalStateException("Position no longer valid");
+            }
             return element;
         }
 
-        // getter/setter ausiliari
         public Node<E> getPrev() { return prev; }
         public Node<E> getNext() { return next; }
+        
         public void setElement(E e) { element = e; }
         public void setPrev(Node<E> p) { prev = p; }
         public void setNext(Node<E> n) { next = n; }
     }
-    // Fine classe innesta Node
+    // ------------------------------------------------------------------------
 
-    private Node<E> header;
-    private Node<E> trailer;
-    private int size = 0;
+    private Node<E> header;    // Sentinella di testa
+    private Node<E> trailer;   // Sentinella di coda
+    private int size = 0;      // Numero di elementi attivi
 
+    /**
+     * Costruttore: inizializza le sentinelle e stabilisce il legame iniziale.
+     */
     public LinkedPositionalList() {
         header = new Node<>(null, null, null);
         trailer = new Node<>(null, header, null);
         header.setNext(trailer);
     }
 
-    // Validazione di una posizione
+    // Metodi ausiliari di validazione e conversione interna
     private Node<E> validate(Position<E> p) throws IllegalArgumentException {
-        if (!(p instanceof Node))
-            throw new IllegalArgumentException("Invalid p");
+        if (!(p instanceof Node)) {
+            throw new IllegalArgumentException("Invalid p: la posizione non è del tipo Node corretto");
+        }
         Node<E> node = (Node<E>) p;
-        if (node.getNext() == null)  // nodo rimosso
-            throw new IllegalArgumentException("La posizione non e' piu' nella lista");
+        if (node.getNext() == null) {
+            throw new IllegalArgumentException("p is no longer in the list: la posizione è defunta");
+        }
         return node;
     }
 
-    // Converte un nodo in una posizione, gestendo header e trailer
     private Position<E> position(Node<E> node) {
-        if (node == header || node == trailer) return null;
+        if (node == header || node == trailer) {
+            return null; // Non esponiamo le sentinelle all'utente
+        }
         return node;
     }
 
-    // Metodi principali
+    // Metodi di accesso (Accessor)
     public int size() { return size; }
+    
     public boolean isEmpty() { return size == 0; }
-    public Position<E> first() { return position(header.getNext()); }
-    public Position<E> last() { return position(trailer.getPrev()); }
 
+    public Position<E> first() { 
+        return position(header.getNext()); 
+    }
+
+    public Position<E> last() { 
+        return position(trailer.getPrev()); 
+    }
+
+    public Position<E> before(Position<E> p) throws IllegalArgumentException {
+        Node<E> node = validate(p);
+        return position(node.getPrev());
+    }
+
+    public Position<E> after(Position<E> p) throws IllegalArgumentException {
+        Node<E> node = validate(p);
+        return position(node.getNext());
+    }
+
+    // Metodo di utilità per l'inserimento
     private Position<E> addBetween(E e, Node<E> pred, Node<E> succ) {
         Node<E> newest = new Node<>(e, pred, succ);
         pred.setNext(newest);
@@ -71,58 +106,58 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
         return newest;
     }
 
+    // Metodi di aggiornamento (Update)
     public Position<E> addFirst(E e) {
-	    return addBetween(e, header, header.getNext());
-	  }
+        return addBetween(e, header, header.getNext());
+    }
+
     public Position<E> addLast(E e) {
-	    return addBetween(e, trailer.getPrev(), trailer);
-	  }
-    public Position<E> addBefore(Position<E> p, E e) {
+        return addBetween(e, trailer.getPrev(), trailer);
+    }
+
+    public Position<E> addBefore(Position<E> p, E e) throws IllegalArgumentException {
         Node<E> node = validate(p);
         return addBetween(e, node.getPrev(), node);
     }
-    public Position<E> addAfter(Position<E> p, E e) {
+
+    public Position<E> addAfter(Position<E> p, E e) throws IllegalArgumentException {
         Node<E> node = validate(p);
         return addBetween(e, node, node.getNext());
     }
-    public E set(Position<E> p, E e) {
+
+    public E set(Position<E> p, E e) throws IllegalArgumentException {
         Node<E> node = validate(p);
         E answer = node.getElement();
         node.setElement(e);
-        return answer;  //ritorniamo il valore salvato precedentemente
+        return answer;
     }
-    public E remove(Position<E> p) {
+
+    public E remove(Position<E> p) throws IllegalArgumentException {
         Node<E> node = validate(p);
         Node<E> predecessor = node.getPrev();
         Node<E> successor = node.getNext();
+        
         predecessor.setNext(successor);
         successor.setPrev(predecessor);
         size--;
-        E element = node.getElement();
+        
+        E answer = node.getElement();
+        
+        // Pulizia riferimenti per aiutare il Garbage Collector
         node.setElement(null);
-        node.setNext(null);  // aiuta il garbage collector
+        node.setNext(null); // Segnala l'invalidità del nodo
         node.setPrev(null);
-        return element;
+        
+        return answer;
     }
 
     
 
-    @Override
-    public Position<E> before(Position<E> p) throws IllegalArgumentException {
-        Node<E> node = validate(p);
-        if (node.getPrev() == header) return null;
-        return node.getPrev();
-    }
+
+
     
+
     
-    public Position<E> after(Position<E> p) throws IllegalArgumentException {
-        Node<E> node = validate(p);
-        if (node.getNext() == trailer) return null;
-        return node.getNext();
-    }
-
-
-
     //Vediamo come poter iterare una lista posizionale
     //Il primo modo per iterare una lista posizionale, è attraverso un oggetto Iterable delle posizioni, che restituisce un iteratore delle posizioni
 

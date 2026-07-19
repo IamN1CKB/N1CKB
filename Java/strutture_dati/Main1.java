@@ -83,6 +83,8 @@ public class Main1 {
         System.out.println("la queue e' vuota? " + queue.isEmpty());
         System.out.println("elemento rimosso dalla queue: " + queue.dequeue());
 
+
+        
         LinkedPositionalList<String> listaPosizioni = new LinkedPositionalList<String>();
         Position<String> MichelePosition = listaPosizioni.addFirst("Michele");
         // lista: Michele
@@ -97,7 +99,7 @@ public class Main1 {
         // lista: Michele
         System.out.println("numero elementi lista posizionale: " + listaPosizioni.size());
         try {
-            // se proviamo a stampare un elemento rimosso, ci dà IllegalStateException
+            // se proviamo a stampare un elemento rimosso (Luca), ci dà IllegalStateException
             System.out.println("elemento Luca della lista posizionala: " + LucaPosition.getElement());
         } catch (Exception e) {
             System.out.println("\n");
@@ -139,6 +141,10 @@ public class Main1 {
         System.out.println(
                 MarioPosition.getElement() + " e' dopo di " + listaPosizioni.before(MarioPosition).getElement());
 
+
+
+
+                
         // usiamo un albero generico per rappresentare un sistema di cartelle e file
         // usiamo la classe VisitGenTree che estende GenTree e implementa le visite
         VisitGenTree<String> alberoFile = new VisitGenTree<String>();

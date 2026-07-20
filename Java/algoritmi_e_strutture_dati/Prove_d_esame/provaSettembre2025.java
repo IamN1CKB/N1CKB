@@ -1,4 +1,4 @@
-package algoritmi_e_strutture_dati.esame;
+package algoritmi_e_strutture_dati.Prove_d_esame;
 import algoritmi_e_strutture_dati.Strutture_dati.Position;
 import algoritmi_e_strutture_dati.Strutture_dati.VisitGenTree;
 

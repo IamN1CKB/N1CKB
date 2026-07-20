@@ -1,6 +1,6 @@
-package strutture_dati.Esercitazione_strutture_dati;
+package algoritmi_e_strutture_dati.Esercitazione_strutture_dati;
 
-import strutture_dati.ArrayQueue;
+import algoritmi_e_strutture_dati.Strutture_dati.ArrayQueue;
 
 public class EsQueue {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package strutture_dati;
+package algoritmi_e_strutture_dati.Strutture_dati;
 
 public class ArrayQueue<E> implements Queue<E> {
     private E[] data;       // Array per la memorizzazione degli elementi

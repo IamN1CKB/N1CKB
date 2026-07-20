@@ -1,6 +1,15 @@
-package strutture_dati;
+package algoritmi_e_strutture_dati.interfacce_non_usate;
 
-public class ArrayListDimMax<E>{
+/**
+ * Questa classe implementa una lista generica basata su array statico. 
+ * Non la useremo mai, siccome in Java esiste già la classe ArrayList in java.util, 
+ * ma la scriviamo per esercizio.
+ *
+ * Infatti la classe ArrayList in java.util è molto più complessa e ottimizzata, 
+ * siccome gestisce dinamicamente la capacità dell'array sottostante, mentre questa 
+ * implementazione è statica e non ridimensiona l'array.
+*/
+public class ArrayList<E>{
     // Variabili di istanza
     private int size = 0; // Tiene traccia del numero reale di elementi inseriti
     private E[] data;     // Array di supporto per memorizzare i riferimenti agli oggetti
@@ -10,7 +19,7 @@ public class ArrayListDimMax<E>{
      * @param capacity La capacità fisica massima iniziale dell'array.
      */
     @SuppressWarnings("unchecked")
-    public ArrayListDimMax(int capacity) {
+    public ArrayList(int capacity) {
         // Allocazione dell'array come Object[] e successivo cast generico
         data = (E[]) new Object[capacity];
     }

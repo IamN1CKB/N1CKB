@@ -1,4 +1,6 @@
-package strutture_dati;
+package algoritmi_e_strutture_dati.Strutture_dati;
+
+import java.util.Iterator;
 
 /**
  * Interfaccia che definisce il comportamento di una lista posizionale.

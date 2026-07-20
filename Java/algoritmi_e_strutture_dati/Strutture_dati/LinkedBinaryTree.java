@@ -4,9 +4,10 @@
  * Fornisce metodi per aggiungere radice, figli sinistro/destro, ottenere fratello, visitare l'albero in-order, ecc.
  * Ogni nodo è rappresentato dalla classe interna Node<E>.
  */
-package strutture_dati;
+package algoritmi_e_strutture_dati.Strutture_dati;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class LinkedBinaryTree<E> implements BinaryTree<E> {
     /**
@@ -279,7 +280,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
         if (right(p) != null) {
             snapshot.add(right(p));
         }
-        return snapshot;
+        return (Iterable<Position<E>>) snapshot;
     }
 
     /**
@@ -305,7 +306,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
         if (!isEmpty()) {
             inOrderSubtree(root(), snapshot);
         }
-        return snapshot;
+        return (Iterable<Position<E>>)snapshot;
     }
 
     /**

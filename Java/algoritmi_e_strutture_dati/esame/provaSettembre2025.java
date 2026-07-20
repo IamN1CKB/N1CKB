@@ -1,7 +1,6 @@
-package strutture_dati.esame;
-import strutture_dati.Position;
-
-import strutture_dati.VisitGenTree;
+package algoritmi_e_strutture_dati.esame;
+import algoritmi_e_strutture_dati.Strutture_dati.Position;
+import algoritmi_e_strutture_dati.Strutture_dati.VisitGenTree;
 
 public class provaSettembre2025 {
     public static void main(String[] args) {

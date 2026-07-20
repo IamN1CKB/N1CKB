@@ -1,4 +1,4 @@
-package strutture_dati;
+package algoritmi_e_strutture_dati.Strutture_dati;
 
 public interface BinaryTree<E> extends Tree<E> {
     /** Restituisce la posizione del figlio sinistro di p (o nulli se non esiste). */

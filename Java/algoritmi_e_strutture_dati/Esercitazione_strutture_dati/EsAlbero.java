@@ -1,7 +1,8 @@
-package strutture_dati.Esercitazione_strutture_dati;
+package algoritmi_e_strutture_dati.Esercitazione_strutture_dati;
 
-import strutture_dati.Position;
-import strutture_dati.VisitGenTree;
+import algoritmi_e_strutture_dati.Strutture_dati.GenTree;
+import algoritmi_e_strutture_dati.Strutture_dati.Position;
+import algoritmi_e_strutture_dati.Strutture_dati.VisitGenTree;
 
 public class EsAlbero {
     public static void main(String[] args) {
@@ -45,22 +46,22 @@ public class EsAlbero {
         // L'albero rappresenta la seguente struttura:
         /*
          * C:
-         * └── Users
-         * └── nicol
-         * ├── Desktop
-         * │ ├── file1.txt
-         * │ └── file2.txt
-         * ├── Documenti
-         * │ └── file3.txt
-         * └── Foto
-         * ├── Vacanze
-         * │ ├── img1.jpg
-         * │ ├── img2.jpg
-         * │ └── img3.jpg
-         * └── Amici
-         * ├── img4.jpg
-         * ├── img5.jpg
-         * └── img6.jpg
+            └── Users
+                └── nicol
+                    ├── Desktop
+                    │   ├── file1.txt
+                    │   └── file2.txt
+                    ├── Documenti
+                    │   └── file3.txt
+                    └── Foto
+                        ├── Vacanze
+                        │   ├── img1.jpg
+                        │   ├── img2.jpg
+                        │   └── img3.jpg
+                        └── Amici
+                            ├── img4.jpg
+                            ├── img5.jpg
+                            └── img6.jpg
          */
         System.out.println("Visita in pre-ordine:");
         alberoFile.preOrder(alberoFile.root());
@@ -82,6 +83,53 @@ public class EsAlbero {
         System.out.println("img1.jpg e' una foglia? " + alberoFile.isExternal(img1));
         System.out.println("C: e' la radice dell'albero? " + alberoFile.isRoot(root));
         System.out.println("Il numero totale di nodi nell'albero e': " + alberoFile.size());
-        System.out.println("L'albero e' vuoto? " + alberoFile.isEmpty());
+        System.out.println("L'albero e' vuoto? " + alberoFile.isEmpty()+ "\n");
+
+
+
+        // Esercizio: creare un albero genealogico della famiglia reale britannica
+        GenTree<String> gtree = new GenTree<>();
+
+        System.out.println("--- Inizio popolamento albero genealogico ---");
+
+        // Radice: Generazione 0
+        Position<String> realRoot = gtree.addRoot("Elisabetta II");
+
+        // Generazione 1 (Figli di Elisabetta II)
+        Position<String> carlo = gtree.addChild(realRoot, "Carlo");
+        Position<String> anna = gtree.addChild(realRoot, "Anna");
+        Position<String> andrea = gtree.addChild(realRoot, "Andrea");
+        Position<String> edoardo = gtree.addChild(realRoot, "Edoardo");
+
+        // Figli di Carlo
+        Position<String> william = gtree.addChild(carlo, "William");
+        gtree.addChild(carlo, "Harry");
+
+        // Figli di William (Generazione 3)
+        gtree.addChild(william, "George");
+        gtree.addChild(william, "Charlotte");
+
+        // Figli di Anna
+        gtree.addChild(anna, "Peter");
+        gtree.addChild(anna, "Zara");
+
+        // Figli di Andrea
+        gtree.addChild(andrea, "Beatrice");
+        gtree.addChild(andrea, "Eugenia");
+
+        // Figli di Edoardo
+        gtree.addChild(edoardo, "Louise");
+        gtree.addChild(edoardo, "James");
+
+        System.out.println("Popolamento completato.");
+        System.out.println("Numero totale di nodi inseriti (size): " + gtree.size());
+
+        // Iterazione sugli elementi tramite iteratore (pre-ordine)
+        System.out.println("\n--- Stampa nodi tramite Iterator (pre-ordine) ---");
+        int count = 0;
+        for (String nome : gtree) {
+            System.out.println("Nodo " + count + ": " + nome);
+            count++;
+        }
     }
 }

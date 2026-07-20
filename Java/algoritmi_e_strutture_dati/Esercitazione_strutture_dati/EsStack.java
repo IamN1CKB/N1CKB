@@ -1,7 +1,7 @@
-package strutture_dati.Esercitazione_strutture_dati;
+package algoritmi_e_strutture_dati.Esercitazione_strutture_dati;
 
-import strutture_dati.ArrayStack;
-import strutture_dati.ListBasedStack;
+import algoritmi_e_strutture_dati.Strutture_dati.ArrayStack;
+import algoritmi_e_strutture_dati.Strutture_dati.ListBasedStack;
 
 public class EsStack {
     public static void main(String[] args) {

@@ -1,9 +1,9 @@
-package strutture_dati.Esercitazione_strutture_dati;
+package algoritmi_e_strutture_dati.Esercitazione_strutture_dati;
 
 import java.util.Scanner;
 
-import strutture_dati.DoublyLinkedList;
-import strutture_dati.SinglyLinkedList;
+import algoritmi_e_strutture_dati.Strutture_dati.DoublyLinkedList;
+import algoritmi_e_strutture_dati.Strutture_dati.SinglyLinkedList;
 
 public class EsListeConcatenate {
     public static void main(String[] args) {

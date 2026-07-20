@@ -1,4 +1,4 @@
-package strutture_dati;
+package algoritmi_e_strutture_dati.Strutture_dati;
 
 public class ArrayStack<E> implements Stack<E> {
     private E[] data;       // Array di supporto per la memorizzazione dei dati

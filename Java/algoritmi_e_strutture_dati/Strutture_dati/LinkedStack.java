@@ -1,12 +1,12 @@
 package algoritmi_e_strutture_dati.Strutture_dati;
 
-public class ListBasedStack<E> implements Stack<E> {
+public class LinkedStack<E> implements Stack<E> {
 
     private SinglyLinkedList<E> list = new SinglyLinkedList<E>();
 
 
     //costruttore vuoto
-    public ListBasedStack() { }
+    public LinkedStack() { }
     
     @Override
     public int size() {

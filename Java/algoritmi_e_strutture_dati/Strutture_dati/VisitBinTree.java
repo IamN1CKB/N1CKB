@@ -52,20 +52,20 @@ public class VisitBinTree<E> extends LinkedBinaryTree<E> {
      */
     public void breadthfirst() {
         if (!isEmpty()) {
-            java.util.LinkedList<Position<E>> queue = new java.util.LinkedList<>();
-            queue.addLast(root()); // Enqueue della radice
+            LinkedQueue<Position<E>> queue = new LinkedQueue<>();
+            queue.enqueue(root()); // Enqueue della radice
 
             while (!queue.isEmpty()) {
-                Position<E> p = queue.removeFirst(); // Dequeue
+                Position<E> p = queue.dequeue(); // Dequeue
                 System.out.println(p.getElement());   // Visita
 
                 // Enqueue del figlio sinistro (se presente)
                 if (left(p) != null) {
-                    queue.addLast(left(p));
+                    queue.enqueue(left(p));
                 }
                 // Enqueue del figlio destro (se presente)
                 if (right(p) != null) {
-                    queue.addLast(right(p));
+                    queue.enqueue(right(p));
                 }
             }
         }

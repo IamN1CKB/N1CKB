@@ -14,25 +14,25 @@ public interface PositionalList<E> extends Iterable<E> {
      * Restituisce il numero di elementi nella lista.
      * @return dimensione della lista
      */
-    int size();
+    public int size();
 
     /**
      * Verifica se la lista è vuota.
      * @return true se la lista non contiene elementi, false altrimenti
      */
-    boolean isEmpty();
+    public boolean isEmpty();
 
     /**
      * Restituisce la posizione del primo elemento della lista.
      * @return posizione del primo elemento, o null se la lista è vuota
      */
-    Position<E> first();
+    public Position<E> first();
 
     /**
      * Restituisce la posizione dell'ultimo elemento della lista.
      * @return posizione dell'ultimo elemento, o null se la lista è vuota
      */
-    Position<E> last();
+    public Position<E> last();
 
     /**
      * Restituisce la posizione immediatamente precedente a p.
@@ -40,7 +40,7 @@ public interface PositionalList<E> extends Iterable<E> {
      * @return la posizione precedente, o null se p è il primo elemento
      * @throws IllegalArgumentException se p non è una posizione valida per questa lista
      */
-    Position<E> before(Position<E> p) throws IllegalArgumentException;
+    public Position<E> before(Position<E> p) throws IllegalArgumentException;
 
     /**
      * Restituisce la posizione immediatamente successiva a p.
@@ -48,21 +48,21 @@ public interface PositionalList<E> extends Iterable<E> {
      * @return la posizione successiva, o null se p è l'ultimo elemento
      * @throws IllegalArgumentException se p non è una posizione valida per questa lista
      */
-    Position<E> after(Position<E> p) throws IllegalArgumentException;
+    public Position<E> after(Position<E> p) throws IllegalArgumentException;
 
     /**
      * Inserisce un elemento all'inizio della lista.
      * @param e il nuovo elemento da inserire
      * @return la posizione del nuovo elemento
      */
-    Position<E> addFirst(E e);
+    public Position<E> addFirst(E e);
 
     /**
      * Inserisce un elemento alla fine della lista.
      * @param e il nuovo elemento da inserire
      * @return la posizione del nuovo elemento
      */
-    Position<E> addLast(E e);
+    public Position<E> addLast(E e);
 
     /**
      * Inserisce un elemento immediatamente prima della posizione p.
@@ -71,7 +71,7 @@ public interface PositionalList<E> extends Iterable<E> {
      * @return la posizione del nuovo elemento
      * @throws IllegalArgumentException se p non è una posizione valida
      */
-    Position<E> addBefore(Position<E> p, E e) throws IllegalArgumentException;
+    public Position<E> addBefore(Position<E> p, E e) throws IllegalArgumentException;
 
     /**
      * Inserisce un elemento immediatamente dopo la posizione p.
@@ -80,7 +80,7 @@ public interface PositionalList<E> extends Iterable<E> {
      * @return la posizione del nuovo elemento
      * @throws IllegalArgumentException se p non è una posizione valida
      */
-    Position<E> addAfter(Position<E> p, E e) throws IllegalArgumentException;
+    public Position<E> addAfter(Position<E> p, E e) throws IllegalArgumentException;
 
     /**
      * Sostituisce l'elemento memorizzato alla posizione p con e.
@@ -89,7 +89,7 @@ public interface PositionalList<E> extends Iterable<E> {
      * @return l'elemento precedentemente memorizzato in p
      * @throws IllegalArgumentException se p non è una posizione valida
      */
-    E set(Position<E> p, E e) throws IllegalArgumentException;
+    public E set(Position<E> p, E e) throws IllegalArgumentException;
 
     /**
      * Rimuove l'elemento alla posizione p, invalidando la posizione stessa.
@@ -97,18 +97,18 @@ public interface PositionalList<E> extends Iterable<E> {
      * @return l'elemento rimosso
      * @throws IllegalArgumentException se p non è una posizione valida
      */
-    E remove(Position<E> p) throws IllegalArgumentException;
+    public E remove(Position<E> p) throws IllegalArgumentException;
 
     /**
      * Restituisce un iteratore sugli elementi della lista.
      * @return un Iterator degli elementi
      */
-    Iterator<E> iterator();
+    public Iterator<E> iterator();
 
     /**
      * Restituisce una collezione iterabile di tutte le posizioni della lista,
      * consentendo di scorrere le posizioni anziché solo gli elementi.
      * @return una collezione Iterable di oggetti Position
      */
-    Iterable<Position<E>> positions();
+    public Iterable<Position<E>> positions();
 }

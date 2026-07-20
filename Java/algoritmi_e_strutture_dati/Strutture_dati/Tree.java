@@ -13,7 +13,7 @@ public interface Tree<E> extends Iterable<E> {
      *
      * @return posizione della radice
      */
-    Position<E> root();
+    public Position<E> root();
 
     /**
      * Restituisce la posizione del genitore di p.
@@ -22,7 +22,7 @@ public interface Tree<E> extends Iterable<E> {
      * @return posizione del genitore
      * @throws IllegalArgumentException se la posizione p non è valida o è la radice
      */
-    Position<E> parent(Position<E> p) throws IllegalArgumentException;
+    public Position<E> parent(Position<E> p) throws IllegalArgumentException;
 
     /**
      * Restituisce un Iterable contenente tutte le posizioni dei figli di p.
@@ -31,7 +31,7 @@ public interface Tree<E> extends Iterable<E> {
      * @return Iterable contenente le posizioni dei figli
      * @throws IllegalArgumentException se p non è valida
      */
-    Iterable<Position<E>> children(Position<E> p) throws IllegalArgumentException;
+    public Iterable<Position<E>> children(Position<E> p) throws IllegalArgumentException;
 
     /**
      * Restituisce il numero di figli di p.
@@ -40,7 +40,7 @@ public interface Tree<E> extends Iterable<E> {
      * @return numero di figli di p
      * @throws IllegalArgumentException se p non è valida
      */
-    int numChildren(Position<E> p) throws IllegalArgumentException;
+    public int numChildren(Position<E> p) throws IllegalArgumentException;
 
     /**
      * Restituisce true se p è un nodo interno (ha almeno un figlio).
@@ -49,7 +49,7 @@ public interface Tree<E> extends Iterable<E> {
      * @return true se il nodo è interno, false altrimenti
      * @throws IllegalArgumentException se p non è valida
      */
-    boolean isInternal(Position<E> p) throws IllegalArgumentException;
+    public boolean isInternal(Position<E> p) throws IllegalArgumentException;
 
     /**
      * Restituisce true se p è un nodo esterno (foglia, nessun figlio).
@@ -58,7 +58,7 @@ public interface Tree<E> extends Iterable<E> {
      * @return true se il nodo è esterno, false altrimenti
      * @throws IllegalArgumentException se p non è valida
      */
-    boolean isExternal(Position<E> p) throws IllegalArgumentException;
+    public boolean isExternal(Position<E> p) throws IllegalArgumentException;
 
     /**
      * Restituisce true se p è la radice dell'albero.
@@ -67,33 +67,33 @@ public interface Tree<E> extends Iterable<E> {
      * @return true se il nodo è la radice, false altrimenti
      * @throws IllegalArgumentException se p non è valida
      */
-    boolean isRoot(Position<E> p) throws IllegalArgumentException;
+    public boolean isRoot(Position<E> p) throws IllegalArgumentException;
 
     /**
      * Restituisce il numero totale di nodi presenti nell'albero.
      *
      * @return numero totale di nodi
      */
-    int size();
+    public int size();
 
     /**
      * Restituisce true se l'albero non contiene alcun nodo.
      *
      * @return true se l'albero è vuoto, false altrimenti
      */
-    boolean isEmpty();
+    public boolean isEmpty();
 
     /**
      * Restituisce un iteratore sugli elementi contenuti nell'albero.
      *
      * @return iteratore degli elementi
      */
-    Iterator<E> iterator();
+    public Iterator<E> iterator();
 
     /**
      * Restituisce un Iterable contenente tutte le posizioni dell'albero.
      *
      * @return Iterable di tutte le posizioni
      */
-    Iterable<Position<E>> positions();
+    public Iterable<Position<E>> positions();
 }

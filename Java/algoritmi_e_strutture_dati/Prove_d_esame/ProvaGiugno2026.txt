@@ -1,0 +1,19 @@
+1. Scrivere l'interfaccia dei metodi principali della struttura dati Albero binario Generico.
+2. Scrivere un metodo che costruisce un albero binario completo e simmetrico di altezza h,
+ passata come parametro di ingresso, e contenente gli interi successivi a partire dalla
+ radice di valore 1 (vedi figura: albero di altezza pari a 2).
+N.B. E' possibile utilizzare come supporto una struttura dati Coda.
+
+**Rappresentazione dell'albero binario:**
+
+
+          ( 1 )
+         /     \
+      ( 2 )   ( 3 )
+      /   \   /   \
+    [ 4 ][ 5 ][ 6 ][ 7 ]
+
+
+
+(Nota: i nodi 1, 2 e 3 sono rappresentati con forma circolare nell'immagine,
+ mentre le foglie 4, 5, 6 e 7 hanno forma quadrata/rettangolare).

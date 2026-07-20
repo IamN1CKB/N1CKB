@@ -1,0 +1,21 @@
+1. Scrivere l'interfaccia dei metodi principali della struttura dati Pila Generica.
+2. Scrivere un metodo che a partire pila di interi passata come parametro di ingresso, 
+utilizzando una lista doppiamente concatenata come struttura di appoggio, restituisce la 
+stessa pila in cui vengono eliminati i valori pari a 0, e separati i valori positivi da 
+quelli negativi mantenendo l'ordine relativo e inserendo prima i negativi e poi i positivi o 
+viceversa a seconda del segno dell'ultimo elemento diverso da 0 estratto dalla pila.
+
+---
+
+Esempio:
+
+Pila iniziale       Pila finale (Output)
+   +----+                +----+
+   | -2 |                | +8 |
+   | -4 |                |+10 |
+   | +8 |                | -2 |
+   |+10 |                | -4 |
+   | -3 |                | -3 |
+   | -1 |                | -1 |
+   |  0 |                +----+
+   +----+

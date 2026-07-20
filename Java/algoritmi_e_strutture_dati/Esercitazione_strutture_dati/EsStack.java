@@ -1,7 +1,7 @@
 package algoritmi_e_strutture_dati.Esercitazione_strutture_dati;
 
 import algoritmi_e_strutture_dati.Strutture_dati.ArrayStack;
-import algoritmi_e_strutture_dati.Strutture_dati.ListBasedStack;
+import algoritmi_e_strutture_dati.Strutture_dati.LinkedStack;
 
 public class EsStack {
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class EsStack {
         System.out.println(stack.pop());
         System.out.println("lo stack e' vuoto? " + stack.isEmpty());
 
-        ListBasedStack<String> stackLista = new ListBasedStack<String>();
+        LinkedStack<String> stackLista = new LinkedStack<String>();
         System.out.println("lo stackLista e' vuoto? " + stackLista.isEmpty());
         stackLista.push("Ciao");
         stackLista.push("A");

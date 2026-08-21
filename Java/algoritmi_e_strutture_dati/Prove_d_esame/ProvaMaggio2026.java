@@ -24,8 +24,7 @@ Pila iniziale       Pila finale (Output)
  */
 import algoritmi_e_strutture_dati.Strutture_dati.DoublyLinkedList;
 import algoritmi_e_strutture_dati.Strutture_dati.LinkedStack;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.Scanner;
 
 public class ProvaMaggio2026 {
     /**
@@ -41,8 +40,9 @@ public class ProvaMaggio2026 {
 
         // Struttura di appoggio: Lista doppiamente concatenata
         // In Java, LinkedList implementa nativamente una Doubly Linked List
-        LinkedList<Integer> listaAppoggio = new LinkedList<>();
-        
+        DoublyLinkedList<Integer> listaPositivi = new DoublyLinkedList<>();
+        DoublyLinkedList<Integer> listaNegativi = new DoublyLinkedList<>();
+
         int ultimoNonZero = 0;
 
         // FASE 1: Estrazione dalla pila
@@ -50,21 +50,26 @@ public class ProvaMaggio2026 {
         while (!pila.isEmpty()) {
             int valore = pila.pop();
             
-            if (valore != 0) {
-                listaAppoggio.addLast(valore);
-                // Poiché il ciclo svuota la pila, l'ultimo valore assegnato
-                // a questa variabile sarà esattamente quello che si trovava sul fondo.
+            
+            if (valore > 0) {
+                listaPositivi.addLast(valore);
+                ultimoNonZero = valore; 
+            } else if (valore < 0) {
+                listaNegativi.addLast(valore);
                 ultimoNonZero = valore; 
             }
         }
 
         // Se la pila conteneva solo zeri, ora è vuota e abbiamo finito
-        if (listaAppoggio.isEmpty()) {
+        if (listaPositivi.isEmpty() && listaNegativi.isEmpty()) {
             return pila; // Ritorniamo la pila vuota
         }
 
         // Determiniamo l'ordine di inserimento
         boolean inserisciPrimaNegativi = (ultimoNonZero < 0);
+        // Se l'ultimo elemento non-zero estratto è negativo, inseriamo prima i negativi,
+        // altrimenti prima i positivi.
+
 
         // FASE 2: Reinserimento nella pila
         // Per mantenere l'ordine relativo (LIFO), dobbiamo scorrere la lista 
@@ -72,39 +77,33 @@ public class ProvaMaggio2026 {
         
         if (inserisciPrimaNegativi) {
             // Passata A: Inseriamo prima i negativi (andranno sul fondo della pila)
-            Iterator<Integer> iteratore = listaAppoggio.descendingIterator();
-            while (iteratore.hasNext()) {
-                int valore = iteratore.next();
-                if (valore < 0) {
-                    pila.push(valore);
-                }
+            while (!listaNegativi.isEmpty()) {
+                // Rimuoviamo il primo elemento dalla lista dei negativi e lo inseriamo
+                //  nella pila
+                pila.push(listaNegativi.removeFirst());
+            }
+
+            // Passata B: Inseriamo i positivi (andranno in cima alla pila)
+            while (!listaPositivi.isEmpty()) {
+                // Rimuoviamo il primo elemento dalla lista dei positivi e lo inseriamo
+                //  nella pila
+                pila.push(listaPositivi.removeFirst());
             }
             
-            // Passata B: Inseriamo i positivi (andranno in cima alla pila)
-            iteratore = listaAppoggio.descendingIterator();
-            while (iteratore.hasNext()) {
-                int valore = iteratore.next();
-                if (valore > 0) {
-                    pila.push(valore);
-                }
-            }
+            
         } else {
             // Passata A: Inseriamo prima i positivi (andranno sul fondo)
-            Iterator<Integer> iteratore = listaAppoggio.descendingIterator();
-            while (iteratore.hasNext()) {
-                int valore = iteratore.next();
-                if (valore > 0) {
-                    pila.push(valore);
-                }
+            while (!listaPositivi.isEmpty()) {
+                // Rimuoviamo il primo elemento dalla lista dei positivi e lo inseriamo
+                //  nella pila
+                pila.push(listaPositivi.removeFirst());
             }
             
             // Passata B: Inseriamo i negativi (andranno in cima)
-            iteratore = listaAppoggio.descendingIterator();
-            while (iteratore.hasNext()) {
-                int valore = iteratore.next();
-                if (valore < 0) {
-                    pila.push(valore);
-                }
+            while (!listaNegativi.isEmpty()) {
+                // Rimuoviamo il primo elemento dalla lista dei negativi e lo inseriamo
+                //  nella pila
+                pila.push(listaNegativi.removeFirst());
             }
         }
         return pila; // Ritorniamo la pila modificata
@@ -118,18 +117,29 @@ public class ProvaMaggio2026 {
         ProvaMaggio2026 prova = new ProvaMaggio2026();
         LinkedStack<Integer> stack = new LinkedStack<>();
         // Popoliamo lo stack con alcuni valori di esempio
-        stack.push(-2);
-        stack.push(-4);
-        stack.push(8);
-        stack.push(10);
-        stack.push(-3);
-        stack.push(-1);
-        stack.push(0); // Questo valore sarà eliminato
+        Scanner scanner = new Scanner(System.in);
+        int numeroElementi = 10;
+        int[] array = new int[numeroElementi];
+        for (int i = 0; i < numeroElementi; i++) {
+            System.out.print("Inserisci un intero: ");
+            int valore = scanner.nextInt();
+            stack.push(valore);
+            array[i] = valore;
+
+        }
+        
+        System.out.println("Stack originale:");
+        int i = 0;
+        while (i < array.length) {
+            System.out.println(array[i] + " \n");
+            i++;
+        }
         stack = prova.riorganizza(stack);
         System.out.println("Stack riordinato:");
         while (!stack.isEmpty()) {
-            System.out.print(stack.pop() + " ");
+            System.out.println(stack.pop() + " \n");
         }
         System.out.println();
+        scanner.close();
     }
 }

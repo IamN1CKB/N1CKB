@@ -1,0 +1,3 @@
+1. Scrivere l'interfaccia dei metodi principali della struttura dati Lista semplicemente concatenata generica.
+2. Scrivere un metodo che, a partire da una Lista semplicemente concatenata di bit (registro) passata come parametro genera in maniera casuale un'altra lista di bit della stessa dimensione (maschera) e modica la lista registro facendo un AND bit a bit con la lista maschera.
+N.B. Non vanno usate strutture dati ausiliare.

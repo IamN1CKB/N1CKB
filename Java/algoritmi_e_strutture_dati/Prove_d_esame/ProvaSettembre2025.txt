@@ -1,0 +1,9 @@
+1. Scrivere l'interfaccia dei metodi principali della struttura dati Lista doppiamente 
+concatenata generica.
+
+2. Scrivere un metodo che, a partire da una Lista doppiamente concatenata di interi e da un 
+valore soglia passati come parametro, ipotizzando che la Lista sia Iterable e usando 
+solo i metodi pubblici, scorre gli elementi della Lista dalla testa fino a quando la 
+somma degli elementi visitati non superi il valore soglia. A questo punto tutti i rimanenti 
+elementi della Lista vengono inseriti in una nuova lista mantenendo l'ordine ed 
+eliminandoli dalla lista iniziale.

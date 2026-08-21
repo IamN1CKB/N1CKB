@@ -17,7 +17,7 @@ public class VisitBinTree<E> extends LinkedBinaryTree<E> {
     /**
      * Visita l'albero in pre-ordine (radice, sottoalbero sinistro, sottoalbero destro).
      *
-     * @param p posizione da cui partire
+     * @param p posizione da cui partire (se null, parte dalla radice)
      */
     public void preorder(Position<E> p) {
         if (p == null) return;

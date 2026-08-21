@@ -1,6 +1,6 @@
 package algoritmi_e_strutture_dati.Strutture_dati;
 
-public class SinglyLinkedList<E> {
+public class SinglyLinkedList<E> implements SinglyLinkedListInterface<E> {
 
     // ---------------- nested Node class ----------------
     private static class Node<E> {

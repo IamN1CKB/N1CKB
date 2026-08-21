@@ -1,0 +1,5 @@
+1. Scrivere l'interfaccia della Lista doppiamente concatenata senza implementare 
+i metodi.
+2. Scrivere un metodo aggiuntivo Converti alla classe Lista che restituisca un 
+array di stringhe contenenti tutti gli elementi in posizione pari della Lista in ordine 
+dalla testa alla coda. (Utilizzare il metodo toString()).

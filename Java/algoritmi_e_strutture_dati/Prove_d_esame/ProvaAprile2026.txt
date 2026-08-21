@@ -1,0 +1,8 @@
+1. Scrivere l'interfaccia dei metodi principali della struttura dati Albero Binario.
+2. Scrivere un metodo che a partire da un'array di V di n interi passato come parametro di 
+ingresso effettua le seguenti operazioni:
+* ordina il vettore in senso decrescente.
+* inserisce come root di un albero binario di interi il valore max del vettore
+* per ogni elemento successivo non negativo, sempre a partire dall'ultimo nodo inserito, 
+    aggiunge l'elemento come figlio sinistro o come figlio destro in base al valore pari o dispari.
+* il metodo restituisce l'albero creato.

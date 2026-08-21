@@ -1,15 +1,21 @@
-package algoritmi_e_strutture_dati.Strutture_dati;
-
-
-public class DoublyLinkedList<E> implements DoublyLinkedListInterface<E> {
+package algoritmi_e_strutture_dati.interfacce_non_usate;
+/*
+intefaccia leggemente modificata rispetto a quella vista a lezione per poter essere 
+ereditata da una sottoclasse
+Invece di avere metodi privati, li abbiamo resi protetti, in modo che possano essere 
+utilizzati dalle sottoclassi.
+Fatto ciò siccome alcune traccie d'esame richiedono di implementare metodi aggiuntivi, 
+abbiamo creato una sottoclasse
+*/
+public class DoublyLinkedList<E> {
 
     // Classe innestata per i nodi
-    private static class Node<E> {
+    protected static class Node<E> {
         private E element;
         private Node<E> prev;
         private Node<E> next;
 
-        private Node(E e, Node<E> p, Node<E> n) {
+        protected Node(E e, Node<E> p, Node<E> n) {
             this.element = e;
             this.prev = p;
             this.next = n;
@@ -42,9 +48,9 @@ public class DoublyLinkedList<E> implements DoublyLinkedListInterface<E> {
         }
     }
 
-    private Node<E> header;
-    private Node<E> trailer;
-    private int size = 0;
+    protected Node<E> header;
+    protected Node<E> trailer;
+    protected int size = 0;
 
     public DoublyLinkedList() {
         header = new Node<>(null, null, null);
@@ -74,14 +80,14 @@ public class DoublyLinkedList<E> implements DoublyLinkedListInterface<E> {
         return trailer.getPrev().getElement();
     }
 
-    private void addBetween(E element, Node<E> predecessor, Node<E> successor) {
+    protected void addBetween(E element, Node<E> predecessor, Node<E> successor) {
         Node<E> newNode = new Node<>(element, predecessor, successor);
         predecessor.setNext(newNode);
         successor.setPrev(newNode);
         size++;
     }
 
-    private E remove(Node<E> node) {
+    protected E remove(Node<E> node) {
         Node<E> predecessor = node.getPrev();
         Node<E> successor = node.getNext();
         predecessor.setNext(successor);

@@ -1,0 +1,5 @@
+1. Scrivere l'interfaccia dei metodi principali della **Lista posizionale** di elementi generici
+2. Scrivere un metodo che a partire da una stringa **Testo** passata come parametro, utilizzando i soli metodi 
+pubblici dell'interfaccia, crei una lista posizionale di caratteri che contiene tutti i caratteri di **Testo**. 
+Successivamente, modificare la lista (senza creare una nuova lista posizionale) inserendo al posto di ogni carattere 
+'*' eventualmente presente la sequenza di caratteri "123".

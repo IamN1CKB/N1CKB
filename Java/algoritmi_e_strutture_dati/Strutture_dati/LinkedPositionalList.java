@@ -62,7 +62,7 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
             throw new IllegalArgumentException("Invalid p: la posizione non è del tipo Node corretto");
         }
         Node<E> node = (Node<E>) p;
-        if (node.getNext() == null) {
+        if (node.getNext() == null) {   // Nodo rimosso o sentinella
             throw new IllegalArgumentException("p is no longer in the list: la posizione è defunta");
         }
         return node;

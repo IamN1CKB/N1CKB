@@ -1,12 +1,17 @@
 package algoritmi_e_strutture_dati.interfacce_non_usate;
-/*
-intefaccia leggemente modificata rispetto a quella vista a lezione per poter essere 
-ereditata da una sottoclasse
-Invece di avere metodi privati, li abbiamo resi protetti, in modo che possano essere 
-utilizzati dalle sottoclassi.
-Fatto ciò siccome alcune traccie d'esame richiedono di implementare metodi aggiuntivi, 
-abbiamo creato una sottoclasse
-*/
+/**
+ * Versione modificata della classe DoublyLinkedList presentata a lezione.
+ * 
+ * Rispetto all'implementazione originale, i membri e i metodi ausiliari 
+ * (originariamente 'private') sono stati resi 'protected'. Questo incapsulamento 
+ * meno restrittivo consente alle sottoclassi di ereditare e utilizzare direttamente 
+ * le logiche interne e la struttura dei nodi della lista base.
+ * 
+ * Questa modifica è stata pensata specificamente per la traccia d'esame di 
+ * Marzo 2026, la quale richiede di estendere la struttura dati implementando 
+ * un metodo aggiuntivo in una sottoclasse, sfruttando i metodi ausiliari 
+ * della classe padre.
+ */
 public class DoublyLinkedList<E> {
 
     // Classe innestata per i nodi

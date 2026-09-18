@@ -1,4 +1,5 @@
 package algoritmi_e_strutture_dati.Prove_d_esame;
+import java.util.Scanner;
 /*
 Scrivere un metodo che costruisce un albero binario completo e simmetrico di altezza h,
  passata come parametro di ingresso, e contenente gli interi successivi a partire dalla
@@ -49,8 +50,8 @@ public class ProvaGiugno2026 {
             value++;
             // Aggiunta del figlio sinistro
             tree.addLeft(p, value);
-            // Richiamiamo left(p) sull'oggetto tree per ottenere la posizione del figlio 
-            // sinistro appena aggiunto e lo mettiamo in coda per la successiva elaborazione
+            // Richiamiamo left(p) sull'oggetto tree per ottenere la posizione del figlio sinistro appena 
+            // aggiunto e lo mettiamo in coda per la successiva elaborazione
             queue.enqueue(tree.left(p));
 
             value++;
@@ -64,10 +65,19 @@ public class ProvaGiugno2026 {
         return tree;
     }
 
+
+    //ci mettiamo un main per testare il metodo createTree (non richiesto dalla traccia d'esame)
     public static void main(String[] args) {
         System.out.println("Prova Giugno 2026");
         ProvaGiugno2026 prova = new ProvaGiugno2026();
-        VisitBinTree<Integer> tree = prova.createTree(3);
+        // Creazione di un albero binario completo e simmetrico di altezza h
+        System.out.println("Albero binario completo e simmetrico di altezza h:");
+        System.out.println("Inserire l'altezza h dell'albero binario: ");
+        Scanner scanner = new Scanner(System.in);
+        int h = scanner.nextInt();
+        VisitBinTree<Integer> tree = prova.createTree(h);
+        System.out.println("Stampa dell'albero in ampiezza (Breadth-First Traversal):");
         tree.breadthfirst();
+        scanner.close();
     }
 }

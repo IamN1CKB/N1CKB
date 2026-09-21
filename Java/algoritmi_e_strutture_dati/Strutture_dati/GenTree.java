@@ -99,7 +99,7 @@ public class GenTree<E> implements Tree<E> {
     }
 
     @Override
-    public boolean isRoot(Position<E> p) throws IllegalArgumentException {
+    public boolean isRoot(Position<E> p) {
         return p == root();
     }
 

@@ -3,159 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tips  di tastiera</title>
+    <meta name="description" content="Scorciatoie da tastiera per Windows, Visual Studio Code e consigli utili.">
+    <title>Scorciatoie da tastiera | Nicola Belardo</title>
     <style>
-        body {
-            background-color: antiquewhite;
-            padding: 10px;
-            padding-top: 0;
+        :root {
+            --bg: #f7f7fb;
+            --surface: #ffffff;
+            --surface-alt: #f0edff;
+            --text: #19162b;
+            --muted: #6d687f;
+            --primary: #6546d8;
+            --primary-dark: #4930ae;
+            --line: #e8e5f0;
+            --shadow: 0 18px 45px rgba(48, 31, 111, .09);
         }
-        h1, h2 {
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            background: radial-gradient(circle at 90% 0%, #e5ddff 0, transparent 27rem), var(--bg);
+            color: var(--text);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+        }
+        a { color: inherit; }
+        .container { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+
+        .site-header {
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(232, 229, 240, .75);
+            background: rgba(247, 247, 251, .78);
+            backdrop-filter: blur(14px);
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            font-weight: 800;
+            text-decoration: none;
+        }
+        .logo-mark {
+            display: grid;
+            place-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 13px;
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 8px 18px rgba(101, 70, 216, .27);
+        }
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 6px;
+        }
+        .nav a {
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: var(--muted);
+            font-size: .9rem;
+            font-weight: 650;
+            text-decoration: none;
+        }
+        .nav a:hover, .nav a:focus-visible {
+            background: var(--surface-alt);
+            color: var(--primary-dark);
+        }
+
+        .hero { padding: 72px 0 42px; }
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--primary);
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: .12em;
             text-transform: uppercase;
         }
-        span {
-            font-weight: bolder;
+        h1, h2, h3, p { margin-top: 0; }
+        h1 {
+            max-width: 760px;
+            margin-bottom: 16px;
+            font-size: clamp(2.6rem, 7vw, 5rem);
+            line-height: .98;
+            letter-spacing: -.055em;
         }
-        li {
-            background-color: rgb(253, 242, 228);
-            width: fit-content;
-            padding: 5px;
-            border-radius: 30px;
+        .intro {
+            max-width: 690px;
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 34px 0 16px;
+        }
+        .quick-nav a {
+            padding: 10px 15px;
+            border: 1px solid #d7cff8;
+            border-radius: 11px;
+            background: var(--surface);
+            color: var(--primary-dark);
+            font-size: .9rem;
+            font-weight: 750;
+            text-decoration: none;
+        }
+        .quick-nav a:hover, .quick-nav a:focus-visible {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .section { padding: 38px 0; }
+        .section-heading { margin-bottom: 22px; }
+        .section-heading h2 {
+            margin-bottom: 5px;
+            font-size: clamp(1.7rem, 3vw, 2.3rem);
+            letter-spacing: -.035em;
+        }
+        .section-heading p { margin-bottom: 0; color: var(--muted); }
+        .shortcut-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+        .shortcut-card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            background: var(--surface);
+            box-shadow: 0 8px 24px rgba(38, 29, 73, .035);
+            transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+        }
+        .shortcut-card:hover {
+            border-color: #c9bdf6;
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+        }
+        .shortcut-card h3 { margin-bottom: 0; font-size: 1rem; }
+        .shortcut-card p { margin-bottom: 0; color: var(--muted); font-size: .94rem; }
+        kbd {
+            display: inline-block;
+            padding: 4px 9px;
+            border: 1px solid #cfc9dc;
+            border-bottom-width: 3px;
+            border-radius: 7px;
+            background: #faf9fd;
+            color: var(--primary-dark);
+            font-family: inherit;
+            font-size: .86rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+        .shortcut-note {
+            margin-top: 20px;
+            padding: 15px 18px;
+            border-left: 4px solid var(--primary);
+            border-radius: 0 10px 10px 0;
+            background: var(--surface-alt);
+            color: var(--muted);
+            font-size: .92rem;
+        }
+        .shortcut-note strong { color: var(--text); }
+        .subsection {
+            margin-top: 26px;
+            padding-top: 26px;
+            border-top: 1px solid var(--line);
+        }
+        .subsection h3 { margin-bottom: 14px; font-size: 1.1rem; }
+        .ascii-list, .tips-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .ascii-list li, .tips-list li {
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            background: var(--surface);
+            color: var(--muted);
+        }
+        .ascii-list strong, .tips-list strong { color: var(--text); }
+        .site-footer {
+            margin-top: 26px;
+            padding: 26px 0 34px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: .88rem;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .container { width: min(100% - 28px, 1080px); }
+            .header-content { align-items: flex-start; flex-direction: column; gap: 14px; }
+            .nav { justify-content: flex-start; }
+            .nav a { padding: 6px 8px; font-size: .82rem; }
+            .hero { padding: 52px 0 25px; }
+            .shortcut-grid, .ascii-list, .tips-list { grid-template-columns: 1fr; }
+            .section { padding: 28px 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition-duration: .01ms !important; }
         }
     </style>
 </head>
 <body>
-    <h1>
-        Tips di tastiera
-    </h1>
-    <ul>
-        <h2>
-            Scorciatoie di tastiera per visual studio
-        </h2>
-        <li>
-            <span>
-                "Ctrl" + "/":
-            </span>
-            trasformare una linea di codice in commento 
-        </li>
-        <li>
-            <span>
-                "Alt" + "Shift" + "⇧" o "⇩":
-            </span>
-            duplicare una linea di codice
-        </li>
-        <li>
-            copiare un intera linea di codice:
-            <br>
-            <span>
-                "Ctrl" + "c"
-            </span>
-            (senza selezionare la linea di codice, ma con solo il cursore su di essa)
-            <br>
-            <span>
-                "Ctrl" + "v"
-            </span>
-            (senza selezionare la linea di codice, ma con solo il cursore su di essa)
-        </li>
-        <li>
-            <span>
-                "Ctrl" + "Shift" + "L":
-            </span>
-            selezionare tutte le parole corrispondenti
-        </li>
-        <li>
-            <span>
-                "Ctrl" + "Shift" + "K":
-            </span>
-            rimuovi la corrente linea di codice
-        </li>
-        <li>
-            <span>
-                Rotellina del mouse premuta a lungo e trascino:
-            </span>
-           seleziona il testo in rettangoli o quadrati
-        </li>
-        <li>
-            <span>
-                "Ctrl" + "D":
-            </span>
-            trova la prossima corrispondenza della parola selezionata con la possibilità di modificarle tutte insieme
-        </li>
-        <li>
-            <span>
-                "Alt" + "Z":
-            </span>
-            ritorno a capo automatico (su una stessa linea di codice)
-        </li>
-        <li>
-            <span>
-                "Alt" + "W"
-            </span>
-            dopo aver selezionato un pezzo di codice, crea un tag che racchiude quel codice (dall'estensione htmltagwrap)
-        </li>
-        <li>
-            cursori:
-            <ul>
-                <li>
-                    <span>
-                        "Alt" + click:
-                    </span>
-                    duplicare i cursori in più posti
-                </li>
-                <li>
-                    <span>
-                        rotellina del mouse premuta e trascina in verticale: 
-                    </span>
-                    crea più puntati dove scrivere testo in contemporanea
-                </li>
-                <li>
-                    <span>
-                        "Ctrl" + "Alt" + "⇧" o "⇩":
-                    </span>
-                    aggiungi il cursore sopra o sotto
-                </li>
-                <li>
-                    <span>
-                        "Ctrl" + "U":
-                    </span>
-                    annulla l'ultimo cursore
-                </li>
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="logo" href="../index.html" aria-label="Torna alla homepage">
+                <span class="logo-mark">NB</span>
+                <span>Nicola Belardo</span>
+            </a>
+            <nav class="nav" aria-label="Navigazione principale">
+                <a href="../index.html">Homepage</a>
+                <a href="#windows">Windows</a>
+                <a href="#vscode">Visual Studio Code</a>
+                <a href="#altre-tips">Altre tips</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">Guida rapida</p>
+            <h1>Scorciatoie da tastiera.</h1>
+            <p class="intro">Comandi pratici per lavorare più velocemente su Windows, Visual Studio Code e nelle attività di tutti i giorni.</p>
+            <nav class="quick-nav" aria-label="Indice della pagina">
+                <a href="#windows">Scorciatoie Windows</a>
+                <a href="#vscode">Visual Studio Code</a>
+                <a href="#ascii">Codici ASCII</a>
+                <a href="#altre-tips">Altri consigli</a>
+            </nav>
+        </section>
+
+        <section class="section" id="windows">
+            <div class="section-heading">
+                <h2>Scorciatoie per Windows</h2>
+                <p>Combinazioni utili per gestire il desktop, il sistema e le applicazioni.</p>
+            </div>
+            <div class="shortcut-grid">
+                <article class="shortcut-card">
+                    <h3><kbd>Windows</kbd> + <kbd>D</kbd></h3>
+                    <p>Mostra il desktop nascondendo tutte le finestre aperte. Premila di nuovo per ripristinarle.</p>
+                </article>
+                <article class="shortcut-card">
+                    <h3><kbd>Windows</kbd> + <kbd>V</kbd></h3>
+                    <p>Apre la cronologia degli appunti per recuperare gli ultimi elementi copiati.</p>
+                </article>
+                <article class="shortcut-card">
+                    <h3><kbd>Windows</kbd> + <kbd>V</kbd></h3>
+                    <p>Dal pannello degli appunti puoi anche accedere a simboli ed emoji non presenti direttamente sulla tastiera.</p>
+                </article>
+                <article class="shortcut-card">
+                    <h3><kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>Windows</kbd> + <kbd>B</kbd></h3>
+                    <p>Reimposta i driver video quando lo schermo si blocca o smette di rispondere. Lo schermo potrebbe lampeggiare brevemente.</p>
+                </article>
+                <article class="shortcut-card">
+                    <h3><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Esc</kbd></h3>
+                    <p>Apre direttamente Gestione attività, utile per terminare le applicazioni che non rispondono.</p>
+                </article>
+                <article class="shortcut-card">
+                    <h3><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Canc</kbd></h3>
+                    <p>Apre il menu di sicurezza di Windows con opzioni per bloccare, cambiare utente o aprire Gestione attività.</p>
+                </article>
+                <article class="shortcut-card">
+                    <h3><kbd>Windows</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd></h3>
+                    <p>Avvia lo strumento Cattura e ritaglia per fare uno screenshot di una parte dello schermo.</p>
+                </article>
+                <article class="shortcut-card">
+                    <h3><kbd>Windows</kbd> + <kbd>I</kbd></h3>
+                    <p>Apre rapidamente le Impostazioni di Windows.</p>
+                </article>
+                <article class="shortcut-card">
+                    <h3><kbd>Windows</kbd> + <kbd>G</kbd></h3>
+                    <p>Apre Xbox Game Bar, con strumenti per registrare lo schermo e controllare le prestazioni.</p>
+                </article>
+                <article class="shortcut-card">
+                    <h3><kbd>Windows</kbd> + <kbd>R</kbd>, poi <kbd>mrt</kbd></h3>
+                    <p>Apre lo strumento di rimozione malware di Microsoft per avviare una scansione del computer.</p>
+                </article>
+            </div>
+            <p class="shortcut-note"><strong>Nota:</strong> per il comando <kbd>Windows</kbd> + <kbd>R</kbd> prima apri la finestra Esegui, digita <kbd>mrt</kbd> e premi Invio.</p>
+        </section>
+
+        <section class="section" id="vscode">
+            <div class="section-heading">
+                <h2>Scorciatoie per Visual Studio Code</h2>
+                <p>Comandi per modificare il codice e gestire più cursori.</p>
+            </div>
+            <div class="shortcut-grid">
+                <article class="shortcut-card"><h3><kbd>Ctrl</kbd> + <kbd>/</kbd></h3><p>Trasforma una riga di codice in un commento.</p></article>
+                <article class="shortcut-card"><h3><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>↑</kbd> o <kbd>↓</kbd></h3><p>Duplica una riga di codice sopra o sotto quella corrente.</p></article>
+                <article class="shortcut-card"><h3><kbd>Ctrl</kbd> + <kbd>C</kbd> / <kbd>Ctrl</kbd> + <kbd>V</kbd></h3><p>Copia e incolla la riga su cui si trova il cursore anche senza selezionarla.</p></article>
+                <article class="shortcut-card"><h3><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd></h3><p>Seleziona tutte le parole corrispondenti a quella selezionata.</p></article>
+                <article class="shortcut-card"><h3><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd></h3><p>Rimuove la riga di codice corrente.</p></article>
+                <article class="shortcut-card"><h3>Rotellina premuta + trascinamento</h3><p>Seleziona il testo in forma rettangolare.</p></article>
+                <article class="shortcut-card"><h3><kbd>Ctrl</kbd> + <kbd>D</kbd></h3><p>Seleziona la corrispondenza successiva e permette di modificarle tutte insieme.</p></article>
+                <article class="shortcut-card"><h3><kbd>Alt</kbd> + <kbd>Z</kbd></h3><p>Attiva o disattiva il ritorno a capo automatico.</p></article>
+                <article class="shortcut-card"><h3><kbd>Alt</kbd> + <kbd>W</kbd></h3><p>Con l'estensione HTMLTagWrap, racchiude il codice selezionato in un tag.</p></article>
+            </div>
+            <div class="subsection">
+                <h3>Cursori multipli</h3>
+                <div class="shortcut-grid">
+                    <article class="shortcut-card"><h3><kbd>Alt</kbd> + clic</h3><p>Aggiunge cursori in più punti del file.</p></article>
+                    <article class="shortcut-card"><h3>Rotellina premuta + trascinamento verticale</h3><p>Crea più punti in cui scrivere contemporaneamente.</p></article>
+                    <article class="shortcut-card"><h3><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>↑</kbd> o <kbd>↓</kbd></h3><p>Aggiunge un cursore sopra o sotto quello corrente.</p></article>
+                    <article class="shortcut-card"><h3><kbd>Ctrl</kbd> + <kbd>U</kbd></h3><p>Annulla l'ultimo cursore aggiunto.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="ascii">
+            <div class="section-heading">
+                <h2>Codici ASCII utili</h2>
+                <p>Puoi consultare l'elenco completo dei codici <a href="https://www.w3schools.com/charsets/ref_html_ascii.asp" target="_blank" rel="noopener noreferrer">qui</a>.</p>
+            </div>
+            <ul class="ascii-list">
+                <li><strong><kbd>Alt</kbd> + <kbd>96</kbd> → `</strong><br>Il carattere backtick.</li>
+                <li><strong><kbd>Alt</kbd> + <kbd>158</kbd> → ×</strong><br>Il simbolo di moltiplicazione.</li>
             </ul>
-        </li>
-    </ul>
+        </section>
 
-    <ul>
-        <h2>
-            codici ASCII per caratteri utili (puoi vederli tutti <a target="_blank" href="https://www.w3schools.com/charsets/ref_html_ascii.asp">qui</a>)
-        </h2>
-        <li>
-            <span>
-                "Alt" + "96": ` 
-            </span>
-            (carattere chiamato backtick)
-        </li>
-        <li>
-            <span>
-                "Alt" + "158": &times;
-            </span>
-        </li>
-    </ul>
+        <section class="section" id="altre-tips">
+            <div class="section-heading">
+                <h2>Altri consigli</h2>
+                <p>Piccoli trucchi utili nella scrittura quotidiana.</p>
+            </div>
+            <ul class="tips-list">
+                <li><strong><kbd>Shift</kbd> + Invio</strong><br>In un campo di testo, ad esempio WhatsApp, Telegram o ChatGPT, va a capo senza inviare il messaggio.</li>
+            </ul>
+        </section>
+    </main>
 
-
-
-
-    <ul>
-        <h2>
-            Altre tips:
-        </h2>
-        <li>
-            <span>
-                "Shift" + "Invia":
-            </span>
-            In un qualsiasi elemento input (ad esempio su WhatsApp, Telegram, ChatGPT) sul computer manda a capo il testo senza inviarlo  
-        </li>
-    </ul>
-
-
+    <footer class="site-footer">
+        <div class="container"><a href="../index.html">← Torna alla homepage</a></div>
+    </footer>
 </body>
 </html>

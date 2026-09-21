@@ -3,122 +3,363 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Homepage di Nicola Belardo</title>
+	<meta name="description" content="La homepage personale di Nicola Belardo: progetti, risorse e siti utili.">
+	<title>Nicola Belardo | Web & risorse</title>
 	<style>
-		body {
-			background-color: antiquewhite;
-			margin: 30px;
+		:root {
+			--bg: #f7f7fb;
+			--surface: #ffffff;
+			--surface-alt: #f0edff;
+			--text: #19162b;
+			--muted: #6d687f;
+			--primary: #6546d8;
+			--primary-dark: #4930ae;
+			--line: #e8e5f0;
+			--shadow: 0 18px 45px rgba(48, 31, 111, .09);
 		}
+
+		* { box-sizing: border-box; }
+
+		html { scroll-behavior: smooth; }
+
+		body {
+			margin: 0;
+			background:
+				radial-gradient(circle at 90% 0%, #e5ddff 0, transparent 27rem),
+				var(--bg);
+			color: var(--text);
+			font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+			line-height: 1.6;
+		}
+
+		a { color: inherit; }
+
+		.container {
+			width: min(1120px, calc(100% - 40px));
+			margin: 0 auto;
+		}
+
+		.site-header {
+			padding: 24px 0;
+			border-bottom: 1px solid rgba(232, 229, 240, .75);
+			background: rgba(247, 247, 251, .78);
+			backdrop-filter: blur(14px);
+		}
+
+		.header-content {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 24px;
+		}
+
+		.logo {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			color: var(--text);
+			font-size: 1.05rem;
+			font-weight: 800;
+			text-decoration: none;
+		}
+
+		.logo-mark {
+			display: grid;
+			place-items: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 13px;
+			background: var(--primary);
+			color: #fff;
+			box-shadow: 0 8px 18px rgba(101, 70, 216, .27);
+		}
+
+		.nav {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			gap: 8px;
+		}
+
+		.nav a {
+			padding: 8px 12px;
+			border-radius: 8px;
+			color: var(--muted);
+			font-size: .9rem;
+			font-weight: 650;
+			text-decoration: none;
+		}
+
+		.nav a:hover, .nav a:focus-visible {
+			background: var(--surface-alt);
+			color: var(--primary-dark);
+		}
+
+		.hero {
+			display: grid;
+			grid-template-columns: 1.25fr .75fr;
+			align-items: center;
+			gap: 64px;
+			padding: 88px 0 78px;
+		}
+
+		.eyebrow {
+			margin: 0 0 14px;
+			color: var(--primary);
+			font-size: .78rem;
+			font-weight: 800;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+		}
+
+		h1, h2, h3, p { margin-top: 0; }
+
 		h1 {
-			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-			color: blue;
+			max-width: 720px;
+			margin-bottom: 20px;
+			font-size: clamp(2.5rem, 6vw, 5rem);
+			line-height: .98;
+			letter-spacing: -.055em;
+		}
+
+		.hero-copy {
+			max-width: 640px;
+			margin-bottom: 30px;
+			color: var(--muted);
+			font-size: clamp(1.05rem, 2vw, 1.2rem);
+		}
+
+		.button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 48px;
+			padding: 0 20px;
+			border-radius: 12px;
+			background: var(--primary);
+			color: #fff;
+			font-weight: 750;
+			text-decoration: none;
+			box-shadow: 0 10px 22px rgba(101, 70, 216, .2);
+			transition: transform .2s ease, background .2s ease;
+		}
+
+		.button:hover, .button:focus-visible {
+			background: var(--primary-dark);
+			transform: translateY(-2px);
+		}
+
+		.hero-card {
+			padding: 28px;
+			border: 1px solid rgba(255, 255, 255, .8);
+			border-radius: 24px;
+			background: linear-gradient(145deg, #7759e7, #412a9c);
+			color: #fff;
+			box-shadow: var(--shadow);
+			transform: rotate(2deg);
+		}
+
+		.hero-card strong { display: block; margin-bottom: 12px; font-size: 1.4rem; }
+		.hero-card p { margin-bottom: 0; color: #e7e1ff; }
+
+		.section { padding: 36px 0 72px; }
+		.section-heading { margin-bottom: 24px; }
+		.section-heading h2 { margin-bottom: 6px; font-size: clamp(1.7rem, 3vw, 2.3rem); letter-spacing: -.035em; }
+		.section-heading p { margin-bottom: 0; color: var(--muted); }
+
+		.card-grid {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 16px;
+		}
+
+		.card {
+			display: flex;
+			flex-direction: column;
+			min-height: 190px;
+			padding: 22px;
+			border: 1px solid var(--line);
+			border-radius: 18px;
+			background: var(--surface);
+			box-shadow: 0 8px 24px rgba(38, 29, 73, .035);
+			transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+		}
+
+		.card:hover {
+			border-color: #c9bdf6;
+			box-shadow: var(--shadow);
+			transform: translateY(-4px);
+		}
+
+		.card h3 { margin-bottom: 8px; font-size: 1.05rem; }
+		.card p { margin-bottom: 18px; color: var(--muted); font-size: .92rem; }
+		.card-link {
+			margin-top: auto;
+			color: var(--primary);
+			font-size: .9rem;
+			font-weight: 750;
+			text-decoration: none;
+		}
+		.card-link:hover { color: var(--primary-dark); text-decoration: underline; }
+
+		.resource-list {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 10px 16px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.resource-list li a, .resource-list li span {
+			display: block;
+			padding: 14px 16px;
+			border: 1px solid var(--line);
+			border-radius: 12px;
+			background: var(--surface);
+			color: var(--text);
+			font-size: .93rem;
+			text-decoration: none;
+			transition: border-color .2s ease, background .2s ease;
+		}
+		.resource-list li a:hover, .resource-list li a:focus-visible {
+			border-color: #c9bdf6;
+			background: var(--surface-alt);
+			color: var(--primary-dark);
+		}
+		.resource-list li span { color: var(--muted); }
+
+		.site-footer {
+			padding: 26px 0 34px;
+			border-top: 1px solid var(--line);
+			color: var(--muted);
+			font-size: .88rem;
+			text-align: center;
+		}
+
+		@media (max-width: 800px) {
+			.hero { grid-template-columns: 1fr; gap: 34px; padding: 62px 0 48px; }
+			.hero-card { max-width: 520px; transform: none; }
+			.card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+		}
+
+		@media (max-width: 560px) {
+			.container { width: min(100% - 28px, 1120px); }
+			.site-header { padding: 16px 0; }
+			.header-content { align-items: flex-start; flex-direction: column; gap: 14px; }
+			.nav { justify-content: flex-start; gap: 4px; }
+			.nav a { padding: 6px 8px; font-size: .82rem; }
+			.hero { padding: 52px 0 36px; }
+			h1 { font-size: clamp(2.6rem, 14vw, 4rem); }
+			.section { padding-bottom: 52px; }
+			.card-grid, .resource-list { grid-template-columns: 1fr; }
+			.card { min-height: 0; }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			html { scroll-behavior: auto; }
+			*, *::before, *::after { transition-duration: .01ms !important; }
 		}
 	</style>
 </head>
 <body>
-	<h1>
-		BENVENUTO NELLA HOMEPAGE DEL PROGRAMMATORE MIGLIORE D'ITALIA
-	</h1>
-	<p>
-		Mi presento, sono Nicola, vengo da Nola, mi piace la pizza con la pummarola, il mio colore preferito è il viola, bevo molta coca cola, vado molto bene a scuola, mia nonna ogni domenica fa la braciola, se mi fate i cattivi caccio la pistola, e vi mostro una bella capriola.
-	</p>
-	<ol>
-		Di seguito troverai un indice dei principali siti di cui puoi avere bisogno
-		<li>
-			<a href="sito della classe/index.html">sito della classe 4A</a>
-		</li>
-		<li>
-			<a href="sito della classe/dante/index-dante.html">sito su dante</a>
-		</li>
-		<li>
-			<a href="html, css e JavaScript/pagine con solo html e css/index0.html">prima pagina</a>
-		</li>
-		<li>
-			<a href="html, css e JavaScript/JavaScript/console.html">pagina con JavaScript (guarda solo console)</a>
-		</li>
-		<li>
-			<a href="html, css e JavaScript/pagine dinamiche/index.html">prima pagina dinamica</a>
-		</li>
-		<li>
-			<a href="maturità/maturità.html">maturità</a>
-		</li>
-		<li>
-			<a href="html, css e JavaScript/pagine e font da tiktok/index.html">pagine e font da Tiktok</a>
-		</li>
-		<li>
-			<a href="pagine varie/tips e scorciatoie di tastiera.html">tips e scorciatoie di tastiera</a>
-		</li>
-		<li>
-            <a href="pagine varie/evento input foto.html">Evento input foto</a>
-        </li>
-		<li>
-			<a href="università/index.html">Università</a>
-		</li>
-		<li>
-			<a href="progetto con francesco/index.html">progetto con Francesco Graziano</a>
-		</li>
-		<li>
-			<a href="giady/index.html">pagine Giada</a>
-		</li>
-	</ol>
-	<br><br><br>
-	<ul>
-		siti carini
-		<li>
-			<a href="https://paveldogreat.github.io/WebGL-Fluid-Simulation/">
-				WebGL-Fluid-Simulation
+	<header class="site-header">
+		<div class="container header-content">
+			<a class="logo" href="#top" aria-label="Torna all'inizio">
+				<span class="logo-mark">NB</span>
+				<span>Nicola Belardo</span>
 			</a>
-		</li>
-		<li>
-			<a href="https://thispersondoesnotexist.com/">
-				this person does not exist
-			</a>
-		</li>
-		<li>
-			<a href="https://www.youtube.com/watch?v=buTYLoQlwsg">
-				Come avere Microsoft OFFICE 365 GRATIS per SEMPRE Legalmente
-			</a>
-		</li>
-		<li>
-			<a href="https://www.thetruesize.com">
-				Sito per confrontare le dimensioni dei vari paesi in scala reale
-			</a>
-		</li>
-		<li>
-			<a href="https://youtu.be/dtPiKyybEOA">
-				Come fare la pallina puzzle giocattolo
-			</a>
-		</li>
-		<li>
-			<a href="https://skyscanner.it">
-				Skyscanner: trova i voli in aereo migliori
-			</a>
-		</li>
-		<li>
-			<a href="https://money-iota-two.vercel.app/#es2-050">
-				sito per vedere banconote 3D
-			</a>
-		</li>
-		<li>
-			<a href="https://cmdchallenge.com/#/current_working_directory">
-				sito per esercitarsi con i comandi da terminale (fatto a gioco)
-			</a>
-		</li>
-		<li>
-			<a href="https://www.yourlifeupdated.net/guide/siti-illegali-per-scaricare-libri-ecco-quelli-piu-usati/">
-				siti illegali per scaricare libri gratis
-			</a>
-		</li>
-		<li>
-			<a href="https://www.giardiniblog.it/libri-pdf-gratis/">
-				altri siti per scaricare libri gratis
-			</a>
-		</li>
-		<li>
-			<a href="https://www.myinstants.com/en/categories/sound%20effects/">
-				sito per trovare audio di giochi o da edit
-			</a>
-		</li>
-	</ul>
+			<nav class="nav" aria-label="Navigazione principale">
+				<a href="#progetti">Progetti</a>
+				<a href="#risorse">Risorse</a>
+				<a href="#app">App</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="top">
+		<section class="hero container">
+			<div>
+				<p class="eyebrow">Benvenuto nella mia homepage</p>
+				<h1>Idee, progetti e cose utili.</h1>
+				<p class="hero-copy">Sono Nicola, programmatore di Nola. Qui raccolgo i miei esperimenti web, i progetti scolastici e una selezione di risorse che uso o trovo interessanti.</p>
+				<a class="button" href="#progetti">Esplora il sito <span aria-hidden="true">&nbsp;→</span></a>
+			</div>
+			<aside class="hero-card" aria-label="Presentazione">
+				<strong>Il mio angolo digitale</strong>
+				<p>Un punto di partenza semplice per scoprire lavori, esperimenti e link utili.</p>
+			</aside>
+		</section>
+
+		<section class="section container" id="progetti">
+			<div class="section-heading">
+				<h2>Progetti e pagine</h2>
+				<p>I lavori che ho costruito e le pagine da cui partire.</p>
+			</div>
+			<div class="card-grid">
+				<article class="card"><h3>Sito della classe 4A</h3><p>Il progetto condiviso con la classe.</p><a class="card-link" href="sito della classe/index.html">Visita il progetto →</a></article>
+				<article class="card"><h3>Approfondimento su Dante</h3><p>Una pagina dedicata a Dante e alle sue opere.</p><a class="card-link" href="sito della classe/dante/index-dante.html">Apri la pagina →</a></article>
+				<article class="card"><h3>Prime pagine web</h3><p>Esercizi con HTML, CSS e JavaScript.</p><a class="card-link" href="html, css e JavaScript/pagine con solo html e css/index0.html">Scopri gli esercizi →</a></article>
+				<article class="card"><h3>JavaScript in console</h3><p>Una prima pagina per sperimentare con JavaScript.</p><a class="card-link" href="html, css e JavaScript/JavaScript/console.html">Apri la pagina →</a></article>
+				<article class="card"><h3>Pagine dinamiche</h3><p>Esperimenti interattivi e prime prove con JavaScript.</p><a class="card-link" href="html, css e JavaScript/pagine dinamiche/index.html">Apri il progetto →</a></article>
+				<article class="card"><h3>Pagine e font da TikTok</h3><p>Esperimenti grafici ispirati ai social.</p><a class="card-link" href="html, css e JavaScript/pagine e font da tiktok/index.html">Scopri la pagina →</a></article>
+				<article class="card"><h3>Progetto maturità</h3><p>Il lavoro realizzato per l'esame.</p><a class="card-link" href="maturità/maturità.html">Visualizza il progetto →</a></article>
+				<article class="card"><h3>Progetti collaborativi</h3><p>Le pagine realizzate con amici e compagni.</p><a class="card-link" href="progetto con francesco/index.html">Progetto con Francesco →</a></article>
+				<article class="card"><h3>Pagina Giada</h3><p>Una raccolta di pagine realizzate per Giada.</p><a class="card-link" href="giady/index.html">Apri la raccolta →</a></article>
+				<article class="card"><h3>Input foto</h3><p>Un piccolo esperimento con gli eventi del browser.</p><a class="card-link" href="pagine varie/evento input foto.html">Prova l'esperimento →</a></article>
+				<article class="card"><h3>Tips e scorciatoie</h3><p>Una raccolta di consigli per usare meglio la tastiera.</p><a class="card-link" href="pagine varie/tips e scorciatoie di tastiera.html">Vedi i consigli →</a></article>
+				<article class="card"><h3>Università</h3><p>La sezione dedicata al percorso universitario.</p><a class="card-link" href="università/index.html">Vai alla sezione →</a></article>
+			</div>
+		</section>
+
+		<section class="section container" id="risorse">
+			<div class="section-heading">
+				<h2>Risorse e siti utili</h2>
+				<p>Link per imparare, creare e passare il tempo.</p>
+			</div>
+			<ul class="resource-list">
+				<li><a href="https://paveldogreat.github.io/WebGL-Fluid-Simulation/">WebGL Fluid Simulation</a></li>
+				<li><a href="https://www.thetruesize.com">Confronta le dimensioni dei Paesi</a></li>
+				<li><a href="https://cmdchallenge.com/#/current_working_directory">Esercitati con il terminale</a></li>
+				<li><a href="https://goalkicker.com/">Manuali dei linguaggi di programmazione</a></li>
+				<li><a href="https://www.typingclub.com/">Impara a scrivere veloce</a></li>
+				<li><a href="https://www.free4talk.com/">Fai pratica con l'inglese</a></li>
+				<li><a href="https://www.worldometers.info/it/">Statistiche mondiali in tempo reale</a></li>
+				<li><a href="https://aulab.it/notizia/396/5-esercizi-python-per-skillarti">Esercizi Python</a></li>
+				<li><a href="https://imissmycafe.com/">Suoni di una caffetteria</a></li>
+				<li><a href="https://roomstyler.com/3dplanner">Arreda una casa in 3D</a></li>
+				<li><a href="https://sketch.metademolab.com/">Anima i tuoi disegni</a></li>
+				<li><a href="https://fakeupdate.net/">Schermate di aggiornamento</a></li>
+				<li><a href="https://www.myinstants.com/en/categories/sound%20effects/">Effetti sonori</a></li>
+				<li><a href="https://skyscanner.it">Trova voli con Skyscanner</a></li>
+				<li><a href="https://money-iota-two.vercel.app/#es2-050">Banconote 3D</a></li>
+				<li><a href="https://www.yourlifeupdated.net/guide/siti-illegali-per-scaricare-libri-ecco-quelli-piu-usati/">Guida ai siti per libri gratuiti</a></li>
+				<li><a href="https://www.giardiniblog.it/libri-pdf-gratis/">Altre risorse per libri PDF</a></li>
+				<li><a href="https://thispersondoesnotexist.com/">This Person Does Not Exist</a></li>
+				<li><a href="https://youtu.be/dtPiKyybEOA">Tutorial pallina puzzle</a></li>
+				<li><a href="https://www.youtube.com/watch?v=buTYLoQlwsg">Guida a Microsoft Office 365</a></li>
+				<li><a href="https://www.calculator.net/conception-calculator.html">Conception Calculator</a></li>
+				<li><a href="https://www.google.com/maps/@43.637707,-79.42142,3a,75.0y,87.04256h,85.46407t/data=!3m4!1e1!3m2!1swrw5i3INN8eir5me8dbLxA!2e0">Street View di Google Maps</a></li>
+				<li><a href="https://rroll.to/">Accorcia link e scopri siti casuali</a></li>
+			</ul>
+		</section>
+
+		<section class="section container" id="app">
+			<div class="section-heading">
+				<h2>App da ricordare</h2>
+				<p>Strumenti interessanti per Android e Windows.</p>
+			</div>
+			<ul class="resource-list">
+				<li><span>Windows Sandbox: un PC virtuale dentro il PC</span></li>
+				<li><a href="https://play.google.com/store/apps/details?id=com.karolsmolak.wlanalysis&hl=it">WL Analysis: analisi del percorso del bilanciere</a></li>
+				<li><a href="https://www.navigaweb.net/app-android-con-root/">Migliori app Android con Root</a></li>
+				<li><a href="https://play.google.com/store/apps/details?id=com.alephzain.floating&hl=it">Floating Apps: finestre flottanti su Android</a></li>
+			</ul>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">Costruito da Nicola · <span id="year">2026</span></div>
+	</footer>
 </body>
 </html>

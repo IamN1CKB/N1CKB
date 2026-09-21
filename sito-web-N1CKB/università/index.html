@@ -1,126 +1,327 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage Appunti Università</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Appunti, materiali e documenti per il percorso universitario di Nicola Belardo.">
+	<title>Università | Nicola Belardo</title>
 	<link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
-    <style>
-        body {
-			background-color: antiquewhite;
-			margin: 30px;
+	<style>
+		:root {
+			--bg: #f7f7fb;
+			--surface: #ffffff;
+			--surface-alt: #f0edff;
+			--text: #19162b;
+			--muted: #6d687f;
+			--primary: #6546d8;
+			--primary-dark: #4930ae;
+			--line: #e8e5f0;
+			--shadow: 0 18px 45px rgba(48, 31, 111, .09);
 		}
-		h1, h2 {
-			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			background:
+				radial-gradient(circle at 90% 0%, #e5ddff 0, transparent 27rem),
+				var(--bg);
+			color: var(--text);
+			font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+			line-height: 1.6;
+		}
+		a { color: inherit; }
+		.container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+		.site-header {
+			padding: 24px 0;
+			border-bottom: 1px solid rgba(232, 229, 240, .75);
+			background: rgba(247, 247, 251, .78);
+			backdrop-filter: blur(14px);
+		}
+		.header-content {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 24px;
+		}
+		.logo {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			color: var(--text);
+			font-size: 1.05rem;
+			font-weight: 800;
+			text-decoration: none;
+		}
+		.logo-mark {
+			display: grid;
+			place-items: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 13px;
+			background: var(--primary);
+			color: #fff;
+			box-shadow: 0 8px 18px rgba(101, 70, 216, .27);
+		}
+		.nav {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			gap: 8px;
+		}
+		.nav a {
+			padding: 8px 12px;
+			border-radius: 8px;
+			color: var(--muted);
+			font-size: .9rem;
+			font-weight: 650;
+			text-decoration: none;
+		}
+		.nav a:hover, .nav a:focus-visible {
+			background: var(--surface-alt);
+			color: var(--primary-dark);
+		}
+
+		.hero {
+			display: grid;
+			grid-template-columns: 1.25fr .75fr;
+			align-items: center;
+			gap: 64px;
+			padding: 88px 0 78px;
+		}
+		.eyebrow {
+			margin: 0 0 14px;
+			color: var(--primary);
+			font-size: .78rem;
+			font-weight: 800;
+			letter-spacing: .12em;
 			text-transform: uppercase;
 		}
+		h1, h2, h3, p { margin-top: 0; }
 		h1 {
-			color: red;
+			max-width: 720px;
+			margin-bottom: 20px;
+			font-size: clamp(2.5rem, 6vw, 5rem);
+			line-height: .98;
+			letter-spacing: -.055em;
 		}
-		h2 {
-			color: blue;
+		.hero-copy {
+			max-width: 640px;
+			margin-bottom: 30px;
+			color: var(--muted);
+			font-size: clamp(1.05rem, 2vw, 1.2rem);
 		}
-        figcaption {
-            text-transform: uppercase;
-        }
-		footer {
-			border: 2px solid;
-			text-align: center;
-			display: flex;
-			background-color: bisque;
-			padding: 10px;
-			justify-content: space-around;
+		.button {
+			display: inline-flex;
 			align-items: center;
+			justify-content: center;
+			min-height: 48px;
+			padding: 0 20px;
+			border-radius: 12px;
+			background: var(--primary);
+			color: #fff;
+			font-weight: 750;
+			text-decoration: none;
+			box-shadow: 0 10px 22px rgba(101, 70, 216, .2);
+			transition: transform .2s ease, background .2s ease;
 		}
-		footer > details,
-		footer > a {
-			border: solid 1px blue;
-			padding: 8px;
+		.button:hover, .button:focus-visible {
+			background: var(--primary-dark);
+			transform: translateY(-2px);
 		}
-		details > ul > li {
-			text-align: left;
-			padding: 2px;
+		.hero-card {
+			padding: 28px;
+			border: 1px solid rgba(255, 255, 255, .8);
+			border-radius: 24px;
+			background: linear-gradient(145deg, #7759e7, #412a9c);
+			color: #fff;
+			box-shadow: var(--shadow);
+			transform: rotate(2deg);
 		}
-    </style>
+		.hero-card strong { display: block; margin-bottom: 12px; font-size: 1.4rem; }
+		.hero-card p { margin-bottom: 0; color: #e7e1ff; }
+
+		.section { padding: 36px 0 72px; }
+		.section-heading { margin-bottom: 24px; }
+		.section-heading h2 {
+			margin-bottom: 6px;
+			font-size: clamp(1.7rem, 3vw, 2.3rem);
+			letter-spacing: -.035em;
+		}
+		.section-heading p { margin-bottom: 0; color: var(--muted); }
+		.card-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 16px;
+		}
+		.card {
+			display: flex;
+			flex-direction: column;
+			min-height: 190px;
+			padding: 22px;
+			border: 1px solid var(--line);
+			border-radius: 18px;
+			background: var(--surface);
+			box-shadow: 0 8px 24px rgba(38, 29, 73, .035);
+			transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+		}
+		.card:hover {
+			border-color: #c9bdf6;
+			box-shadow: var(--shadow);
+			transform: translateY(-4px);
+		}
+		.card h3 { margin-bottom: 8px; font-size: 1.05rem; }
+		.card p { margin-bottom: 18px; color: var(--muted); font-size: .92rem; }
+		.card-link {
+			margin-top: auto;
+			color: var(--primary);
+			font-size: .9rem;
+			font-weight: 750;
+			text-decoration: none;
+		}
+		.card-link:hover { color: var(--primary-dark); text-decoration: underline; }
+		.resource-list {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 10px 16px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.resource-list li a {
+			display: block;
+			padding: 14px 16px;
+			border: 1px solid var(--line);
+			border-radius: 12px;
+			background: var(--surface);
+			color: var(--text);
+			font-size: .93rem;
+			text-decoration: none;
+			transition: border-color .2s ease, background .2s ease;
+		}
+		.resource-list li a:hover, .resource-list li a:focus-visible {
+			border-color: #c9bdf6;
+			background: var(--surface-alt);
+			color: var(--primary-dark);
+		}
+		.site-footer {
+			padding: 26px 0 34px;
+			border-top: 1px solid var(--line);
+			color: var(--muted);
+			font-size: .88rem;
+			text-align: center;
+		}
+
+		@media (max-width: 800px) {
+			.hero { grid-template-columns: 1fr; gap: 34px; padding: 62px 0 48px; }
+			.hero-card { max-width: 520px; transform: none; }
+		}
+		@media (max-width: 560px) {
+			.container { width: min(100% - 28px, 1120px); }
+			.site-header { padding: 16px 0; }
+			.header-content { align-items: flex-start; flex-direction: column; gap: 14px; }
+			.nav { justify-content: flex-start; gap: 4px; }
+			.nav a { padding: 6px 8px; font-size: .82rem; }
+			.hero { padding: 52px 0 36px; }
+			h1 { font-size: clamp(2.6rem, 14vw, 4rem); }
+			.section { padding-bottom: 52px; }
+			.card-grid, .resource-list { grid-template-columns: 1fr; }
+			.card { min-height: 0; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			html { scroll-behavior: auto; }
+			*, *::before, *::after { transition-duration: .01ms !important; }
+		}
+	</style>
 </head>
 <body>
-	<h1>
-		Università
-	</h1>
-	<figure>
-		<figcaption>
-			<h2>
-				orario lezioni
-			</h2>
-		</figcaption>
-		<img src="media/orario lezioni.png" alt="non disponibile">
-	</figure>
-	
-	<hr>
-	
+	<header class="site-header">
+		<div class="container header-content">
+			<a class="logo" href="../index.html" aria-label="Torna alla homepage">
+				<span class="logo-mark">NB</span>
+				<span>Nicola Belardo</span>
+			</a>
+			<nav class="nav" aria-label="Navigazione principale">
+				<a href="#materiali">Materiali</a>
+				<a href="#strumenti">Strumenti</a>
+				<a href="#documenti">Documenti</a>
+				<a href="../index.html">Homepage</a>
+			</nav>
+		</div>
+	</header>
 
-	
-	
-	
-	<ul>
-		<h3>
-			Materiali
-		</h3>
-		<li>
-			<a href="https://elearning.unicampania.it/course/index.php?categoryid=74" target="_blank">
-				Materiale dei prof suddivisi in argomenti
-			</a>
-		</li>
-		<li>
-			<a href="https://www.ingegneria.unicampania.it/dipartimento/docenti" target="_blank">
-				Materiale dei prof suddivisi in prof
-			</a>
-		</li>
-		<li>
-			<a href="https://mega.nz/folder/MYZ2wKyB#oTHe7IALSK3fYfDyrvf11w" target="_blank">
-				Materiale di tutta la triennale in MEGA
-			</a>
-		</li>
-		<li>
-			<a href="https://uninadue-my.sharepoint.com/:f:/g/personal/vincenzo_silvano_studenti_unicampania_it/Eo_gTHYJNzFCnkIPdMrSSMoBTOvWn-C3pNteIQXwyBXKdw?e=5%3a7TFQbm&fromShare=true&at=9" target="_blank">
-				Video-lezioni di tutte le materie su OneDrive
-			</a>
-		</li>
-	</ul>
-	<hr>
-	<h3>
-		Pdf per le istruzioni della calcolatrice CASIO fx-570ES PLUS: 
-		<a href="media/fx-570_991ES_PLUS_IT.pdf">clicca qui</a>
-	</h3>
+	<main id="top">
+		<section class="hero container">
+			<div>
+				<p class="eyebrow">Risorse per il percorso universitario</p>
+				<h1>Appunti, materiali e strumenti.</h1>
+				<p class="hero-copy">
+					Una raccolta ordinata di link, dispense e documenti utili per affrontare il corso di laurea in ingegneria informatica.
+				</p>
+				<a class="button" href="#materiali">Esplora le risorse <span aria-hidden="true">&nbsp;→</span></a>
+			</div>
+			<aside class="hero-card" aria-label="Presentazione della sezione">
+				<strong>Il mio spazio universitario</strong>
+				<p>Un punto di riferimento per ritrovare velocemente materiali, informazioni e documenti del corso.</p>
+			</aside>
+		</section>
 
-	<footer>
-		<a href="https://idp.unicampania.it/idp/Authn/UserPassword#shortcut" target="_blank">
-			Area studenti Esse3
-		</a>
+		<section class="section container" id="materiali">
+			<div class="section-heading">
+				<h2>Materiali di studio</h2>
+				<p>Le raccolte principali per consultare lezioni e contenuti delle materie.</p>
+			</div>
+			<div class="card-grid">
+				<article class="card">
+					<h3>Materiale dei professori</h3>
+					<p>Materiali organizzati per argomento sulla piattaforma e-learning.</p>
+					<a class="card-link" href="https://elearning.unicampania.it/course/index.php?categoryid=74" target="_blank" rel="noopener noreferrer">Apri la raccolta →</a>
+				</article>
+				<article class="card">
+					<h3>Materiale per docente</h3>
+					<p>Consulta le pagine dei professori del dipartimento di ingegneria.</p>
+					<a class="card-link" href="https://www.ingegneria.unicampania.it/dipartimento/docenti" target="_blank" rel="noopener noreferrer">Vedi i docenti →</a>
+				</article>
+				<article class="card">
+					<h3>Archivio della triennale</h3>
+					<p>Materiale di tutte le materie raccolto in un'unica cartella MEGA.</p>
+					<a class="card-link" href="https://mega.nz/folder/MYZ2wKyB#oTHe7IALSK3fYfDyrvf11w" target="_blank" rel="noopener noreferrer">Apri MEGA →</a>
+				</article>
+				<article class="card">
+					<h3>Video-lezioni</h3>
+					<p>Le registrazioni e le video-lezioni delle materie su OneDrive.</p>
+					<a class="card-link" href="https://uninadue-my.sharepoint.com/:f:/g/personal/vincenzo_silvano_studenti_unicampania_it/Eo_gTHYJNzFCnkIPdMrSSMoBTOvWn-C3pNteIQXwyBXKdw?e=5%3a7TFQbm&fromShare=true&at=9" target="_blank" rel="noopener noreferrer">Apri OneDrive →</a>
+				</article>
+			</div>
+		</section>
 
-		
-		<details>
-			<summary>
-				documenti università
-			</summary>
-			<ul>
-				<li>
-					<a href="https://share.google/b88KVTwzNTVMPRZHq" target="_blank">
-						Informazioni corso ingegneria informatica
-					</a>
-				</li>
-				<li>
-					<a href="media/Laurea_in_Ingegneria_Elettronica_e_Informatica_curriculum_Informatica_23_24.pdf" target="_blank">
-						Piano Di Studio per ingegneria informatica 2023/2024
-					</a>
-				</li>
-				<li>
-					<a href="media/Manifesto_Tasse_2023_24_con_nuove_rate_e_TR_aggiornata_link_aggiornato.pdf" target="_blank">
-						tasse 2023/2024
-					</a>
-				</li>
+		<section class="section container" id="strumenti">
+			<div class="section-heading">
+				<h2>Strumenti utili</h2>
+				<p>Guide e risorse da tenere a portata di mano durante lo studio.</p>
+			</div>
+			<ul class="resource-list">
+				<li><a href="media/fx-570_991ES_PLUS_IT.pdf">Istruzioni per la calcolatrice CASIO fx-570ES PLUS</a></li>
+				<li><a href="https://idp.unicampania.it/idp/Authn/UserPassword#shortcut" target="_blank" rel="noopener noreferrer">Area studenti Esse3</a></li>
 			</ul>
-			</details>
+		</section>
+
+		<section class="section container" id="documenti">
+			<div class="section-heading">
+				<h2>Documenti universitari</h2>
+				<p>Informazioni sul corso, piano di studio e documentazione amministrativa.</p>
+			</div>
+			<ul class="resource-list">
+				<li><a href="https://share.google/b88KVTwzNTVMPRZHq" target="_blank" rel="noopener noreferrer">Informazioni sul corso di ingegneria informatica</a></li>
+				<li><a href="media/Laurea_in_Ingegneria_Elettronica_e_Informatica_curriculum_Informatica_23_24.pdf" target="_blank" rel="noopener noreferrer">Piano di studio per ingegneria informatica 2023/2024</a></li>
+				<li><a href="media/Manifesto_Tasse_2023_24_con_nuove_rate_e_TR_aggiornata_link_aggiornato.pdf" target="_blank" rel="noopener noreferrer">Tasse universitarie 2023/2024</a></li>
+			</ul>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">Costruito da Nicola · <a href="../index.html">Torna alla homepage</a></div>
 	</footer>
 </body>
 </html>

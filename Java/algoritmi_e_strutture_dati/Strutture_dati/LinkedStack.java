@@ -2,15 +2,15 @@ package algoritmi_e_strutture_dati.Strutture_dati;
 
 public class LinkedStack<E> implements Stack<E> {
 
-    private SinglyLinkedList<E> list = new SinglyLinkedList<E>();
-
-
-    //costruttore vuoto
+    // Composizione: lo stack incapsula e delega le operazioni a una lista singola
+    private SinglyLinkedList<E> list = new SinglyLinkedList<>();
+		
+		//costruttore vuoto
     public LinkedStack() { }
-    
+
     @Override
     public int size() {
-        return list.size();    
+        return list.size();
     }
 
     @Override
@@ -20,17 +20,19 @@ public class LinkedStack<E> implements Stack<E> {
 
     @Override
     public E top() {
+        // Equivale a leggere il nodo di testa
         return list.first();
     }
 
     @Override
     public void push(E element) {
+        // Inserisce in testa alla lista
         list.addFirst(element);
     }
 
     @Override
     public E pop() {
-        return list.removeFirst(); //ritorna il primo elemento e lo rimuove
+        // Rimuove e restituisce il nodo di testa
+        return list.removeFirst();
     }
-    
 }

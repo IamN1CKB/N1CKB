@@ -39,6 +39,12 @@ public class MergeSort {
         // Fase di unione (conquista) dei sotto-array ordinati nell'array principale S
         merge(S1, S2, S, comp);
     }
+    
+
+
+
+
+    // Esempio di utilizzo del MergeSort
     public static void main(String[] args) {
         Integer[] array = {38, 27, 43, 3, 9, 82, 10};
         System.out.println("Array originale: " + Arrays.toString(array));

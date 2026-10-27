@@ -182,19 +182,18 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
     @Override
     public boolean isInternal(Position<E> p) throws IllegalArgumentException {
         Node<E> node = validate(p);
-        return node.getLeft() != null || node.getRight() != null;
+        return (node.getLeft() != null) || (node.getRight() != null);
     }
 
     @Override
     public boolean isExternal(Position<E> p) throws IllegalArgumentException {
         Node<E> node = validate(p);
-        return node.getLeft() == null && node.getRight() == null;
+        return (node.getLeft() == null) && (node.getRight() == null);
     }
 
     @Override
     public boolean isRoot(Position<E> p) throws IllegalArgumentException {
-        Node<E> node = validate(p);
-        return node == root();
+        return p == root();
     }
 
     @Override
